@@ -13,7 +13,7 @@ make sure rspec and cucumber work by running these commands:
     rake cucumber
 
 run the web server (thin)
-				
+
 		rails s
 				
 the site should be at http://localhost:3000
