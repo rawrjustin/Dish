@@ -1,20 +1,5 @@
 h1. Foodprepapp
 
-This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.com/.
-
-h2. Diagnostics
-
-This application was built with recipes that are known to work together.
-
-This application was built with preferences that are known to work together.
-
-If the application doesn't work as expected, please "report an issue":https://github.com/RailsApps/rails_apps_composer/issues and include these diagnostics:
-
-We'd also like to know if you've found combinations of recipes or preferences that do work together.
-
-Recipes:
-["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"]
-
 Preferences:
 {:git=>true, :railsapps=>"rails3-devise-rspec-cucumber", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"none", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"none", :starter_app=>"users_app", :form_builder=>"none", :quiet_assets=>true, :dev_webserver=>"thin", :prod_webserver=>"thin", :templates=>"haml", :github=>true}
 
@@ -46,35 +31,12 @@ The application is configured to send email using a Gmail account.
 
 h2. Getting Started
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+clone the repo
 
-h2. Documentation and Support
+` git clone https://github.com/rawrjustin/foodprep.git `
 
-This is the only documentation.
+make sure rspec and cucumber work by running these commands:
 
-h4. Issues
+` rake spec `
+` cucumber `
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-h2. Similar Projects
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-h2. Contributing
-
-If you make improvements to this application, please share with others.
-
-* Fork the project on GitHub.
-* Make your feature addition or bug fix.
-* Commit with Git.
-* Send the author a pull request.
-
-If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
-
-h2. Credits
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-h2. License
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
