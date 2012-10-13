@@ -33,9 +33,15 @@ h2. Getting Started
 
 clone the repo
 
-		git clone https://github.com/rawrjustin/foodprep.git
+				git clone https://github.com/rawrjustin/foodprep.git
 
 make sure rspec and cucumber work by running these commands:
 
-		rake spec
-		cucumber
+				rake spec
+				cucumber
+
+run the web server (thin)
+				
+				rails s
+				
+the site should be at http://localhost:3000
