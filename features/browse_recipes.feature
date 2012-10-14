@@ -6,11 +6,11 @@ Feature: display list of recipes
 Background:
   
   Given the following recipes exist: 
-  | name                    | servings | description | ingredients |
-  | Dabogee                 | 30       | It's like a hoagie, but Korean. | Rice cake, fish cake, gochujang. |
-  | Lime Chicken            | 5        | A Gideon Chia classic | Some chicken, and a lot of limes. | 
+  | name                    | servings | description                     | ingredients                       |
+  | Dabogee                 | 30       | It's like a hoagie, but Korean. | Rice cake, fish cake, gochujang.  |
+  | Lime Chicken            | 5        | A Gideon Chia classic           | Some chicken, and a lot of limes. | 
 
-  And I am on the browse page 
+  And I am on the "browse recipes" page
 
 Scenario: show all recipes
   Then I should see "Dabogee"
