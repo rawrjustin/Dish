@@ -9,6 +9,11 @@ test: &test
   adapter: postgresql
   database: foodapptest
   host: localhost
+  
+production:
+  adapter: postgresql
+  database: foodapp
+  host: localhost
 
 cucumber:
   <<: *test
