@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Foodprepapp"
+      %title= content_for?(:title) ? yield(:title) : "Dish"
       %meta{:content => content_for?(:description) ? yield(:description) : "Foodprepapp", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"
         = javascript_include_tag "application"
