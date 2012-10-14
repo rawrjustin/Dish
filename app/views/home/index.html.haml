@@ -1,4 +1,28 @@
-%h3 Home
-- @users.each do |user|
+.hero-unit
+  %h1 Dish Gracepoint
+  
   %p
-    User: #{link_to user.name, user}
+    %h5 For Gracepoint Church, food preparation is a task that is managed by hundreds of people to plan out meals for groups ranging from 5 to over 200 on a day-to-day basis. It is often difficult to find a meal that falls under a particular food manager’s constraints of budget, time, manpower, and equipment. Gracepoint Church needs a fast, organized way to find all its available recipes that fit to a particular food manager’s set of constraints.
+  
+  - @users.each do |user|
+    %p
+      User: #{link_to user.name, user}
+    
+%ul.thumbnails
+  %li.span3
+    .thumbnail
+      %img{:src => 'http://25.media.tumblr.com/tumblr_mbusw8Uy731qitz6do1_400.jpg'}
+  %li.span3
+    .thumbnail
+      %img{:src => 'http://25.media.tumblr.com/tumblr_mbusuhVzJz1qitz6do1_400.jpg'}
+  %li.span3
+    .thumbnail
+      %img{:src => 'http://25.media.tumblr.com/tumblr_mbrhlwO6dg1qitz6do1_400.jpg'}
+  %li.span3
+    .thumbnail
+      %img{:src => 'http://24.media.tumblr.com/tumblr_mbj458gOfd1qitz6do1_400.jpg'}
+      
+      
+      
+      
+      
