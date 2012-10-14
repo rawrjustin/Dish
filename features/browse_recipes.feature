@@ -1,7 +1,7 @@
 Feature: display list of recipes
   As a food manager
   So that I can save time and reuse preexisting recipes
-  I want to browse the saved recipes
+  I want to browse the recipes
 
 Background:
   
