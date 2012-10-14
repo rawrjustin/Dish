@@ -3,11 +3,6 @@
 _make sure you have the required rails/ruby versions and postgres before starting_
 
 ## Getting Started
-create two databases in postgres (installation instructions in Database section below)
-
-    # CREATE DATABASE foodapp;
-    # CREATE DATABASE foodapptest;
-
 clone the repo
 
     $ git clone https://github.com/rawrjustin/foodprep.git
@@ -47,10 +42,7 @@ Learn more about "Installing Rails":http://railsapps.github.com/installing-rails
 
 ## Database
 
-This application uses postgresql with ActiveRecord.
-if you are on a mac, install postgres.app for easy local postgres management
-http://postgresapp.com/
-if you are on windows or ubuntu.....google..lol sorry can't help much here but you'll just need postgres locally to be able to create a db
+This application uses sqlite with ActiveRecord. and postgresql in production.
 
 ## Development gems
 
