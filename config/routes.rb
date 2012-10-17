@@ -1,19 +1,6 @@
 FoodPrepApp::Application.routes.draw do
   # replace below with "resources :recipes"
   resources :recipes
-# get "recipes/new"
-
-# get "recipes/create"
-
-# get "recipes/update"
-
-# get "recipes/edit"
-
-# get "recipes/destroy"
-
-# get "recipes/index"
-
-# get "recipes/show"
 
   authenticated :user do
     root :to => 'home#index'
