@@ -6,7 +6,7 @@ Feature: display a single recipe
 Background:
   
   Given the following recipes exist: 
-  | name            | servings | description             | ingredients                             | direction                                       | cpp   |
+  | name            | servings | description             | ingredients                             | directions                                      | cpp   |
   | Asian Meatballs | 100      | Can't have enough of it | beef meatballs (60 lbs), rice (10 cups) | 1 Preheat oven, 2 toss in meatballs, 3 add rice | $1.50 |
 
 Scenario: Viewing the Asian Meatballs recipe
