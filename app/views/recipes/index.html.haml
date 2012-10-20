@@ -1,2 +1,18 @@
-%h1 Recipes#index
-%p Find me in app/views/recipes/index.html.haml
+%h1 Recipes List
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Recipe Name
+      %th Description
+      %th Ready In
+      %th Number of Servings
+      %th Cost
+  %tbody
+    - @recipes.each do |recipe|
+      %tr
+        %td= link_to recipe.name, recipe_path(recipe)
+        %td= recipe.description
+        %td= recipe.time_in_minutes
+        %td= recipe.servings
+        %td= recipe.total_cost
