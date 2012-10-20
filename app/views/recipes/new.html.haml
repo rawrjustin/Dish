@@ -1,2 +1,26 @@
-%h1 Recipes#new
-%p Find me in app/views/recipes/new.html.haml
+%h1 Create New Recipe
+
+= form_tag recipes_path do
+
+  = label :recipe, :name, 'Name'
+  = text_field :recipe, 'name'
+
+  = label :recipe, :description, 'Description'
+  = text_field :recipe, 'description'
+
+  = label :recipe, :ingredients, 'Ingredients'
+  = text_field :recipe, 'ingredients'
+
+  = label :recipe, :directions, 'Directions'
+  = text_field :recipe, 'directions'
+
+  = label :recipe, :time_in_minutes, 'Time Required'
+  = text_field :recipe, 'time_in_minutes'
+
+  = label :recipe, :servings, 'Number of Servings'
+  = text_field :recipe, 'servings'
+
+  = label :recipe, :total_cost, 'Total Cost'
+  = text_field :recipe, 'total_cost'
+
+  = submit_tag 'Save Changes'
