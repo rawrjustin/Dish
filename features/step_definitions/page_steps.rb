@@ -15,12 +15,8 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
-Then /^(?:|I )should see "([^"]*)"$/ do |text|
-  if page.respond_to? :should
-    page.should have_content(text)
-  else
-    assert page.has_content?(text)
-  end
+Then /^(?:|I )should( not)? see "([^"]*)"$/ do |negate, text|
+    negate ? page.should_not(have_content(text)) : page.should(have_content(text))
 end
 
 Then /^show me the page$/ do

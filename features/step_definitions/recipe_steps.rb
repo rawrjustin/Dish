@@ -1,3 +1,9 @@
+Given /^the following recipes exist:?$/ do |table|  
+  table.hashes.each do |hash|  
+    FactoryGirl.create(:recipe, hash)
+  end  
+end
+
 Given /^these recipes exist: "([^"]*)"$/ do |recipes|
   recipes_list = recipes.split(',')
   recipes_list.each do |recipe_name|
@@ -6,3 +12,5 @@ Given /^these recipes exist: "([^"]*)"$/ do |recipes|
     r.save
   end
 end
+
+
