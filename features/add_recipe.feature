@@ -22,8 +22,8 @@ Scenario: successfully adding a recipe
   And I fill in "cost" with "50"
   And I press "submit"
   Then I should be on the details page for "BBQ Chicken"
-  And I should see "BBQ Chicken"
-  And I should see "It is perfect for casual group dinners. It is so tasty!"
+  Then I should see "BBQ Chicken"
+  Then I should see "It is perfect for casual group dinners. It is so tasty!"
   Given I am on the "browse recipes" page
   Then I should see "BBQ Chicken"
   And I should see "by billyjean"

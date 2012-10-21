@@ -1,7 +1,7 @@
-Given /^the following recipes exist:?$/ do |table|  
-  table.hashes.each do |hash|  
+Given /^the following recipes exist:?$/ do |table|
+  table.hashes.each do |hash|
     FactoryGirl.create(:recipe, hash)
-  end  
+  end
 end
 
 Given /^these recipes exist: "([^"]*)"$/ do |recipes|
