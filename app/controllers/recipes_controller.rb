@@ -3,6 +3,9 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.create!(params[:recipe])
+    flash[:notice] = "#{@recipe.name} was successfully created."
+    redirect_to recipes_path
   end
 
   def update
@@ -15,6 +18,14 @@ class RecipesController < ApplicationController
   end
 
   def index
+    @q = Recipe.search(params[:q])
+    results = @q.result(:distinct => true) 
+    if results.count > 0 
+      @recipes = results
+    else
+      @recipes = Recipe.all
+    end
+    
   end
 
   def show

@@ -1,3 +1,3 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost
 end

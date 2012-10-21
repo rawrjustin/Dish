@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(:version => 20121014013359) do
     t.text     "description"
     t.text     "ingredients"
     t.text     "directions"
-    t.integer  "ready_in_minutes"
-    t.integer  "num_servings"
+    t.integer  "time_in_minutes"
+    t.integer  "servings"
     t.decimal  "total_cost"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|

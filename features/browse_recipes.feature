@@ -4,14 +4,9 @@ Feature: display list of recipes
   I want to browse the recipes
 
 Background:
-  
-  Given the following recipes exist: 
-  | name                    | servings | description                     | ingredients                       |
-  | Dabogee                 | 30       | It's like a hoagie, but Korean. | Rice cake, fish cake, gochujang.  |
-  | Lime Chicken            | 5        | A Gideon Chia classic           | Some chicken, and a lot of limes. | 
-
-  And I am on the "browse recipes" page
+  Given these recipes exist: "McNuggets, Dabogee"
 
 Scenario: show all recipes
-  Then I should see "Dabogee"
-  And I should see "Lime Chicken"
+  Given I am on the browse recipes page
+  Then I should see "McNuggets"
+  And I should see "Dabogee"

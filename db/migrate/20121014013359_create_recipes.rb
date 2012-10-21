@@ -5,8 +5,8 @@ class CreateRecipes < ActiveRecord::Migration
       t.text :description
       t.text :ingredients
       t.text :directions
-      t.integer :ready_in_minutes
-      t.integer :num_servings
+      t.integer :time_in_minutes
+      t.integer :servings
       t.decimal :total_cost
       t.timestamps
     end
