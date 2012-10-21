@@ -26,6 +26,9 @@ module NavigationHelpers
     when /the browse recipes page/
       '/recipes'
 
+    when /the details page for "(.*)"/
+      recipe_path(Recipe.find_by_name($1))
+
     else
       begin
         page_name =~ /the (.*) page/
