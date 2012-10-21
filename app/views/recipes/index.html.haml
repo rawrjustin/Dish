@@ -1,5 +1,11 @@
 %h1 Recipes List
 
+= search_form_for @q do |f|
+  = f.label :name_cont
+  = f.text_field :name_cont
+  = f.submit
+end
+
 %table.table.table-hover
   %thead
     %tr

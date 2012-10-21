@@ -18,7 +18,14 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @q = Recipe.search(params[:q])
+    results = @q.result(:distinct => true) 
+    if results.count > 0 
+      @recipes = results
+    else
+      @recipes = Recipe.all
+    end
+    
   end
 
   def show
