@@ -22,16 +22,18 @@ describe RecipesController do
   end
 
   describe 'create' do
+    before :each do
+      @recipe = FactoryGirl.create(:recipe)
+      @recipe.stub(:valid?).and_return(true)
+    end
     it 'should call the model to create a new recipe in the database' do
-      recipe = mock('recipe')
-      Recipe.should_receive(:create!).and_return(recipe)
-      get 'create', {:recipe => recipe}
+      Recipe.should_receive(:new).and_return(@recipe)
+      get 'create'
     end
     it 'should redirect to recipe details page upon submission' do
-      recipe = mock('recipe')
-      Recipe.stub(:create!).and_return(recipe)
-      get 'create', {:recipe => recipe}
-      response.should redirect_to('show')
+      Recipe.stub(:new).and_return(@recipe)
+      get 'create'
+      response.should redirect_to(recipes_path)
     end
   end
 
