@@ -29,6 +29,6 @@ class Recipe < ActiveRecord::Base
         total_time += "#{mins} mins"
       end
     end
-    return total_time
+    return total_time.strip
   end
 end
