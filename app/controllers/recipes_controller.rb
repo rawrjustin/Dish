@@ -3,9 +3,15 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create!(params[:recipe])
-    flash[:notice] = "#{@recipe.name} was successfully created."
-    redirect_to recipe_path(@recipe.id)
+    @recipe = Recipe.new(params[:recipe])
+    if @recipe.valid?
+      @recipe.save!
+      flash[:notice] = "#{@recipe.name} was successfully created."
+      redirect_to recipe_path(@recipe.id)
+    elsif
+      flash[:notice] = @recipe.errors.to_a.join(", ")
+      redirect_to new_recipe_path
+    end
   end
 
   def update

@@ -3,3 +3,4 @@
 %div= "Description: #{@recipe.description}"
 %div= "Ingredients: #{@recipe.ingredients}"
 %div= "Servings: #{@recipe.servings}"
+%div= "Costs per person: #{number_to_currency(@recipe.cpp, :unit => '$')}"
