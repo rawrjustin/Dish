@@ -33,7 +33,7 @@ describe RecipesController do
     it 'should redirect to recipe details page upon submission' do
       Recipe.stub(:new).and_return(@recipe)
       get 'create'
-      response.should redirect_to(recipes_path)
+      response.should redirect_to(recipe_path(@recipe.id))
     end
   end
 
