@@ -43,3 +43,8 @@ Given /^I add a recipe for "(.*?)"$/ do |recipe_name|
   fill_in "recipe_total_cost", :with => 5
   click_button "Save Changes"
 end
+
+Given /^I search for a recipe named "(.*?)"$/ do |recipe_name|
+  fill_in "Name contains", :with => "Lime Chicken"
+  click_button "Search"
+end
