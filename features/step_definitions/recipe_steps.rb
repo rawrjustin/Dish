@@ -25,3 +25,9 @@ Given /^I am logged in as "(.*?)" with password "(.*?)"$/ do |user, password|
   fill_in "Password", :with => password
   click_button "Sign in"
 end
+
+Given /^I add a recipe for "(.*?)"$/ do |recipe_name|
+  visit '/recipes/new'
+  fill_in "recipe_name", :with => recipe_name
+  click_button "Save Changes"
+end

@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.create!(params[:recipe])
     flash[:notice] = "#{@recipe.name} was successfully created."
-    redirect_to recipes_path
+    redirect_to recipe_path(@recipe.id)
   end
 
   def update
