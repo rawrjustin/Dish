@@ -2,9 +2,12 @@
 
 FactoryGirl.define do
   factory :recipe do
-    name "MyString"
-    description "MyText"
-    servings 2
-    ingredients "i can't believe it's not butter"
+    name 'Lime Chicken'
+    description 'A Gideon Chia classic'
+    ingredients '1 lb of chicken, LOTS of lime juice, LOTS'
+    directions 'Stir fry chicken, dump in LOADS and LOADS of lime juice'
+    time_in_minutes '20'
+    servings '5'
+    total_cost '7'
   end
 end
