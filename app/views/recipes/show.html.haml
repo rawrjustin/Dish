@@ -1,5 +1,5 @@
 %h1= @recipe.name
-%div= "Directions: #{@recipe.directions}"
-%div= "Description: #{@recipe.description}"
+%div= "#{@recipe.description}"
+%div= "This recipe is for #{@recipe.servings} servings and ready in #{@recipe.time} and costs #{number_to_currency(@recipe.cpp)} per person"
 %div= "Ingredients: #{@recipe.ingredients}"
-%div= "Servings: #{@recipe.servings}"
+%div= "Directions: #{@recipe.directions}"

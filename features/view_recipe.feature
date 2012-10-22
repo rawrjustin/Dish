@@ -6,15 +6,14 @@ Feature: display a single recipe
 Background:
   
   Given the following recipes exist: 
-  | name            | servings | description             | ingredients                             | directions                                      | cpp   |
-  | Asian Meatballs | 100      | Can't have enough of it | beef meatballs (60 lbs), rice (10 cups) | 1 Preheat oven, 2 toss in meatballs, 3 add rice | $1.50 |
+  | name            | servings | description   | ingredients    | directions                          | total_cost | time_in_minutes |
+  | Asian Meatballs | 100      | Awesome stuff | beef meatballs | 1 Preheat oven, 2 toss in meatballs | 150.00     | 95              |
 
 Scenario: Viewing the Asian Meatballs recipe
-  Given I am on the "Asian Meatballs" recipe page
+  Given I am on the details page for "Asian Meatballs"
   Then I should see "Asian Meatballs"
   Then I should see "Preheat oven"
-  Then I should see "Can't have enough of it"
-  Then I should see "rice"
-  Then I should see "$1.50 per person"
-  Then I should see "200 servings"
-  Then I should see "Scale Ingredients"
+  Then I should see "Awesome stuff"
+  Then I should see "beef meatballs"
+  Then I should see "$1.50"
+  Then I should see "100"
