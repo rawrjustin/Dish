@@ -4,6 +4,7 @@ class Recipe < ActiveRecord::Base
   validates_numericality_of :time_in_minutes, :servings, :total_cost
 
   def cpp
+    # cost per person
     if servings > 0
       cost_per_person = self.total_cost.to_f / self.servings.to_f
     end
@@ -25,7 +26,7 @@ class Recipe < ActiveRecord::Base
       if mins == 1
         total_time += "1 min"
       else
-        total_time += "${mins} mins"
+        total_time += "#{mins} mins"
       end
     end
     return total_time
