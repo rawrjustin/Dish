@@ -26,6 +26,18 @@ module NavigationHelpers
     when /the browse recipes page/
       '/recipes'
 
+    when /the browse large group menus page/
+      '/large/menus'
+
+    when /the small group recipes page/
+      '/small/recipes'
+
+    when /the admin page/
+      '/admin'
+
+    when /the admin sign in page/
+      '/admin/sign_in'
+
     else
       begin
         page_name =~ /the (.*) page/
