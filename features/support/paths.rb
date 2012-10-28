@@ -23,8 +23,26 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
-    when /the browse recipes page/
-      '/recipes'
+    when /the browse large group menus page/
+      '/large/menus'
+
+    when /the small group recipes page/
+      '/small/recipes'
+
+    when /the admin page/
+      '/admin'
+
+    when /the admin sign in page/
+      '/admin/sign_in'
+
+    when /the add a large group menu page/
+      '/admin/menus/new'
+
+    when /the details page for "(.*)"/
+      recipe_path(Recipe.find_by_name($1))
+
+    when /the details page for the large group menu "(.*)"/
+      menu_path(Recipe.find_by_name($1))
 
     when /the add a recipe page/
       '/recipes/new'
