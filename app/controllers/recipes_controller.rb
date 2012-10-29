@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(params[:recipe])
+    @recipe.image = params[:image]
     if @recipe.valid?
       @recipe.save!
       flash[:notice] = "#{@recipe.name} was successfully created."

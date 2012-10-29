@@ -3,3 +3,4 @@
 %div= "This recipe is for #{@recipe.servings} servings and ready in #{@recipe.time} and costs #{number_to_currency(@recipe.cpp)} per person"
 %div= "Ingredients: #{@recipe.ingredients}"
 %div= "Directions: #{@recipe.directions}"
+= image_tag @recipe.image_url.to_s

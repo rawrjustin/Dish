@@ -1,6 +1,6 @@
 %h1 Create New Recipe
 
-= form_tag recipes_path do
+= form_tag recipes_path, :multipart => true do
 
   = label :recipe, :name, 'Name'
   = text_field :recipe, 'name'
@@ -22,5 +22,9 @@
 
   = label :recipe, :total_cost, 'Total Cost'
   = text_field :recipe, 'total_cost'
-
+  
+  = label :recipe, :image, 'Image'
+  = file_field_tag :image
+  
+  <br>
   = submit_tag 'Save Changes'
