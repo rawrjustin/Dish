@@ -1,6 +1,6 @@
 FoodPrepApp::Application.routes.draw do
-  # replace below with "resources :recipes"
-  resources :recipes
+  resources :recipes, :path => "small"
+  resources :menus, :path => "large"
 
   authenticated :user do
     root :to => 'home#index'

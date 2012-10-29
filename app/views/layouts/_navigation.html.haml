@@ -1,11 +1,11 @@
 .navbar
   .navbar-inner
-    = link_to "Dish", root_path, :class => 'brand'
+    = link_to "Dish Gracepoint", root_path, :class => 'brand'
     
     %ul.nav
       - if user_signed_in?
         %li
-          = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+          = link_to 'Logout', destroy_user_session_path, :method=>'get'
       - else
         %li
           = link_to 'Login', new_user_session_path
@@ -15,7 +15,3 @@
       - else
         %li
           = link_to 'Sign up', new_user_registration_path
-      %li
-        = link_to 'Find a Recipe', recipes_path
-      %li
-        = link_to 'Add a Recipe', new_recipe_path
