@@ -23,11 +23,11 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
-    when /the browse large group menus page/
-      '/large/menus'
+    when /the large group menus page/
+      '/large'
 
     when /the small group recipes page/
-      '/small/recipes'
+      '/small'
 
     when /the admin page/
       '/admin'
