@@ -9,9 +9,9 @@ Feature: add Caterer Information
 
     Scenario: successfully adding a caterer
         When I am on the add a caterer page
-        When I fill in "name" with "Peking Express"
-        When I fill in "address" with "2068 Center Street Berkeley, CA 94704"
-        When I fill in "phone" with "(510) 841-5942"
-        When I press "save"
+        When I fill in "menu_name" with "Peking Express"
+        When I fill in "menu_address" with "2068 Center Street Berkeley, CA 94704"
+        When I fill in "menu_phone" with "(510) 841-5942"
+        When I press "Save"
         # probably have a flash 
         Then I should see "Peking Express saved"

@@ -1,2 +1,21 @@
-%h1 Menus#new
-%p Find me in app/views/menus/new.html.haml
+%h1 Create A New Menu
+
+= form_tag menus_path do
+
+  = label :menu, :name, 'Name'
+  = text_field :menu, 'name'
+
+  = label :menu, :phone, 'Phone'
+  = text_field :menu, 'phone'
+
+  = label :menu, :address, 'Address'
+  = text_field :menu, 'address'
+
+  = label :menu, :servings, 'Number of Servings'
+  = text_field :menu, 'servings'
+
+  = label :menu, :description, 'Description'
+  = text_area :menu, 'description'
+
+  <br>
+  = submit_tag 'Save'
