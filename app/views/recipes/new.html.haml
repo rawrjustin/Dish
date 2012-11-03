@@ -1,30 +1,30 @@
 %h1 Create New Recipe
-
-= form_tag recipes_path, :multipart => true do
-
-  = label :recipe, :name, 'Name'
-  = text_field :recipe, 'name'
-
-  = label :recipe, :description, 'Description'
-  = text_field :recipe, 'description'
-
-  = label :recipe, :ingredients, 'Ingredients'
-  = text_field :recipe, 'ingredients'
-
-  = label :recipe, :directions, 'Directions'
-  = text_field :recipe, 'directions'
-
-  = label :recipe, :time_in_minutes, 'Time Required'
-  = text_field :recipe, 'time_in_minutes'
-
-  = label :recipe, :servings, 'Number of Servings'
-  = text_field :recipe, 'servings'
-
-  = label :recipe, :total_cost, 'Total Cost'
-  = text_field :recipe, 'total_cost'
+.span6
+  = form_tag recipes_path, :multipart => true do
   
-  = label :recipe, :image, 'Image'
-  = file_field_tag :image
+    = label :recipe, :name, 'Name'
+    = text_field :recipe, 'name', :style => "width:550px"
   
-  <br>
-  = submit_tag 'Save Changes'
+    = label :recipe, :description, 'Description'
+    = text_area :recipe, 'description', :style => "width:850px; height:200px"
+  
+    = label :recipe, :ingredients, 'Ingredients'
+    = text_area :recipe, 'ingredients', :style => "width:850px; height:200px"
+  
+    = label :recipe, :directions, 'Directions'
+    = text_area :recipe, 'directions', :style => "width:850px; height:200px"
+  
+    = label :recipe, :time_in_minutes, 'Time Required'
+    = text_field :recipe, 'time_in_minutes'
+  
+    = label :recipe, :servings, 'Number of Servings'
+    = text_field :recipe, 'servings'
+  
+    = label :recipe, :total_cost, 'Total Cost'
+    = text_field :recipe, 'total_cost'
+    
+    = label :recipe, :image, 'Image'
+    = file_field_tag :image
+    
+    <br>
+    = submit_tag 'Save Changes'

@@ -1,6 +1,19 @@
-%h1= @recipe.name
-%div= "#{@recipe.description}"
-%div= "This recipe is for #{@recipe.servings} servings and ready in #{@recipe.time} and costs #{number_to_currency(@recipe.cpp)} per person"
-%div= "Ingredients: #{@recipe.ingredients}"
-%div= "Directions: #{@recipe.directions}"
-= image_tag @recipe.image_url.to_s
+.row
+  .span12
+    %h1= @recipe.name
+.row
+  .span3
+    .img-rounded.preview
+      = image_tag @recipe.image_url.to_s
+  .span9
+    .well
+      = "#{@recipe.description}"
+    = "This recipe is for #{@recipe.servings} servings and ready in #{@recipe.time} and costs #{number_to_currency(@recipe.cpp)} per person"
+
+<br>
+%h4 Ingredients
+= "#{@recipe.ingredients}"
+<br>
+%h4 Directions
+= "#{@recipe.directions}"
+
