@@ -1,16 +1,28 @@
 class MenusController < ApplicationController
-  def new
+  def new_cooked_menu
   end
 
-  def create
-    @menu = Menu.new(params["menu"])
-    if @menu.valid?
-      @menu.save!
-      flash[:notice] = "#{@menu.name} saved!"
-      redirect_to menu_path(@menu.id)
+  def new_catered_menu
+  end
+
+  def create_cooked_menu
+    menu = CookedMenu.new(params["menu"])
+    create_menu(menu)
+  end
+
+  def create_catered_menu
+    menu = CateredMenu.new(params["menu"])
+    create_menu(menu)
+  end
+
+  def create_menu(menu)
+    if menu.valid?
+      menu.save!
+      flash[:notice] = "#{menu.name} saved!"
+      redirect_to menus_path
     elsif
-      flash[:notice] = @menu.errors.to_a.join(", ")
-      redirect_to new_menu_path
+      flash[:notice] = menu.errors.to_a.join(", ")
+      redirect_to menus_path
     end
   end
 
@@ -35,5 +47,10 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:id])
+    if @menu.type == "CookedMenu"
+      render "show_cooked_menu"
+    elsif @menu.type == "CateredMenu"
+      render "show_catered_menu"
+    end
   end
 end

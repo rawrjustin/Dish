@@ -28,3 +28,18 @@ Recipe.create! do |recipe|
   recipe.servings = '5'
   recipe.total_cost = '7'
 end
+CookedMenu.create! do |menu|
+  menu.name = 'BBQ Pork and Salad'
+  menu.description = 'Cheap and tasty!'
+  menu.servings = '200'
+  menu.ingredients = 'Pork and veggies'
+  menu.directions = 'Cook pork and mix veggies'
+  menu.time_in_minutes = '50'
+end
+CateredMenu.create! do |menu|
+  menu.name = 'Hong Kong Express'
+  menu.description = 'Cheap and quick, we usually order from them!'
+  menu.servings = '400'
+  menu.phone = '5355354422'
+  menu.address = '3445 Telegraph Ave, Berkeley'
+end

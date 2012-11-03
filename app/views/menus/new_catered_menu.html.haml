@@ -1,0 +1,21 @@
+%h1 Create A New Catered Option
+
+= form_tag large_create_catered_menu_path do
+
+  = label :menu, :name, 'Name'
+  = text_field :menu, 'name'
+
+  = label :menu, :description, 'Description'
+  = text_field :menu, 'description'
+
+  = label :menu, :servings, 'Number of Servings'
+  = text_field :menu, 'servings'
+
+  = label :menu, :phone, 'Phone'
+  = text_area :menu, 'phone'
+
+  = label :menu, :address, 'Address'
+  = text_area :menu, 'address'
+
+  <br>
+  = submit_tag 'Save'
