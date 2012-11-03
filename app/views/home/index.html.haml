@@ -1,6 +1,12 @@
 .hero-unit
   %h1 Dish Gracepoint
 
-%h2
-  %a{:href => 'small'} Small Group
-  %a{:href => 'large'} Large Group
+%ul.thumbnails
+  %li.span6
+    %a.thumbnail{:href => 'small'}
+      %img{:src => "http://placehold.it/600x200&text=Small%20Group"}
+      %h3 Small Group
+  %li.span6
+    %a.thumbnail{:href => 'large'}
+      %img{:src => "http://placehold.it/600x200&text=Large%20Group"}
+      %h3 Large Group
