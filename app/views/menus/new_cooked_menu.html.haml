@@ -1,0 +1,24 @@
+%h1 Create A New Home Cooked Menu
+
+= form_tag large_create_cooked_menu_path do
+
+  = label :menu, :name, 'Name'
+  = text_field :menu, 'name'
+
+  = label :menu, :description, 'Description'
+  = text_field :menu, 'description'
+
+  = label :menu, :servings, 'Number of Servings'
+  = text_field :menu, 'servings'
+
+  = label :menu, :ingredients, 'Ingredients'
+  = text_area :menu, 'ingredients'
+
+  = label :menu, :directions, 'Directions'
+  = text_area :menu, 'directions'
+
+  = label :menu, :time_in_minutes, 'Time In Minutes'
+  = text_area :menu, 'time_in_minutes'
+
+  <br>
+  = submit_tag 'Save'

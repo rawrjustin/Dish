@@ -7,9 +7,9 @@ Background:
   Given I am on the home page
 
 Scenario: Select large group view
-  When I press "Large Group"
+  When I follow "Large Group"
   Then I should be on the large group menus page
 
 Scenario: Select small group view
-  When I press "Small Group"
+  When I follow "Small Group"
   Then I should be on the small group recipes page
