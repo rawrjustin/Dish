@@ -1,4 +1,8 @@
 FoodPrepApp::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :recipes, :path => "small"
 
   get "/large/new_catered_menu" => "menus#new_catered_menu"

@@ -45,3 +45,16 @@ Given /^I am logged in as "(.*?)"$/ do |email|
   fill_in "Password", :with => "welcome"
   click_button "Sign in"
 end
+
+Given /^the following users exist:$/ do |table|
+  table.hashes.each do |hash|
+    User.create!(hash)
+  end
+end
+
+Given /^I am logged in as "(.*?)" with password "(.*?)"$/ do |user, password|
+  visit '/users/sign_in'
+  fill_in "Email", :with => user
+  fill_in "Password", :with => password
+  click_button "Sign in"
+end

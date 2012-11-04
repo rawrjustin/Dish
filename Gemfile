@@ -29,6 +29,9 @@ gem "sqlite3", :group => [:development, :test]
 gem 'pg', :group => :production
 gem 'carrierwave'
 #gem "rmagick"
+gem 'activeadmin' #admin cp
+gem 'less-rails'
+gem 'therubyracer'
 
 gem "simplecov"
 gem "ransack"

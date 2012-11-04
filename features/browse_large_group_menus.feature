@@ -4,9 +4,9 @@ Feature: display list of large group menus
   I want to browse the large group menus
 
 Background:
-  Given these large group menus exist: "Asian Meatballs, Vietnamese Sandwiches"
+  Given these menus exist: "Asian Meatballs, Vietnamese Sandwiches"
 
 Scenario: show all menus
-  Given I am on the browse large group recipes page
+  Given I am on the large group menus page
   Then I should see "Asian Meatballs"
   And I should see "Vietnamese Sandwiches"
