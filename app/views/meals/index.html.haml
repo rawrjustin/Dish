@@ -1,4 +1,4 @@
-%h1 Menus List
+%h1 Meals List
 
 = search_form_for @q do |f|
   = f.label :name_cont
@@ -14,8 +14,8 @@
       %th Description
       %th Type
   %tbody
-    - @menus.each do |menu|
+    - @meals.each do |meal|
       %tr
-        %td= link_to menu.name, menu_path(menu)
-        %td= menu.description
-        %td= menu.type
+        %td= link_to meal.name, meal_path(meal)
+        %td= meal.description
+        %td= meal.type

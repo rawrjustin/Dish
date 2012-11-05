@@ -1,7 +1,9 @@
-ActiveAdmin.register CookedMenu do
+ActiveAdmin.register CateredMeal do
   index do
     column :name
     column :description
+    column :phone
+    column :address
     column :servings
     default_actions
   end
@@ -9,12 +11,11 @@ ActiveAdmin.register CookedMenu do
   filter :name
   
   form do |f|
-    f.inputs "Cooked Menus" do
+    f.inputs "Catered Meals" do
       f.input :name
       f.input :description
-      f.input :ingredients
-      f.input :directions
-      f.input :time_in_minutes
+      f.input :phone
+      f.input :address
       f.input :servings
     end
     f.buttons

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MenusController do
+describe MealsController do
 
   describe "GET 'new'" do
     it "returns http success" do

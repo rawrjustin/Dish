@@ -1,4 +1,4 @@
-class Menu < ActiveRecord::Base
+class Meal < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :name, :description, :servings
   validates :name, :description, :servings, :presence => true
