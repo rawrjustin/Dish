@@ -7,7 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "haml", ">= 3.1.7"
