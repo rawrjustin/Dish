@@ -8,6 +8,5 @@ Background:
 
 Scenario: show all meals
   Given I am on the large group meals page
-  Then show me the page
   Then I should see "Asian Meatballs"
   And I should see "Vietnamese Sandwiches"
