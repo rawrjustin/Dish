@@ -2,7 +2,7 @@ class Recipe < ActiveRecord::Base
   attr_accessible :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :image
   validates :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
   
   def cpp
     # cost per person
