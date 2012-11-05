@@ -1,6 +1,9 @@
 FoodPrepApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  #heroku fix for active admin
+  config.assets.precompile += %w[active_admin.css active_admin.js]
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
