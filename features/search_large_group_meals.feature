@@ -4,7 +4,7 @@ Feature: search for a particular large group menu
   I want to search large group menus by title
 
 Background:
-  Given these meals exist: "Asian Meatballs, Vietnamese Sandwiches, Ham & Cheese Sandwiches"
+  Given these cooked meals exist: "Asian Meatballs, Vietnamese Sandwiches, Ham & Cheese Sandwiches"
 
 Scenario: search for a large group meal
   Given I am on the large group meals page

@@ -28,7 +28,7 @@ Given /^the following meals exist:?$/ do |table|
   end
 end
 
-Given /^these meals exist: "([^"]*)"$/ do |meals|
+Given /^these catered meals exist: "([^"]*)"$/ do |meals|
   meals_list = meals.split(',')
   meals_list.each do |meal_name|
     m = CateredMeal.create
@@ -36,6 +36,20 @@ Given /^these meals exist: "([^"]*)"$/ do |meals|
     m[:description] = "..."
     m[:phone] = "0123456789"
     m[:address] = "..."
+    m[:servings] = 100
+    m.save!
+  end
+end
+
+Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
+  meals_list = meals.split(',')
+  meals_list.each do |meal_name|
+    m = CookedMeal.create
+    m[:name] = meal_name
+    m[:description] = "..."
+    m[:ingredients] = "..."
+    m[:directions] = "..."
+    m[:time_in_minutes] = 100
     m[:servings] = 100
     m.save!
   end

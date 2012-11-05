@@ -4,7 +4,7 @@ Feature: display list of large group meals
   I want to browse the large group meals
 
 Background:
-  Given these meals exist: "Asian Meatballs, Vietnamese Sandwiches"
+  Given these cooked meals exist: "Asian Meatballs, Vietnamese Sandwiches"
 
 Scenario: show all meals
   Given I am on the large group meals page

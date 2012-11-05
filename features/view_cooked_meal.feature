@@ -4,9 +4,8 @@ Feature: display a single large group menu
     I want to see the details of a large group menu
 
 Background:
-  Given these meals exist: "Asian Meatballs"
+  Given these cooked meals exist: "Asian Meatballs"
 
 Scenario: Viewing the Asian Meatballs large group meal
   Given I am on the details page for the large group meal "Asian Meatballs"
-  Then show me the page
   Then I should see "Asian Meatballs"
