@@ -1,53 +1,31 @@
 require 'spec_helper'
 
 describe MealsController do
-
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "returns http success" do
-      get 'update'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'edit'" do
-    it "returns http success" do
-      get 'edit'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      response.should be_success
-    end
-  end
-
   describe "GET 'index'" do
-    it "returns http success" do
+    it 'should fetch meals from the database' do
+      Meal.should_receive(:all)
       get 'index'
-      response.should be_success
     end
   end
 
   describe "GET 'show'" do
-    it "returns http success" do
-      get 'show'
-      response.should be_success
+    before :each do
+      @r1 = mock('Meal')
+      @r1.stub(:name).and_return('Asian Meatballs')
+      @r1.stub(:type).and_return('CookedMeal')
+      @r2 = mock('Meal')
+      @r2.stub(:name).and_return('Peking Express')
+      @r2.stub(:type).and_return('CateredMeal')
+    end
+    it "should show a cooked meal" do
+      Meal.should_receive(:find).and_return(@r1)
+      get 'show', :id => 1
+      response.should render_template('show_cooked_meal')
+    end
+    it "should show a catered meal" do
+      Meal.should_receive(:find).and_return(@r2)
+      get 'show', :id => 1
+      response.should render_template('show_catered_meal')
     end
   end
 
