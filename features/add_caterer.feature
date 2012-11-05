@@ -9,9 +9,21 @@ Feature: add Caterer Information
 
     Scenario: successfully adding a caterer
         When I am on the add a caterer page
-        When I fill in "menu_name" with "Peking Express"
-        When I fill in "menu_address" with "2068 Center Street Berkeley, CA 94704"
-        When I fill in "menu_phone" with "(510) 841-5942"
-        When I press "Save"
-        # probably have a flash 
-        Then I should see "Peking Express saved"
+        Then show me the page
+        When I fill in "catered_meal_name" with "Peking Express"
+        When I fill in "catered_meal_address" with "2068 Center Street Berkeley, CA 94704"
+        When I fill in "catered_meal_phone" with "(510) 841-5942"
+        When I press "Create Catered meal"
+
+        #Then I should be on the admin view page for "Peking Express"
+        Then I should see "Peking Express was successfully created."
+        And I should see "2068 Center Street Berkeley, CA 94704"
+        And I should see "(510) 841-5942"
+
+        # View the actual meal 
+        When I am on the large group meals page
+        Then I should see "Peking Express"
+
+        When I follow "Peking Express"
+        Then I should see "2068 Center Street Berkeley, CA 94704"
+        And I should see "(510) 841-5942"

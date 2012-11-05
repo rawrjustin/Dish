@@ -24,12 +24,12 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /the add a caterer page/
-      '/admin/catered_menus/new'
+      '/admin/catered_meals/new'
 
-    when /the add a cooked menu page/
-      '/admin/cooked_menu/new'
+    when /the add a cooked meals page/
+      '/admin/cooked_meals/new'
 
-    when /the large group menus page/
+    when /the large group meals page/
       '/large'
 
     when /the small group recipes page/
