@@ -44,8 +44,8 @@ module NavigationHelpers
     when /the details page for "(.*)"/
       recipe_path(Recipe.find_by_name($1))
 
-    when /the details page for the large group menu "(.*)"/
-      menu_path(Recipe.find_by_name($1))
+    when /the details page for the large group meal "(.*)"/
+      meal_path(Meal.find_by_name($1))
 
     when /the add a recipe page/
       '/recipes/new'
