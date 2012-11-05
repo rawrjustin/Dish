@@ -1,8 +1,5 @@
 %h1 Recipes List
 
-%h3
-  = link_to 'Add Recipe', new_recipe_path
-
 = search_form_for @q do |f|
   = f.label :name_cont
   = f.text_field :name_cont
