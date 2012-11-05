@@ -24,7 +24,10 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /the add a caterer page/
-      '/large/new'
+      '/admin/catered_menus/new'
+
+    when /the add a cooked menu page/
+      '/admin/cooked_menu/new'
 
     when /the large group menus page/
       '/large'
@@ -37,9 +40,6 @@ module NavigationHelpers
 
     when /the admin sign in page/
       '/admin/sign_in'
-
-    when /the add a large group menu page/
-      '/admin/menus/new'
 
     when /the details page for "(.*)"/
       recipe_path(Recipe.find_by_name($1))

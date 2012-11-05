@@ -1,5 +1,6 @@
 ActiveAdmin.register Recipe do     
   index do            
+    column :id
     column :name
     column :description
     column :ingredients
