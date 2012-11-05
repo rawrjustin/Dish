@@ -4,10 +4,6 @@ ActiveAdmin.register CateredMenu do
     column :description
     column :phone
     column :address
-    column :ingredients
-    column :directions
-    column :time_in_minutes
-    column :type
     column :servings
     default_actions
   end
@@ -20,10 +16,6 @@ ActiveAdmin.register CateredMenu do
       f.input :description
       f.input :phone
       f.input :address
-      f.input :ingredients
-      f.input :directions
-      f.input :time_in_minutes
-      f.input :type
       f.input :servings
     end
     f.buttons
