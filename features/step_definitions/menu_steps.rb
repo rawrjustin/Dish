@@ -13,10 +13,11 @@ Given /^these menus exist: "([^"]*)"$/ do |menus|
     m[:phone] = "0123456789"
     m[:address] = "..."
     m[:ingredients] = "..."
+    m[:servings] = 100
     m[:directions] = "..."
     m[:time_in_minutes] = 5
     m[:total_cost] = 5
-    m.save
+    m.save!
   end
 end
 
