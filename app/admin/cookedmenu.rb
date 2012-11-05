@@ -12,8 +12,6 @@ ActiveAdmin.register CookedMenu do
     f.inputs "Cooked Menus" do
       f.input :name
       f.input :description
-      f.input :phone
-      f.input :address
       f.input :ingredients
       f.input :directions
       f.input :time_in_minutes
