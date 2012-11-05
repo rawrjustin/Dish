@@ -8,7 +8,7 @@ Background:
 
 Scenario: Select large group view
   When I follow "Large Group"
-  Then I should be on the large group menus page
+  Then I should be on the large group meals page
 
 Scenario: Select small group view
   When I follow "Small Group"
