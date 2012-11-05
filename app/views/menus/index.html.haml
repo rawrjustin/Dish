@@ -1,10 +1,5 @@
 %h1 Menus List
 
-%h3
-  = link_to 'Add Catering Option', large_new_catered_menu_path
-  %br
-  = link_to 'Add Home-cooked Option', large_new_cooked_menu_path
-
 = search_form_for @q do |f|
   = f.label :name_cont
   = f.text_field :name_cont

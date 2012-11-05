@@ -1,29 +1,4 @@
 class RecipesController < ApplicationController
-  def new
-  end
-
-  def create
-    @recipe = Recipe.new(params[:recipe])
-    @recipe.image = params[:image]
-    if @recipe.valid?
-      @recipe.save!
-      flash[:notice] = "#{@recipe.name} was successfully created."
-      redirect_to recipe_path(@recipe.id)
-    elsif
-      flash[:notice] = @recipe.errors.to_a.join(", ")
-      redirect_to new_recipe_path
-    end
-  end
-
-  def update
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
-
   def index
     @q = Recipe.search(params[:q])
     results = @q.result(:distinct => true) 
@@ -32,7 +7,6 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
-    
   end
 
   def show
