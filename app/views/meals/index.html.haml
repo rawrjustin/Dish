@@ -7,15 +7,19 @@
   = f.text_field :description_cont
   = f.submit
 
-%table.table.table-hover
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Type
-  %tbody
-    - @meals.each do |meal|
+- if @meals.count == 0
+  .alert Sorry, no results match your criteria.
+- else
+  %table.table.table-hover
+    %thead
       %tr
-        %td= link_to meal.name, meal_path(meal)
-        %td= meal.description
-        %td= meal.type
+        %th Name
+        %th Description
+        %th Type
+    %tbody
+      - @meals.each do |meal|
+        %tr
+          %td= link_to meal.name, meal_path(meal)
+          %td= meal.description
+          %td= meal.type
+  = paginate @meals

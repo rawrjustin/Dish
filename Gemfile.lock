@@ -266,6 +266,7 @@ DEPENDENCIES
   hpricot (>= 0.8.6)
   hub (>= 1.10.2)
   jquery-rails
+  kaminari
   launchy (>= 2.1.2)
   less-rails
   pg

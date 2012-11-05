@@ -1,12 +1,7 @@
 class MealsController < ApplicationController
   def index
     @q = Meal.search(params[:q])
-    results = @q.result(:distinct => true)
-    if results.count > 0
-      @meals = results
-    else
-      @meals = Meal.all
-    end
+    @meals = @q.result.page(params[:page])
   end
 
   def show

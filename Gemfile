@@ -35,3 +35,4 @@ gem 'therubyracer'
 
 gem "simplecov"
 gem "ransack"
+gem "kaminari"
