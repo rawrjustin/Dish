@@ -29,7 +29,7 @@ module NavigationHelpers
     when /the add a cooked menu page/
       '/admin/cooked_menu/new'
 
-    when /the large group menus page/
+    when /the large group meals page/
       '/large'
 
     when /the small group recipes page/

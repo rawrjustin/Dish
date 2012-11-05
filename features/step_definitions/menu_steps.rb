@@ -4,11 +4,11 @@ Given /^the following menus exist:?$/ do |table|
   end
 end
 
-Given /^these menus exist: "([^"]*)"$/ do |menus|
-  menus_list = menus.split(',')
-  menus_list.each do |menu_name|
-    m = Menu.create
-    m[:name] = menu_name
+Given /^these meals exist: "([^"]*)"$/ do |meals|
+  meals_list = meals.split(',')
+  meals_list.each do |meal_name|
+    m = Meal.create
+    m[:name] = meal_name
     m[:description] = "..."
     m[:phone] = "0123456789"
     m[:address] = "..."
@@ -20,4 +20,3 @@ Given /^these menus exist: "([^"]*)"$/ do |menus|
     m.save!
   end
 end
-
