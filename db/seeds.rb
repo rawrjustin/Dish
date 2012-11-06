@@ -54,3 +54,12 @@ CateredMeal.create! do |meal|
   meal.address = '3445 Telegraph Ave, Berkeley'
   meal.thumb = 'http://farm9.staticflickr.com/8479/8159756748_474eed57fe_n.jpg'
 end
+CookedMeal.create! do |meal|
+  meal.name = 'Grilled Hotdogs'
+  meal.description = 'An All-American classic.'
+  meal.servings = '300'
+  meal.ingredients = 'Hotdogs, buns, ketchup'
+  meal.directions = '...'
+  meal.time_in_minutes = '45'
+  meal.thumb = 'http://farm9.staticflickr.com/8203/8159756800_d233433cd6_n.jpg'
+end
