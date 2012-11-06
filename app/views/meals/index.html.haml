@@ -1,16 +1,9 @@
-%h1 Large Group Meals
-
-.row-fluid
-  .span6
-    = search_form_for @q do |f|
-      = f.text_field :name_cont
-      = f.submit
 .row-fluid
   .span2
     .sidebar.affix.span2
       %ul.nav.nav-list
         %li
-          %h5 Show the following meals
+          %h4 Show me...
         %li
           %a{:href => ""}
             Meals under $2
@@ -18,16 +11,24 @@
           %a{:href => ""}
             Meals under $5
 
-  .span9
-    - if @meals.count == 0
-      .alert Sorry, no results match your criteria.
-    - else
-      .thumbnails
-        - @meals.each do |meal|
-          %li.span3
-            .thumbnail#meal
-              %a{:href => meal_path(meal)}
-                %p= meal.name
-                %img{:src => meal.thumb}
-              %p= meal.type
-      = paginate @meals
+  .span10
+    .row-fluid.masthead
+      %h1 Large Group Meals
+      .span3.form-search.pull-right
+        = search_form_for @q do |f|
+          = f.text_field :name_cont, :class => 'input-large search-query', :placeholder => 'Search large group meals'
+          = f.submit :class => 'btn', :value => 'Search'
+      %h5 Each of these are complete budget-friendly meals that will feed a large group.
+    .row-fluid
+      - if @meals.count == 0
+        .alert Sorry, no results match your criteria.
+      - else
+        .thumbnails
+          - @meals.each do |meal|
+            %li.span3
+              .thumbnail.meal
+                %a{:href => meal_path(meal)}
+                  .mealname
+                    %p= meal.name
+                  %img{:src => meal.thumb}
+        = paginate @meals

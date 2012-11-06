@@ -1,6 +1,43 @@
 // Place all the styles related to the meals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.thumbnail#meal{
-    height: 200px;
+
+h1 {
+  display: inline;
+  color: #C60;
 }
+
+h5 {
+  //display: inline;
+  color: #CCC;
+}
+
+.masthead {
+  height: 150px;
+}
+
+.sidebar {
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+}
+
+.mealname {
+  background-color: rgba(51,51,51,0.7);
+  padding: 12px 0px 7px 0px;
+  font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+  margin: 0px auto 0px auto;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+body {
+  background-image: url('http://farm8.staticflickr.com/7140/8160418949_7d5adcda8a_h.jpg');
+}
+
+.thumbnail.meal{
+  max-width: 330px;
+  border: 0;
+}
+

@@ -35,7 +35,7 @@ CookedMeal.create! do |meal|
   meal.ingredients = 'Meatballs, salad, and rice'
   meal.directions = 'Cook meatballs at 400F for one hour.'
   meal.time_in_minutes = '60'
-  meal.thumb = 'http://farm9.staticflickr.com/8490/8159734486_4de1559ef6_n.jpg'
+  meal.thumb = 'http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg'
 end
 CookedMeal.create! do |meal|
   meal.name = 'Vietnamese Sandwiches'
@@ -44,7 +44,7 @@ CookedMeal.create! do |meal|
   meal.ingredients = 'Vietnamese things... ask a Vietnamese person.'
   meal.directions = 'Cook stuff. Sandwichify it.'
   meal.time_in_minutes = '30'
-  meal.thumb = 'http://farm9.staticflickr.com/8206/8159756696_59ecbc4e3a_n.jpg'
+  meal.thumb = 'http://farm8.staticflickr.com/7111/8160415698_1bb88ae465.jpg'
 end
 CateredMeal.create! do |meal|
   meal.name = 'Hong Kong Express'
@@ -52,7 +52,7 @@ CateredMeal.create! do |meal|
   meal.servings = '400'
   meal.phone = '5355354422'
   meal.address = '3445 Telegraph Ave, Berkeley'
-  meal.thumb = 'http://farm9.staticflickr.com/8479/8159756748_474eed57fe_n.jpg'
+  meal.thumb = 'http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg'
 end
 CookedMeal.create! do |meal|
   meal.name = 'Grilled Hotdogs'
@@ -61,5 +61,5 @@ CookedMeal.create! do |meal|
   meal.ingredients = 'Hotdogs, buns, ketchup'
   meal.directions = '...'
   meal.time_in_minutes = '45'
-  meal.thumb = 'http://farm9.staticflickr.com/8203/8159756800_d233433cd6_n.jpg'
+  meal.thumb = 'http://farm8.staticflickr.com/7110/8160415758_6f1c3a38bc.jpg'
 end
