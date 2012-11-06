@@ -1,25 +1,23 @@
 %h1 Meals List
 
-= search_form_for @q do |f|
-  = f.label :name_cont
-  = f.text_field :name_cont
-  = f.label :description_cont
-  = f.text_field :description_cont
-  = f.submit
-
-- if @meals.count == 0
-  .alert Sorry, no results match your criteria.
-- else
-  %table.table.table-hover
-    %thead
-      %tr
-        %th Name
-        %th Description
-        %th Type
-    %tbody
-      - @meals.each do |meal|
-        %tr
-          %td= link_to meal.name, meal_path(meal)
-          %td= meal.description
-          %td= meal.type
-  = paginate @meals
+.row
+  .span3
+    = search_form_for @q do |f|
+      = f.label :name_cont
+      = f.text_field :name_cont
+      = f.label :description_cont
+      = f.text_field :description_cont
+      = f.submit
+  .span9
+    - if @meals.count == 0
+      .alert Sorry, no results match your criteria.
+    - else
+      .thumbnails
+        - @meals.each do |meal|
+          %li.span3
+            .thumbnail#meal
+              %p= meal.type
+              %a{:href => meal_path(meal)}
+                %img{:src => "http://placehold.it/300x160"}
+                %p= meal.name
+      = paginate @meals
