@@ -29,12 +29,22 @@ Recipe.create! do |recipe|
   recipe.total_cost = '7'
 end
 CookedMeal.create! do |meal|
-  meal.name = 'BBQ Pork and Salad'
-  meal.description = 'Cheap and tasty!'
+  meal.name = 'Asian Meatballs, Salad, and Rice'
+  meal.description = 'The perfect large group meal.'
   meal.servings = '200'
-  meal.ingredients = 'Pork and veggies'
-  meal.directions = 'Cook pork and mix veggies'
-  meal.time_in_minutes = '50'
+  meal.ingredients = 'Meatballs, salad, and rice'
+  meal.directions = 'Cook meatballs at 400F for one hour.'
+  meal.time_in_minutes = '60'
+  meal.thumb = 'http://farm9.staticflickr.com/8490/8159734486_4de1559ef6_n.jpg'
+end
+CookedMeal.create! do |meal|
+  meal.name = 'Vietnamese Sandwiches'
+  meal.description = 'Great for lunch.'
+  meal.servings = '200'
+  meal.ingredients = 'Vietnamese things... ask a Vietnamese person.'
+  meal.directions = 'Cook stuff. Sandwichify it.'
+  meal.time_in_minutes = '30'
+  meal.thumb = 'http://farm9.staticflickr.com/8206/8159756696_59ecbc4e3a_n.jpg'
 end
 CateredMeal.create! do |meal|
   meal.name = 'Hong Kong Express'
@@ -42,4 +52,5 @@ CateredMeal.create! do |meal|
   meal.servings = '400'
   meal.phone = '5355354422'
   meal.address = '3445 Telegraph Ave, Berkeley'
+  meal.thumb = 'http://farm9.staticflickr.com/8479/8159756748_474eed57fe_n.jpg'
 end

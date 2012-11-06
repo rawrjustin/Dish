@@ -1,12 +1,9 @@
-%h1 Meals List
+%h1 Large Group Meals
 
 .row
   .span3
     = search_form_for @q do |f|
-      = f.label :name_cont
       = f.text_field :name_cont
-      = f.label :description_cont
-      = f.text_field :description_cont
       = f.submit
   .span9
     - if @meals.count == 0
@@ -16,8 +13,8 @@
         - @meals.each do |meal|
           %li.span3
             .thumbnail#meal
-              %p= meal.type
               %a{:href => meal_path(meal)}
-                %img{:src => "http://placehold.it/300x160"}
                 %p= meal.name
+                %img{:src => meal.thumb}
+              %p= meal.type
       = paginate @meals
