@@ -1,10 +1,23 @@
 %h1 Large Group Meals
 
-.row
-  .span3
+.row-fluid
+  .span6
     = search_form_for @q do |f|
       = f.text_field :name_cont
       = f.submit
+.row-fluid
+  .span2
+    .sidebar.affix.span2
+      %ul.nav.nav-list
+        %li
+          %h5 Show the following meals
+        %li
+          %a{:href => ""}
+            Meals under $2
+        %li.active
+          %a{:href => ""}
+            Meals under $5
+
   .span9
     - if @meals.count == 0
       .alert Sorry, no results match your criteria.
