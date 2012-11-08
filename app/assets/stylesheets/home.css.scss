@@ -1,3 +1,85 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+    display: block;
+    &:hover {
+        opacity: 0.75;
+    }
+    &:active {
+        opacity: 1.0;
+    }
+}
+
+#large_group {
+    height: 200px;
+    margin: 20px 0px 20px 0px;
+    background-color: rgba(131,231,3,0.95);
+    a {
+        color: white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    h1 {
+        color: white;
+        margin: 24px;
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: 84px;
+    }
+    h2 {
+        color: white;
+        margin: 24px;
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 40px;
+        font-weight: normal;
+    }
+}
+
+#small_group {
+    height: 200px;
+    margin: 20px 20px 20px 0px;
+    background-color: rgba(0,153,255,0.95);
+    h1 {
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        margin: 24px;
+        color: white;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: 84px;
+    }
+    h2 {
+        color: white;
+        margin: 24px;
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 40px;
+        font-weight: normal;
+    }
+}
+
+#cooking_tips {
+    height: 200px;
+    margin: 20px 0px 20px 20px;
+    background-color: rgba(244,163,51,0.95);
+    h1 {
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        margin: 24px;
+        color: white;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: 84px;
+    }
+    h2 {
+        color: white;
+        margin: 24px;
+        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        line-height: 40px;
+        font-weight: normal;
+    }
+}
