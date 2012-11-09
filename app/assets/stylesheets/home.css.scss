@@ -42,7 +42,8 @@ a {
 
 #small_group {
     height: 200px;
-    margin: 20px 20px 20px 0px;
+    margin: 20px 0px 20px 0px;
+    float: left;
     background-color: rgba(0,153,255,0.95);
     h1 {
         font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
@@ -64,7 +65,8 @@ a {
 
 #cooking_tips {
     height: 200px;
-    margin: 20px 0px 20px 20px;
+    margin: 20px 0px 20px 0px;
+    float: right;
     background-color: rgba(244,163,51,0.95);
     h1 {
         font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;

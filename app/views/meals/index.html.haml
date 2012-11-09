@@ -14,7 +14,7 @@
   .span10
     .row-fluid.masthead
       %h1 Large Group Meals
-      .span3.form-search.pull-right
+      .span4.form-search.pull-right
         = search_form_for @q do |f|
           = f.text_field :name_cont, :class => 'input-large search-query', :placeholder => 'Search large group meals'
           = f.submit :class => 'btn', :value => 'Search'
