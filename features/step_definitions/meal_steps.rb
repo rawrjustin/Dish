@@ -7,6 +7,7 @@ end
 
 When /^I fill in fields for cooked meal "(.*?)"$/ do |name|
   fill_in "Name", :with => name
+  fill_in "Image URL", :with => "some_link"
   fill_in "Description", :with => "Delicious!"
   fill_in "Ingredients", :with => "Onions and meat"
   fill_in "Directions", :with => "Cook it"
@@ -16,6 +17,7 @@ end
 
 When /^I fill in fields for catered meal "(.*?)"$/ do |name|
   fill_in "Name", :with => name
+  fill_in "Image URL", :with => "some_link"
   fill_in "Description", :with => "Delicious!"
   fill_in "Phone", :with => "315-000-PEKI"
   fill_in "Address", :with => "2222 Telegraphy Ave."
@@ -33,6 +35,7 @@ Given /^these catered meals exist: "([^"]*)"$/ do |meals|
   meals_list.each do |meal_name|
     m = CateredMeal.create
     m[:name] = meal_name
+    m[:thumb] = "some_link"
     m[:description] = "..."
     m[:phone] = "0123456789"
     m[:address] = "..."
@@ -46,6 +49,7 @@ Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
   meals_list.each do |meal_name|
     m = CookedMeal.create
     m[:name] = meal_name
+    m[:thumb] = "some_link"
     m[:description] = "..."
     m[:ingredients] = "..."
     m[:directions] = "..."
@@ -56,6 +60,6 @@ Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
 end
 
 Given /^I search for "(.*?)"$/ do |meal_name|
-  fill_in "Name contains", :with => meal_name
+  fill_in "q_name_cont", :with => meal_name
   click_button "Search"
 end
