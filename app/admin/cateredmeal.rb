@@ -18,6 +18,7 @@ ActiveAdmin.register CateredMeal do
       row :phone
       row :address
       row :servings
+      row :cost
     end
     active_admin_comments
   end
@@ -30,6 +31,7 @@ ActiveAdmin.register CateredMeal do
       f.input :phone
       f.input :address
       f.input :servings
+      f.input :cost, :as => :select, :collection => ['Under $2', 'Under $5'], :include_blank => false
     end
     f.buttons
   end

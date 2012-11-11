@@ -36,6 +36,7 @@ CookedMeal.create! do |meal|
   meal.directions = 'Cook meatballs at 400F for one hour.'
   meal.time_in_minutes = '60'
   meal.thumb = 'http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg'
+  meal.cost = 'Under $2'
 end
 CookedMeal.create! do |meal|
   meal.name = 'Vietnamese Sandwiches'
@@ -45,6 +46,7 @@ CookedMeal.create! do |meal|
   meal.directions = 'Cook stuff. Sandwichify it.'
   meal.time_in_minutes = '30'
   meal.thumb = 'http://farm8.staticflickr.com/7111/8160415698_1bb88ae465.jpg'
+  meal.cost = 'Under $2'
 end
 CateredMeal.create! do |meal|
   meal.name = 'Hong Kong Express'
@@ -53,6 +55,7 @@ CateredMeal.create! do |meal|
   meal.phone = '5355354422'
   meal.address = '3445 Telegraph Ave, Berkeley'
   meal.thumb = 'http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg'
+  meal.cost = 'Under $2'
 end
 CookedMeal.create! do |meal|
   meal.name = 'Grilled Hotdogs'
@@ -62,4 +65,5 @@ CookedMeal.create! do |meal|
   meal.directions = '...'
   meal.time_in_minutes = '45'
   meal.thumb = 'http://farm8.staticflickr.com/7110/8160415758_6f1c3a38bc.jpg'
+  meal.cost = 'Under $5'
 end
