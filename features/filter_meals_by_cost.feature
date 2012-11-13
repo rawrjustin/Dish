@@ -21,5 +21,6 @@ Scenario: $2 filter
 Scenario: $5 filter
   When I follow "Meals under $5"
   Then there are 2 meals
+  #FIXME this is a wrong test, should include the under $2 as well right?
   And I should see "Steak and Sushi"
   And I should see "Teriyaki Chicken Burrito"

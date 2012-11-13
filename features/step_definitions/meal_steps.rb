@@ -31,7 +31,7 @@ Given /^the following meals exist:?$/ do |table|
 end
 
 Given /^these catered meals exist: "([^"]*)"$/ do |meals|
-  meals_list = meals.split(',')
+  meals_list = meals.split(/,\s*/)
   meals_list.each do |meal_name|
     m = CateredMeal.create
     m[:name] = meal_name
@@ -46,7 +46,7 @@ Given /^these catered meals exist: "([^"]*)"$/ do |meals|
 end
 
 Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
-  meals_list = meals.split(',')
+  meals_list = meals.split(/,\s*/)
   meals_list.each do |meal_name|
     m = CookedMeal.create
     m[:name] = meal_name
@@ -64,4 +64,26 @@ end
 Given /^I search for "(.*?)"$/ do |meal_name|
   fill_in "q_name_cont", :with => meal_name
   click_button "Search"
+end
+
+Given /^these \$(\d+) meals exist: "(.*?)"$/ do |amount, meals|
+  meals_list = meals.split(/,\s*/)
+  meals_list.each do |meal_name|
+    m = CookedMeal.create
+    m[:name] = meal_name
+    m[:thumb] = "some_link"
+    m[:description] = "..."
+    m[:ingredients] = "..."
+    m[:directions] = "..."
+    m[:time_in_minutes] = 100
+    m[:servings] = 100
+    m[:cost] = "Under $#{amount}"
+    m.save!
+  end
+end
+
+Then /^there are (\d+) meals$/ do |count|
+  count = count.to_i
+  thumbnails = page.all('div .mealname')
+  thumbnails.length.should == count
 end
