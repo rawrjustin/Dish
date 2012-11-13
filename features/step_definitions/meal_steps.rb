@@ -40,6 +40,7 @@ Given /^these catered meals exist: "([^"]*)"$/ do |meals|
     m[:phone] = "0123456789"
     m[:address] = "..."
     m[:servings] = 100
+    m[:cost] = "Under $5"
     m.save!
   end
 end
@@ -55,6 +56,7 @@ Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
     m[:directions] = "..."
     m[:time_in_minutes] = 100
     m[:servings] = 100
+    m[:cost] = "Under $2"
     m.save!
   end
 end
