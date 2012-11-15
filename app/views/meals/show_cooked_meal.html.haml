@@ -1,7 +1,13 @@
-%h1= @meal.name
-%div= "#{@meal.description}"
-%div= "This recipe is for #{@meal.servings} servings"
-%div= "#{@meal.ingredients}"
-%div= "#{@meal.time_in_minutes}"
-%div= "#{@meal.directions}"
-%div= "#{@meal.cost}"
+.row-fluid
+  .span3
+    %img{:src => @meal.thumb}
+  .span9
+    %h1= @meal.name
+    %div= "#{@meal.description}"
+    %h2 about the meal:
+    %div= "It costs #{@meal.cost} per person"
+    %div= "It is for #{@meal.servings} servings"
+    %div= "It requires #{@meal.ingredients}"
+    %div= "It requires #{@meal.time_in_minutes} minutes"
+    %h2 how to make it:
+    %div= "#{@meal.directions}"
