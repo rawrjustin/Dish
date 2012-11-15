@@ -13,7 +13,3 @@ Scenario: Select large group view
 Scenario: Select small group view
   When I follow "Small Group"
   Then I should be on the small group recipes page
-
-Scenario: Select Cooking Tip group view
-  When I follow "Cooking Tips"
-  Then I should be on the cooking tips page

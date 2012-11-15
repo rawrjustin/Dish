@@ -3,8 +3,8 @@ require 'spec_helper'
 describe MealsController do
   describe "GET 'index'" do
     it 'should fetch meals from the database' do
-      Meal.should_receive(:search).and_return(Meal.search())
       get 'index'
+      response.should render_template('index')
     end
   end
 

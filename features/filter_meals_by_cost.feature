@@ -4,7 +4,8 @@ Feature: Filter meals by cost
   I want to filter meals by cost
 
 Background:
-  Given these $2 meals exist: "Asian Meatballs, Vietnamese Sandwiches, Ham & Cheese Sandwiches"
+  Given no meals exist
+  And these $2 meals exist: "Asian Meatballs, Vietnamese Sandwiches, Ham & Cheese Sandwiches"
   And these $5 meals exist: "Steak and Sushi, Teriyaki Chicken Burrito"
   And I am on the large group meals page
 

@@ -41,7 +41,7 @@ module NavigationHelpers
     when /the admin sign in page/
       '/admin/sign_in'
 
-    when /the details page for "(.*)"/
+    when /the details page for the small group recipe "(.*)"/
       recipe_path(Recipe.find_by_name($1))
 
     when /the details page for the large group meal "(.*)"/

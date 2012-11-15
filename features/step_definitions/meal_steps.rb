@@ -45,6 +45,10 @@ Given /^these catered meals exist: "([^"]*)"$/ do |meals|
   end
 end
 
+Given /^no meals exist$/ do
+  Meal.delete_all
+end
+
 Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
   meals_list = meals.split(/,\s*/)
   meals_list.each do |meal_name|
@@ -86,4 +90,36 @@ Then /^there are (\d+) meals$/ do |count|
   count = count.to_i
   thumbnails = page.all('div .mealname')
   thumbnails.length.should == count
+end
+
+Given /^(\d+) meals exist$/ do |num|
+  (1..num.to_i).each do
+    step %{these cooked meals exist: "Asian Meatballs"}
+  end
+end
+
+Then /^there are (\d+) pages$/ do |num|
+  pages = page.all('div .pagination')
+  pages[0].all('li').length.should == num.to_i + 2
+end
+
+Then /^there are only links to later pages$/ do
+  step %{I should see "Next"}
+  step %{I should see "Last"}
+  step %{I should not see "Prev"}
+  step %{I should not see "First"}
+end
+
+Then /^there are only links to earlier pages$/ do
+  step %{I should see "Prev"}
+  step %{I should see "First"}
+  step %{I should not see "Next"}
+  step %{I should not see "Last"}
+end
+
+Then /^there are links to both earlier and later pages$/ do
+  step %{I should see "Prev"}
+  step %{I should see "First"}
+  step %{I should see "Next"}
+  step %{I should see "Last"}
 end

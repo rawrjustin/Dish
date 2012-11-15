@@ -4,7 +4,7 @@ Given /^the following recipes exist:?$/ do |table|
   end
 end
 
-Given /^these recipes exist: "([^"]*)"$/ do |recipes|
+Given /^these small group recipes exist: "([^"]*)"$/ do |recipes|
   recipes_list = recipes.split(',')
   recipes_list.each do |recipe_name|
     r = Recipe.create
