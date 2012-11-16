@@ -5,6 +5,7 @@ FoodPrepApp::Application.routes.draw do
 
   resources :recipes, :path => "small", :only => [:index, :show]
   resources :meals, :path => "large", :only => [:index, :show]
+  resources :posts, :path => "tips", :only => [:index, :show]
 
   authenticated :user do
     root :to => 'home#index'

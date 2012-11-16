@@ -1,0 +1,17 @@
+.row-fluid
+  .blog-body
+    .blog-header
+      %h1#blog Cooking Tips
+    %table#blog
+      - @posts.each do |post|
+        %tr
+          %td#blog
+            %h4#date= post.created_at.strftime("%b %d, %Y")
+            %h4#author
+              by
+              = post.author
+            %a{:href => post_path(post)}
+              %h2#blog= post.title
+            %p#blog= post.content
+            %a{:href => post_path(post)}
+              [Read Full Article]

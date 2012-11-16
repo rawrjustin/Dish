@@ -1,0 +1,39 @@
+table#blog {
+    margin: 0 10px 0;
+}
+td#blog{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #555;
+}
+h1#blog{
+    margin: 0 10px 0;
+    color: #4E4E4E;
+}
+h2#blog{
+    color: #00536D;
+}
+p#blog{
+    color: #666;
+    max-height: 60px;
+    overflow: hidden;
+}
+h4#date{
+    display: inline;
+    color: #666;
+}
+h4#author{
+    display: inline;
+    color: #888;
+}
+.blog-header{
+    margin: 20px 0 0;
+    border-bottom: 5px solid #555;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.blog-body{
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    padding-bottom: 25px;
+}

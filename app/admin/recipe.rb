@@ -15,7 +15,7 @@ ActiveAdmin.register Recipe do
   filter :description
 
   form do |f|                         
-    f.inputs "Menu Details" do
+    f.inputs "Recipe Details" do
       f.input :name
       f.input :description
       f.input :ingredients
