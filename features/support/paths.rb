@@ -35,6 +35,9 @@ module NavigationHelpers
     when /the small group recipes page/
       '/small'
 
+    when /the cooking tips page/
+      '/tips'
+
     when /the admin page/
       '/admin'
 
