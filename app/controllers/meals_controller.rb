@@ -1,11 +1,15 @@
 class MealsController < ApplicationController
   def index
+    @active_2 = params[:cost] == "Under $2"
+    @active_5 = params[:cost] == "Under $5"
+    if not params[:q]
+      params[:q] = {}
+    end
+    if params[:cost] == "Under $2"
+      params[:q][:cost_eq] = "Under $2"
+    end
     @q = Meal.search(params[:q])
     @meals = @q.result.page(params[:page])
-    if params[:q] and params[:q][:cost_eq]
-      @active_2 = params[:q][:cost_eq] == "Under $2"
-      @active_5 = params[:q][:cost_eq] == "Under $5"
-    end
   end
 
   def show
