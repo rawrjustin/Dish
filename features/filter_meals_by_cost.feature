@@ -18,10 +18,14 @@ Scenario: $2 filter
   And I should see "Asian Meatballs"
   And I should see "Vietnamese Sandwiches"
   And I should see "Ham & Cheese Sandwiches"
+  And I should not see "Steak and Sushi"
+  And I should not see "Teriyaki Chicken Burrito"
 
 Scenario: $5 filter
   When I follow "Meals under $5"
-  Then there are 2 meals
-  #FIXME this is a wrong test, should include the under $2 as well right?
+  Then there are 5 meals
+  And I should see "Asian Meatballs"
+  And I should see "Vietnamese Sandwiches"
+  And I should see "Ham & Cheese Sandwiches"
   And I should see "Steak and Sushi"
   And I should see "Teriyaki Chicken Burrito"
