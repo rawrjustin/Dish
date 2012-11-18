@@ -15,13 +15,28 @@ h4 {
   color: #575757;
 }
 
-div {
-  color: white;
-}
 
 h5 {
   //display: inline;
   color: #CCC;
+}
+
+div {
+  color: white;
+}
+
+strong {
+  font-size: 18px;
+  color: #86D649;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quantity {
+  text-align: center;
 }
 
 .masthead {

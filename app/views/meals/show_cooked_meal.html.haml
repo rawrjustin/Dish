@@ -1,13 +1,61 @@
 .row-fluid
-  .span3
-    %img{:src => @meal.thumb}
-  .span9
+  .span12
     %h1= @meal.name
+    %div
+      %img{:src => @meal.thumb}
     %div= "#{@meal.description}"
-    %h2 about the meal:
-    %div= "It costs #{@meal.cost} per person"
-    %div= "It is for #{@meal.servings} servings"
-    %div= "It requires #{@meal.ingredients}"
-    %div= "It requires #{@meal.time_in_minutes} minutes"
-    %h2 how to make it:
+.row-fluid
+  .span12
+    %h2 Servings
+    %ul.nav.nav-pills
+      %li
+        %a 100
+      %li
+        %a 150
+      %li.active
+        %a 200
+      %li
+        %a 250
+    //%div= "It costs #{@meal.cost} per person"
+    //%div= "It is for #{@meal.servings} servings"
+    //%div= "It requires #{@meal.ingredients}"
+    //%div= "It requires #{@meal.time_in_minutes} minutes"
+.row-fluid
+  .span12
+    %h2 Ingredients
+    .row-fluid
+      %table.table
+        %tr
+          %td
+            %strong= "10x"
+          %td
+            %div= "Beef Meatballs (bag, $10.99 each from Costco)"
+          %td
+            %div= "$109.90"
+        %tr
+          %td
+            %strong= "5x"
+          %td
+            %div= "Panda Express Orange Chicken Glaze (pack, $8.99 each from Costco)"
+          %td
+            %div= "$44.95"
+        %tr
+          %td
+            %strong= "5x"
+          %td
+            %div= "Iceberg Salad Mix (bag, $5.00 each from Costco)"
+          %td
+            %div= "$25.00"
+        %td
+          %td
+            %div= "Total Cost"
+            %div= "Cost per person"
+          %td
+            %div
+              %strong= "$179.85"
+            %div
+              %strong= "$0.89"
+.row-fluid
+  .span12
+    %h2 Prep Notes
     %div= "#{@meal.directions}"
