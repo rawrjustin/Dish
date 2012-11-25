@@ -4,6 +4,15 @@ class Recipe < ActiveRecord::Base
   validates_numericality_of :time_in_minutes, :servings, :total_cost
   #mount_uploader :image, ImageUploader
   
+  before_save :default_values
+  
+  def default_values
+    if self.image.to_s.length == 0
+      self.image = 'defaultfood.png'
+      self.save!
+    end
+  end
+  
   def cpp
     # cost per person
     if servings > 0

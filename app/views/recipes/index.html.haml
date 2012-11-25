@@ -1,15 +1,13 @@
 %h1 Recipes List
-
-= search_form_for @q do |f|
-  = f.label :name_cont
-  = f.text_field :name_cont
-  = f.label :description_cont
-  = f.text_field :description_cont
-  = f.submit
+.span4.form-search.pull-right
+  = search_form_for @q do |f|
+    = f.text_field :name_or_description_cont, :class => 'input-large search-query', :placeholder => 'Search small group meals'
+    = f.submit :class => 'btn'
 
 %table.table
   %thead
     %tr
+      %th Image
       %th Recipe Name
       %th Description
       %th Ready In
@@ -18,6 +16,7 @@
   %tbody
     - @recipes.each do |recipe|
       %tr
+        %td= image_tag recipe.image.to_s
         %td= link_to recipe.name, recipe_path(recipe)
         %td= recipe.description
         %td= recipe.time_in_minutes

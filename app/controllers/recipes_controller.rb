@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+
   def index
     @q = Recipe.search(params[:q])
     results = @q.result(:distinct => true) 
