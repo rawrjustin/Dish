@@ -16,7 +16,7 @@
       %h1 Large Group Meals
       .span4.form-search.pull-right
         = search_form_for @q do |f|
-          = f.text_field :name_cont, :class => 'input-large search-query', :placeholder => 'Search large group meals'
+          = f.text_field :name_or_description_cont, :class => 'input-large search-query', :placeholder => 'Search large group meals'
           = f.submit :class => 'btn', :value => 'Search'
       %h5 Each of these are complete budget-friendly meals that will feed a large group.
     .row-fluid
