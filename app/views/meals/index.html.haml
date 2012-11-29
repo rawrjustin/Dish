@@ -21,7 +21,7 @@
       %h5 Each of these are complete budget-friendly meals that will feed a large group.
     .row-fluid
       - if @meals.count == 0
-        .alert Sorry, no results match your criteria.
+        .alert.alert-info Sorry, no results match your criteria.
       - else
         .thumbnails
           - @meals.each do |meal|
