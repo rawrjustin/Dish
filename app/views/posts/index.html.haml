@@ -1,23 +1,25 @@
-%form{ :action => "", :method => "get"}
-  %fieldset
-    %label{:for => "term"} Term:
-    %input{:type => "text", :name => "term", :class => "text"}
-    %input{:type => "submit", :value => "Search", :class => "button"}
-
 .row-fluid
   .blog-body
     .blog-header
       %h1#blog Cooking Tips
-    %table#blog
-      - @posts.each do |post|
-        %tr
-          %td#blog
-            %h4#date= post.created_at.strftime("%b %d, %Y")
-            %h4#author
-              by
-              = post.author
-            %a{:href => post_path(post)}
-              %h2#blog= post.title
-            %p#blog= post.content
-            %a{:href => post_path(post)}
-              [Read Full Article]
+      .span4.form-search.pull-right
+        = search_form_for @q do |f|
+          = f.text_field :title_or_content_cont, :class => 'input-large search-query', :placeholder => 'Search cooking tips'
+          = f.submit :class => 'btn', :value => 'Search'
+    - if @posts.count == 0
+      .alert.alert-info Sorry, no results match your criteria.
+    - else
+      %table#blog
+        - @posts.each do |post|
+          %tr
+            %td#blog
+              %h4#date= post.created_at.strftime("%b %d, %Y")
+              %h4#author
+                by
+                = post.author
+              %a{:href => post_path(post)}
+                %h2#blog= post.title
+              %p#blog= post.content
+              %a{:href => post_path(post)}
+                [Read Full Article]
+      = paginate @posts
