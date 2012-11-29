@@ -17,7 +17,7 @@ Feature: add recipe
         And I fill in "Total cost" with "10"
         And I press "Create Recipe"
         Then I should see "successfully created."
-        
+
         When I follow "Recipes"
         Then I should see "Quesadillas"
 
