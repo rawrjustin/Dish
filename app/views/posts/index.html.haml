@@ -1,25 +1,25 @@
 .row-fluid
   .blog-body
     .blog-header
-      %h1#blog Cooking Tips
-      .span4.form-search.pull-right
-        = search_form_for @q do |f|
-          = f.text_field :title_or_content_cont, :class => 'input-large search-query', :placeholder => 'Search cooking tips'
-          = f.submit :class => 'btn', :value => 'Search'
+      .blog-title
+        Cooking Tips
+        .span4.form-search.pull-right
+          = search_form_for @q do |f|
+            = f.text_field :title_or_content_cont, :class => 'input-large search-query', :placeholder => 'Search cooking tips'
+            = f.submit :class => 'btn', :value => 'Search'
     - if @posts.count == 0
       .alert.alert-info Sorry, no results match your criteria.
     - else
-      %table#blog
+      .thumbnails.post
         - @posts.each do |post|
-          %tr
-            %td#blog
-              %h4#date= post.created_at.strftime("%b %d, %Y")
-              %h4#author
-                by
-                = post.author
+          %li.span3
+            .thumbnail
               %a{:href => post_path(post)}
-                %h2#blog= post.title
-              %p#blog= post.content
-              %a{:href => post_path(post)}
-                [Read Full Article]
-      = paginate @posts
+                %img{:src => "http://farm1.staticflickr.com/6/11533831_25b04bdb88.jpg"}
+                .post-info
+                  .post-title
+                    = post.title
+                  .post-subtitle
+                    =  " by " + post.author + ", " + post.created_at.strftime("%b %d, %Y")
+      .post-paginate
+        = paginate @posts

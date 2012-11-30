@@ -1,39 +1,59 @@
-table#blog {
-    margin: 0 10px 0;
+.thumbnails li.span3:nth-child(4n + 5) {
+    margin-left : 0px;
 }
-td#blog{
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #555;
+.thumbnails.post {
+    padding: 10px 30px 0px 30px;
 }
-h1#blog{
-    margin: 0 10px 0;
-    color: #4E4E4E;
+.post-info {
+    background-color: white;
+    padding-top:  7px;
+    padding-left: 7px;
 }
-h2#blog{
-    color: #00536D;
-}
-p#blog{
-    color: #666;
-    max-height: 60px;
+.post-title {
+    white-space: nowrap;
+    width: 100%;
     overflow: hidden;
+    text-overflow: ellipsis;
+
+    height: 20px;
+
+    font: bold 20px "Century Schoolbook", Georgia, Times, serif;
+    color: #333;
+    line-height: 90%;
+    margin: .2em 0 .4em 0;
+    letter-spacing: -1px;
 }
-h4#date{
-    display: inline;
-    color: #666;
+.post-subtitle {
+    font-size: 85%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    font-size: 12px;
+    font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    margin-top: -5px;
+    padding-bottom: 7px;
 }
-h4#author{
-    display: inline;
-    color: #888;
-}
-.blog-header{
-    margin: 20px 0 0;
-    border-bottom: 5px solid #555;
-    padding-top: 20px;
-    padding-bottom: 5px;
+.post-paginate {
+    padding-left: 30px;
 }
 .blog-body{
     background-color: #F1F1F1;
     border-radius: 5px;
     padding-bottom: 25px;
+}
+.blog-header{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #555;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.blog-title{
+    padding-bottom: 15px;
+    padding-left: 20px;
+    font: bold 40px "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 90%;
+    letter-spacing: -1px;
 }
