@@ -20,6 +20,6 @@
                   .post-title
                     = post.title
                   .post-subtitle
-                    =  " by " + post.author + ", " + post.created_at.strftime("%b %d, %Y")
+                    =  " by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
       .post-paginate
         = paginate @posts
