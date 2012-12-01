@@ -18,6 +18,7 @@ ActiveAdmin.register Ingredient do
       f.input :name
       f.input :location
       f.input :price
+      f.input :photo
       f.input :notes
     end
     f.buttons
