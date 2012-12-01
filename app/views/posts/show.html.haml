@@ -1,4 +1,13 @@
 .row-fluid
-  %h1= @post.title
-  %h3= @post.author
-  %p= @post.content
+  .blog-body
+    .post-body
+      %a{:href => posts_path}= "<< Back to list"
+      %br
+      .title
+        = @post.title
+      .info
+        =  "by " + @post.author
+        %br
+        =  @post.created_at.strftime("%b %d, %Y")
+      .content
+        = @post.content
