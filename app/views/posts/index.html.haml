@@ -15,7 +15,8 @@
           %li.span3
             .thumbnail
               %a{:href => post_path(post)}
-                %img{:src => "http://farm1.staticflickr.com/6/11533831_25b04bdb88.jpg"}
+                .post-img
+                  %img{:src => post.thumbnail}
                 .post-info
                   .post-title
                     = post.title

@@ -4,6 +4,19 @@
 .thumbnails.post {
     padding: 10px 30px 0px 30px;
 }
+.post-img {
+    width:100%;
+    height:188px; 
+    display:block; 
+    position:relative;
+    overflow:hidden;
+}
+.container img {
+    position:absolute;
+    top:0;
+    left:0; 
+    width:100%;
+}
 .post-info {
     background-color: white;
     padding-top:  7px;

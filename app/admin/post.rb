@@ -14,6 +14,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs "Post Details" do
       f.input :title
+      f.input :thumb, :label => "Image URL"
       f.input :author
       f.input :content
     end
