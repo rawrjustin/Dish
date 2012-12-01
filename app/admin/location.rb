@@ -4,6 +4,7 @@ ActiveAdmin.register Location do
     column :name
     column :city
     column :address
+    default_actions
   end
 
   filter :name
