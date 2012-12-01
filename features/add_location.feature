@@ -7,7 +7,7 @@ Feature: add a location
         Given I am logged in as an administrator
         And I am on the admin page
         When I follow "Locations"
-        And I follow "New Loction"
+        And I follow "New Location"
         And I fill in "Name" with "Costco"
         And I fill in "City" with "San Leandro"
         And I fill in "Address" with "5555 Swift Street"
@@ -15,4 +15,5 @@ Feature: add a location
         Then I should see "successfully created."
 
         When I follow "Locations"
-        Then I should see "Costco (San Leandro)"
+        Then I should see "Costco"
+        Then I should see "San Leandro"

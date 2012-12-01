@@ -6,15 +6,23 @@ Feature: add an ingredient
     Scenario: successfully adding an ingredient
         Given I am logged in as an administrator
         And I am on the admin page
+        When I follow "Locations"
+        And I follow "New Location"
+        And I fill in "Name" with "Costco"
+        And I fill in "City" with "San Leandro"
+        And I fill in "Address" with "5555 Swift Street"
+        And I press "Create Location"
+
         When I follow "Ingredients"
         And I follow "New Ingredient"
         And I fill in "Name" with "Cucumber"
         And I fill in "Price" with "3.50"
         And I fill in "Photo" with "blahblah"
         And I fill in "Notes" with "get the green ones not the brown ones"
-        And I fill in "Location" with "Costco"
+        And I select "Costco" from "Location"
         And I press "Create Ingredient"
         Then I should see "successfully created."
 
         When I follow "Ingredients"
-        Then I should see "Cucumber (Costco)"
+        Then I should see "Cucumber"
+        Then I should see "Costco (San Leandro)"

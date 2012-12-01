@@ -15,6 +15,10 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
+When /^I select "(.*)" from "(.*)"$/ do |value, field|
+    select(value, :from => field) 
+end
+
 Then /^(?:|I )should( not)? see "([^"]*)"$/ do |negate, text|
     negate ? page.should_not(have_content(text)) : page.should(have_content(text))
 end
