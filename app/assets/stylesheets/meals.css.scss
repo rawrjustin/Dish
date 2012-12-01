@@ -67,4 +67,16 @@ body {
   max-width: 330px;
   border: 0;
 }
-
+.meal-img {
+    width:auto;
+    height:175px; 
+    display:block; 
+    position:relative;
+    overflow:hidden;
+}
+.meal-img img {
+    position:absolute;
+    top:0;
+    left:0; 
+    width:100%;
+}

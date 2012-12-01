@@ -30,5 +30,6 @@
                 %a{:href => meal_path(meal)}
                   .mealname
                     %p= meal.name
-                  %img{:src => meal.thumb}
+                  .meal-img
+                    %img{:src => meal.thumb}
         = paginate @meals
