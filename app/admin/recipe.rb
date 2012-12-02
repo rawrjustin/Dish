@@ -13,6 +13,7 @@ ActiveAdmin.register Recipe do
   form do |f|
     f.inputs "Recipe Details" do
       f.input :name
+      f.input :image, :label => "Image URL"
       f.input :description
       f.input :recipe_type, :as => :select, :collection => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :include_blank => false
       f.input :ingredients
@@ -20,7 +21,6 @@ ActiveAdmin.register Recipe do
       f.input :time_in_minutes
       f.input :servings
       f.input :total_cost
-      f.input :image, :placeholder => "Put link to image here"
     end
     f.buttons
   end

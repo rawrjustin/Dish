@@ -34,4 +34,13 @@ class Recipe < ActiveRecord::Base
     end
     return total_time.strip
   end
+
+  def thumbnail
+    if self.image != ""
+      return self.image
+    else
+      return "http://placehold.it/240x175&text=No%20Image"
+    end
+  end
+
 end
