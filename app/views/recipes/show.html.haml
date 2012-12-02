@@ -1,20 +1,62 @@
-.row
+.row-fluid
   .span12
     %h1= @recipe.name
-  -#
-    .row
-      .span3
-        .img-rounded.preview
-          = image_tag @recipe.image
-  .span9
-    .well
-      = "#{@recipe.description}"
-    = "This recipe is for #{@recipe.servings} servings and ready in #{@recipe.time} and costs #{number_to_currency(@recipe.cpp)} per person"
-
-<br>
-%h4 Ingredients
-= "#{@recipe.ingredients}"
-<br>
-%h4 Directions
-= "#{@recipe.directions}"
-
+    %div
+      %img{:src => @recipe.image}
+    %div= "#{@recipe.description}"
+.row-fluid
+  .span12
+    %h2 Servings
+    %ul.nav.nav-pills
+      %li
+        %a 10
+      %li
+        %a 15
+      %li.active
+        %a 20
+      %li
+        %a 25
+    //%div= "It costs #{@recipe.cost}"
+    //%div= "It is for #{@recipe.servings} servings"
+    //%div= "It requires #{@recipe.ingredients}"
+    //%div= "It requires #{@recipe.time_in_minutes} minutes"
+.row-fluid
+  .span12
+    %h2 Ingredients
+    TODO: use database data
+    .row-fluid
+      %table.table
+        %tr
+          %td
+            %strong= "10x"
+          %td
+            %div= "Beef Meatballs (bag, $10.99 each from Costco)"
+          %td
+            %div= "$109.90"
+        %tr
+          %td
+            %strong= "5x"
+          %td
+            %div= "Panda Express Orange Chicken Glaze (pack, $8.99 each from Costco)"
+          %td
+            %div= "$44.95"
+        %tr
+          %td
+            %strong= "5x"
+          %td
+            %div= "Iceberg Salad Mix (bag, $5.00 each from Costco)"
+          %td
+            %div= "$25.00"
+        %td
+          %td
+            %div= "Total Cost"
+            %div= "Cost per person"
+          %td
+            %div
+              %strong= "$179.85"
+            %div
+              %strong= "$0.89"
+.row-fluid
+  .span12
+    %h2 Prep Notes
+    %div= "#{@recipe.directions}"

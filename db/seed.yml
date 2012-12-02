@@ -17,6 +17,8 @@ recipes:
         time_in_minutes: "60"
         servings: "10"
         total_cost: "20"
+        recipe_type: "Main"
+        image: "http://www.laurashomecooking.net/cms/uploads/BBQ-Chicken.jpg"
 
     -   name: "Lime Chicken"
         description: "A Gideon Chia classic"
@@ -25,6 +27,18 @@ recipes:
         time_in_minutes: "20"
         servings: "5"
         total_cost: "7"
+        recipe_type: "Main"
+        image: "http://blogchef.net/wp-content/uploads/2010/06/lime_chicken_1.jpg"
+
+    -   name: "Double Chocolate Brownies"
+        description: "Dark Chocolates and Milk chocolate combine for something awesome"
+        ingredients: "Dark Chocolate, Milk Chcolate, Egg, Butter"
+        directions: "Mix altogether in a bowl until consistency is desired. Pop in oven at 375 degrees"
+        time_in_minutes: "35"
+        servings: "15"
+        total_cost: "9"
+        recipe_type: "Desserts"
+        image: "http://farm4.static.flickr.com/3264/2560601935_875e042485.jpg"
 
 cooked_meals:
     -   name: "Asian Meatballs, Salad, and Rice"

@@ -1,17 +1,8 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :image
-  validates :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :presence => true
+  attr_accessible :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :image, :recipe_type
+  validates :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :recipe_type, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost
   #mount_uploader :image, ImageUploader
-  
-  before_save :default_values
-  
-  def default_values
-    if self.image.to_s.length == 0
-      self.image = 'defaultfood.png'
-      self.save!
-    end
-  end
   
   def cpp
     # cost per person
