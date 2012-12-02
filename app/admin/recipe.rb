@@ -1,16 +1,9 @@
 ActiveAdmin.register Recipe do
   index do
-    column "image" do |recipe|
-      image_tag recipe.image.to_s, :width => '256'
-    end
-    column :id
     column :name
     column :description
-    column :ingredients
-    column :directions
-    column :time_in_minutes
+    column :recipe_type
     column :servings
-    column :total_cost
     default_actions
   end
 
@@ -21,6 +14,7 @@ ActiveAdmin.register Recipe do
     f.inputs "Recipe Details" do
       f.input :name
       f.input :description
+      f.input :recipe_type, :as => :select, :collection => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :include_blank => false
       f.input :ingredients
       f.input :directions
       f.input :time_in_minutes

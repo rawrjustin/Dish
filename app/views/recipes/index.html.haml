@@ -1,28 +1,44 @@
-%h1 Recipes List
-.span4.form-search.pull-right
-  = search_form_for @q do |f|
-    = f.text_field :name_or_description_cont, :class => 'input-large search-query', :placeholder => 'Search small group meals'
-    = f.submit :class => 'btn'
+.row-fluid
+  .span2
+    .sidebar.affix.span2
+      %ul.nav.nav-list
+        %li
+          %h4 Show me...
+        %li{:class => @active_main ? 'active' : ''}
+          %a{:href => "?type=Main"}
+            Main
+        %li{:class => @active_sides ? 'active' : ''}
+          %a{:href => "?type=Sides"}
+            Sides
+        %li{:class => @active_salads ? 'active' : ''}
+          %a{:href => "?type=Salads"}
+            Salads
+        %li{:class => @active_soups ? 'active' : ''}
+          %a{:href => "?type=Soups"}
+            Soups
+        %li{:class => @active_desserts ? 'active' : ''}
+          %a{:href => "?type=Desserts"}
+            Desserts
 
-- if @recipes.count == 0
-  .alert.alert-info Sorry, no results match your criteria.
-- else
-  %table.table
-    %thead
-      %tr
-        %th Image
-        %th Recipe Name
-        %th Description
-        %th Ready In
-        %th Number of Servings
-        %th Cost
-    %tbody
-      - @recipes.each do |recipe|
-        %tr
-          %td= image_tag recipe.image.to_s
-          %td= link_to recipe.name, recipe_path(recipe)
-          %td= recipe.description
-          %td= recipe.time_in_minutes
-          %td= recipe.servings
-          %td= recipe.total_cost
-  = paginate @recipes
+  .span10
+    .row-fluid.masthead
+      %h1 Recipes
+      .span4.form-search.pull-right
+        = search_form_for @q do |f|
+          = f.text_field :name_or_description_cont, :class => 'input-large search-query', :placeholder => 'Search for a recipe'
+          = f.submit :class => 'btn', :value => 'Search'
+      %h5 Everyday recipes for your small group, family, or potluck!
+    .row-fluid
+      - if @recipes.count == 0
+        .alert.alert-info Sorry, no results match your criteria.
+      - else
+        .thumbnails
+          - @recipes.each do |recipe|
+            %li.span3
+              .thumbnail.recipe
+                %a{:href => recipe_path(recipe)}
+                  .recipename
+                    %p= recipe.name
+                  .recipe-img
+                    %img{:src => recipe.image}
+        = paginate @recipes
