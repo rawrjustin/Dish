@@ -15,21 +15,31 @@ ActiveAdmin.register CookedMeal do
         image_tag(meal.thumb)
       end
       row :description
-      row :ingredients
       row :directions
       row :time_in_minutes
       row :servings
       row :cost
+      table_for meal.cooked_meal_ingredients do
+        column "Ingredients" do |ing|
+          ing.ingredient.name + " - "  + ing.amount.to_s
+        end
+      end
     end
     active_admin_comments
   end
-  
+
   form do |f|
     f.inputs "Cooked Meals" do
       f.input :name
       f.input :thumb, :label => "Image URL"
       f.input :description
-      f.input :ingredients
+      f.has_many :cooked_meal_ingredients do |ing_f|
+        ing_f.input :ingredient
+        ing_f.input :amount
+        if !ing_f.object.nil?
+          ing_f.input :_destroy, :as => :boolean, :label => "Remove?"
+        end
+      end
       f.input :directions
       f.input :time_in_minutes
       f.input :servings

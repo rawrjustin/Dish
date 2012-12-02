@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201191942) do
+ActiveRecord::Schema.define(:version => 20121202041609) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20121201191942) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "cooked_meal_ingredients", :force => true do |t|
+    t.string   "cooked_meal_id"
+    t.string   "ingredient_id"
+    t.integer  "amount"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.float    "price"
@@ -69,7 +77,6 @@ ActiveRecord::Schema.define(:version => 20121201191942) do
     t.text     "description"
     t.string   "phone"
     t.string   "address"
-    t.text     "ingredients"
     t.text     "directions"
     t.integer  "time_in_minutes"
     t.string   "type"
