@@ -16,6 +16,7 @@ ActiveAdmin.register Ingredient do
   form do |f|
     f.inputs "Ingredient Details" do
       f.input :name
+      f.input :size, :placeholder => "e.g. 3 lb bag, 2-dozen pack, lb, etc."
       f.input :location
       f.input :price
       f.input :photo

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202041609) do
+ActiveRecord::Schema.define(:version => 20121202201216) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -59,9 +59,10 @@ ActiveRecord::Schema.define(:version => 20121202041609) do
     t.float    "price"
     t.string   "photo"
     t.text     "notes"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "location_id"
+    t.string   "size",        :default => ""
   end
 
   create_table "locations", :force => true do |t|

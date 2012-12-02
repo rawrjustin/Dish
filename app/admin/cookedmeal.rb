@@ -21,7 +21,7 @@ ActiveAdmin.register CookedMeal do
       row :cost
       table_for meal.cooked_meal_ingredients do
         column "Ingredients" do |ing|
-          ing.ingredient.name + " - "  + ing.amount.to_s
+           ing.amount.to_s + " - " + ing.ingredient.display_name
         end
       end
     end
