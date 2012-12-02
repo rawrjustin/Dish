@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
 
   def index
-    @main = params[:type] == "Main"
-    @sides = params[:type] == "Sides"
-    @soups = params[:type] == "Soups"
-    @salads = params[:type] == "Salads"
-    @desserts = params[:type] == "Desserts"
+    @active_main = params[:type] == "Main"
+    @active_sides = params[:type] == "Sides"
+    @active_soups = params[:type] == "Soups"
+    @active_salads = params[:type] == "Salads"
+    @active_desserts = params[:type] == "Desserts"
     if not params[:q]
       params[:q] = {}
     end

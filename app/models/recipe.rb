@@ -2,6 +2,8 @@ class Recipe < ActiveRecord::Base
   attr_accessible :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :image, :recipe_type
   validates :name, :description, :ingredients, :directions, :time_in_minutes, :servings, :total_cost, :recipe_type, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost
+  validates :recipe_type,
+    :inclusion => { :in => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :message => "%{value} is not a valid type of recipe"}
   #mount_uploader :image, ImageUploader
   
   def cpp
