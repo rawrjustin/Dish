@@ -1,7 +1,7 @@
 class Recipe < ActiveRecord::Base
   attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
   validates :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :recipe_type, :presence => true
-  validates_numericality_of :time_in_minutes, :servings, :total_cost
+  validates_numericality_of :time_in_minutes, :servings, :total_cost, :greater_than_or_equal_to => 0
   validates :recipe_type,
     :inclusion => { :in => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :message => "%{value} is not a valid type of recipe"}
   has_many :recipe_ingredients
