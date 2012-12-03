@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202201216) do
+ActiveRecord::Schema.define(:version => 20121203034614) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(:version => 20121202201216) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "cooked_meal_ingredients", :force => true do |t|
-    t.string   "cooked_meal_id"
-    t.string   "ingredient_id"
+    t.integer  "cooked_meal_id"
+    t.integer  "ingredient_id"
     t.integer  "amount"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
