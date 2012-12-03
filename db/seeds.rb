@@ -8,7 +8,26 @@
 seed_file = File.join(Rails.root, 'db', 'seed.yml')
 config = YAML::load_file(seed_file)
 User.create(config["users"])
-Recipe.create(config["recipes"])
+Post.create(config["posts"])
+Location.create(config["locations"])
+config["ingredients"].each do |ingredient|
+  location_name = ingredient["location"]
+  ingredient["location"] = Location.find_by_name(location_name)
+  Ingredient.create(ingredient)
+end
+config["recipes"].each do |recipe|
+  ingredient_list = recipe.delete("ingredients")
+  rec = Recipe.create(recipe)
+  if ingredient_list
+    ingredient_list.each do |ingredient|
+      ing = Ingredient.find_by_name(ingredient["name"])
+      RecipeIngredient.create do |r|
+        r.recipe = rec
+        r.ingredient = ing
+        r.amount = ingredient["size"]
+      end
+    end
+  end
+end
 CookedMeal.create(config["cooked_meals"])
 CateredMeal.create(config["catered_meals"])
-Post.create(config["posts"])
