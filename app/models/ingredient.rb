@@ -5,6 +5,8 @@ class Ingredient < ActiveRecord::Base
   validates_numericality_of :price, :on => :create, :greater_than_or_equal_to => 0
   has_many :cooked_meal_ingredients
   has_many :cooked_meals, :through => :cooked_meal_ingredients
+  has_many :recipe_ingredients
+  has_many :recipes, :through => :recipe_ingredients
 
   def display_name
     if self.size == ""

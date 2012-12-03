@@ -12,7 +12,6 @@ users:
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
-        ingredients: "1 whole chicken, BBQ sauce"
         directions: "Put chicken into oven"
         time_in_minutes: "60"
         servings: "10"
@@ -22,7 +21,6 @@ recipes:
 
     -   name: "Lime Chicken"
         description: "A Gideon Chia classic"
-        ingredients: "1 lb of chicken, LOTS of lime juice, LOTS"
         directions: "Stir fry chicken, dump in LOADS and LOADS of lime juice"
         time_in_minutes: "20"
         servings: "5"
@@ -32,7 +30,6 @@ recipes:
 
     -   name: "Double Chocolate Brownies"
         description: "Dark Chocolates and Milk chocolate combine for something awesome"
-        ingredients: "Dark Chocolate, Milk Chcolate, Egg, Butter"
         directions: "Mix altogether in a bowl until consistency is desired. Pop in oven at 375 degrees"
         time_in_minutes: "35"
         servings: "15"
