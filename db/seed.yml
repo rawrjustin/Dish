@@ -52,7 +52,6 @@ ingredients:
         price: "5"
         photo: "http://farm3.staticflickr.com/2074/2379377093_b4afa1f022.jpg"
 
-<<<<<<< HEAD
     -   name: "Red-Leaf Lettuce"
         size: "Head"
         location: "Safeway"
@@ -130,7 +129,7 @@ ingredients:
         location: "Koreana"
         price: "2"
         photo: "http://farm9.staticflickr.com/8206/8245865744_be20e89823.jpg"
-=======
+
     -   name: "Chicken Breast"
         size: "lb"
         location: "Safeway"
@@ -154,7 +153,6 @@ ingredients:
         location: "Safeway"
         price: "5.45"
         photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
->>>>>>> f54dea906eebfb956c309da282f1f9e991c0febe
 
 recipes:
     -   name: "BBQ Chicken"
