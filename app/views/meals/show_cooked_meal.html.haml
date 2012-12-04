@@ -1,62 +1,56 @@
-.row-fluid
-  .span12
-    %h1= @meal.name
-    %div
-      %img{:src => @meal.thumb}
-    %div= "#{@meal.description}"
-.row-fluid
-  .span12
-    %h2 Servings
-    %ul.nav.nav-pills
-      %li
-        %a 100
-      %li
-        %a 150
-      %li.active
-        %a 200
-      %li
-        %a 250
-    //%div= "It costs #{@meal.cost} per person"
-    //%div= "It is for #{@meal.servings} servings"
-    //%div= "It requires #{@meal.ingredients}"
-    //%div= "It requires #{@meal.time_in_minutes} minutes"
-.row-fluid
-  .span12
-    %h2 Ingredients
-    TODO: use database data
-    .row-fluid
+#show_cooked_meals
+  .row
+    .hero-unit
+      %img{:id => "thumb", :src => @meal.thumb}
+      .hero-content
+        %h1= @meal.name  
+        %p= "#{@meal.description}"
+      
+  .row
+    .span12#servings
+      %h2 1. Choose Number of Servings
+      %p
+        Select servings below, and ingredients will be automatically scaled. 
+      %ul.nav.nav-pills
+        %li{:class => @active_150 ? 'active' : ''}
+          %a{:href => "?servings=150"}
+            150 servings
+        %li{:class => @active_200 ? 'active' : ''}
+          %a{:href => "?servings=200"}
+            200 servings
+        %li{:class => @active_250 ? 'active' : ''}
+          %a{:href => "?servings=250"}
+            250 servings
+  .row
+    .span12#ingredients
+      %h2 2. Buy Ingredients
+      %p
+        Hover over ingredients for a photo, where to buy, and tips.
       %table.table
+        - @meal.cooked_meal_ingredients.each do |ing|
+          %tr
+            %td
+              = "#{ing.amount}x"
+            %td
+              %a{:href => ""}
+                = ing.ingredient.display_name
+            %td
+              = "$#{ing.amount * ing.ingredient.price}"
         %tr
           %td
-            %strong= "10x"
           %td
-            %div= "Beef Meatballs (bag, $10.99 each from Costco)"
+            Total cost of ingredients
           %td
-            %div= "$109.90"
+            = "$#{@meal.total_cost}"
         %tr
           %td
-            %strong= "5x"
           %td
-            %div= "Panda Express Orange Chicken Glaze (pack, $8.99 each from Costco)"
+            Cost per person
           %td
-            %div= "$44.95"
-        %tr
-          %td
-            %strong= "5x"
-          %td
-            %div= "Iceberg Salad Mix (bag, $5.00 each from Costco)"
-          %td
-            %div= "$25.00"
-        %td
-          %td
-            %div= "Total Cost"
-            %div= "Cost per person"
-          %td
-            %div
-              %strong= "$179.85"
-            %div
-              %strong= "$0.89"
-.row-fluid
-  .span12
-    %h2 Prep Notes
-    %div= "#{@meal.directions}"
+            = "$#{@meal.cost_per_person}"
+            
+
+  .row
+    .span12#notes
+      %h2 3. Preparation
+      %div= "#{@meal.directions}"
