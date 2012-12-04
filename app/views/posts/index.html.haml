@@ -1,10 +1,11 @@
 #posts
   .row
-    .span12#jumbotron
-      %h1
-        Cooking tips
-      %span#subheader
-        Get better at cooking.
+    .hero-unit
+      .hero-content
+        %h1 Cooking tips
+        %p
+          Train up!
+
   .row      
     .span10#posts_grid
       - if @posts.count == 0

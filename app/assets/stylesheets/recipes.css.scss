@@ -4,10 +4,11 @@
 /* -----------------------------------*/
 
 $modernWhite: rgb(240,240,240);
-$modernGreen: rgb(130,230,0);
+$modernGreen: rgb(130,220,0);
 $modernOrange: rgb(244,163,51);
 $modernBlue: rgb(0,153,255);
 $modernBlack: rgb(22,22,22);
+$modernRed: rgb(195,55,0);
 
 /* -----------------------------------*/
 /* -------->>> Typography <<<---------*/
@@ -24,17 +25,12 @@ body {
 }
 
 #recipes {
-	#jumbotron {
-		margin-top: 12px;
-		margin-bottom: 6px;
-		padding-bottom: 48px;
-		h1 {
-			margin-bottom: 0px;
-		}
-		#subheader {
-			margin-left: 4px;
-			font-size: 16px;
-			line-height: 28px;
+	.hero-unit {
+  	background-color: $modernBlue;
+		.hero-content {
+			color: white;
+			font-family: $menuFont;
+   	  text-shadow: 2px 2px rgba(128,128,128,0.5);
 		}
 	}
 	.dropdown-toggle {
