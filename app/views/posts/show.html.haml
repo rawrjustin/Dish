@@ -1,16 +1,24 @@
+.row
+  .span12
+    %ul.breadcrumb
+      %li
+        %a{:href => posts_path}
+          Cooking Tips
+        %span{:class => "divider"}
+          = "/"
+      %li.active
+        = "#{@post.title}"
+
 #show_posts
   .row
     .hero-unit
       %img{:id => "thumb", :src => @post.thumbnail}
       .hero-content
         %h1= @post.title
-
-  .info
-    = "by " + @post.author
-    = @post.created_at.strftime("%b %d, %Y")
+        %h5
+          ="by " + @post.author
+          =@post.created_at.strftime("%b %d, %Y")
 
   .row
     .span12#post_content
-      %a{:href => posts_path}= "<< Back to list"
-      .content
-        = @post.content
+      = @post.content
