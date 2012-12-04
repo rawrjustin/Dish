@@ -1,0 +1,63 @@
+
+/* -----------------------------------*/
+/* ---------->>> Colors <<<-----------*/
+/* -----------------------------------*/
+
+$modernWhite: rgb(240,240,240);
+$modernGreen: rgb(130,230,0);
+$modernOrange: rgb(244,163,51);
+$modernBlue: rgb(0,153,255);
+$modernBlack: rgb(22,22,22);
+
+/* -----------------------------------*/
+/* -------->>> Typography <<<---------*/
+/* -----------------------------------*/
+
+$menuFont: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+
+/* -----------------------------------*/
+/* ---------->>> Layout <<<-----------*/
+/* -----------------------------------*/
+
+body {
+	background-image: none;
+}
+
+#posts {
+	#jumbotron {
+		margin-top: 12px;
+		margin-bottom: 6px;
+		padding-bottom: 48px;
+		h1 {
+			margin-bottom: 0px;
+		}
+		#subheader {
+			margin-left: 4px;
+			font-size: 16px;
+			line-height: 28px;
+		}
+	}
+	.dropdown-toggle {
+		background-image: none;
+	}
+	#posts_grid {
+		padding-top: 12px;
+		li {
+			list-style: none;
+		}
+		.post {
+			margin: 3px;
+			img {
+				height: 150px;
+				width: 400px;
+			}
+			h1 {
+				color: $modernBlack;
+				font-size: 16px;
+				font-weight: normal;
+				margin: 0px auto 0px auto;
+				text-align: center;
+			}
+		}
+	}
+}
