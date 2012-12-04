@@ -16,7 +16,7 @@ ActiveAdmin.register CookedMeal do
       end
       row :description
       row :directions
-      row :time_in_minutes
+      row :time
       row :servings
       row :cost
       table_for meal.cooked_meal_ingredients do
