@@ -49,7 +49,6 @@ recipes:
         directions: "Put chicken into oven"
         time_in_minutes: "60"
         servings: "10"
-        total_cost: "20"
         recipe_type: "Main"
         image: "http://www.laurashomecooking.net/cms/uploads/BBQ-Chicken.jpg"
 
@@ -58,7 +57,6 @@ recipes:
         directions: "Stir fry chicken, dump in LOADS and LOADS of lime juice"
         time_in_minutes: "20"
         servings: "5"
-        total_cost: "7"
         recipe_type: "Main"
         image: "http://blogchef.net/wp-content/uploads/2010/06/lime_chicken_1.jpg"
 
@@ -67,7 +65,6 @@ recipes:
         directions: "Mix altogether in a bowl until consistency is desired. Pop in oven at 375 degrees"
         time_in_minutes: "35"
         servings: "15"
-        total_cost: "9"
         recipe_type: "Desserts"
         image: "http://farm4.static.flickr.com/3264/2560601935_875e042485.jpg"
 
@@ -76,7 +73,6 @@ recipes:
         directions: "Boil pasta, cook sauce, serve."
         time_in_minutes: "35"
         servings: "2"
-        total_cost: "3"
         recipe_type: "Main"
         image: "http://farm4.staticflickr.com/3112/2898644650_3f35f83226.jpg"
         ingredients:
@@ -92,7 +88,6 @@ cooked_meals:
         directions: "Cook meatballs at 400F for one hour."
         time_in_minutes: "60"
         thumb: "http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg"
-        cost: "Under $2"
 
     -   name: "Vietnamese Sandwiches"
         description: "Great for lunch."
@@ -100,7 +95,6 @@ cooked_meals:
         directions: "Cook stuff. Sandwichify it."
         time_in_minutes: "30"
         thumb: "http://farm8.staticflickr.com/7111/8160415698_1bb88ae465.jpg"
-        cost: "Under $2"
 
     -   name: "Grilled Hotdogs"
         description: "An All-American classic."
@@ -108,7 +102,6 @@ cooked_meals:
         directions: "..."
         time_in_minutes: "45"
         thumb: "http://farm8.staticflickr.com/7110/8160415758_6f1c3a38bc.jpg"
-        cost: "Under $5"
 
 catered_meals:
     -   name: "Hong Kong Express"
@@ -117,4 +110,3 @@ catered_meals:
         phone: "5355354422"
         address: "3445 Telegraph Ave, Berkeley"
         thumb: "http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg"
-        cost: "Under $2"
