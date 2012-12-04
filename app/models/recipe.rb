@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
-  validates :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :recipe_type, :presence => true
+  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
+  validates :name, :description, :directions, :time_in_minutes, :servings, :recipe_type, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost, :greater_than_or_equal_to => 0
   validates :recipe_type,
     :inclusion => { :in => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :message => "%{value} is not a valid type of recipe"}
@@ -8,6 +8,14 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :recipe_ingredients
   #mount_uploader :image, ImageUploader
+
+  def total_cost
+    tc = 0.0
+    self.ingredients.each do |ingredient|
+      tc += ingredient.price
+    end
+    return tc
+  end
 
   def cpp
     # cost per person

@@ -4,6 +4,8 @@ ActiveAdmin.register Recipe do
     column :description
     column :recipe_type
     column :servings
+    column :cpp
+    column :time
     default_actions
   end
 
@@ -21,7 +23,6 @@ ActiveAdmin.register Recipe do
       row :directions
       row :time_in_minutes
       row :servings
-      row :total_cost
       table_for recipe.recipe_ingredients do
         column "Ingredients" do |ing|
            ing.amount.to_s + " - " + ing.ingredient.display_name
