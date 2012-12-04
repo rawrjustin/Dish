@@ -1,10 +1,4 @@
 class RecipesController < ApplicationController
-  @@descriptions = Hash.new
-	@@descriptions[""] = "Showing all dishes"
-	@@descriptions["Main"] = "Showing main dishes"
-	@@descriptions["Sides"] = "Showing side dishes"
-	@@descriptions["Soups"] = "Showing soups"
-	@@descriptions["Desserts"] = "Showing desserts"
 
   def index
     @active_all = !params[:type] || params[:type] == ""
@@ -20,8 +14,6 @@ class RecipesController < ApplicationController
     end
     if params[:type]
        params[:q][:recipe_type_eq] = params[:type]
-   		 @dropdown_label = @@descriptions[params[:type]]
-       @dropdown_description = "Select Category"
     end
     @q = Recipe.search(params[:q])
     @recipes = @q.result.page(params[:page])
@@ -30,6 +22,14 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-  end
+    @unscaled_recipe = Recipe.find(params[:id])
+		if !params[:servings]
+			params[:servings] = "10"
+		end
+		@active_5 = params[:servings] == "5"
+		@active_10 = params[:servings] == "10"
+		@active_20 = params[:servings] == "20"
+		@active_50 = params[:servings] == "50"
+		@recipe = @unscaled_recipe.scale(params[:servings])
+	end
 end

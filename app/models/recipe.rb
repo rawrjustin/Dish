@@ -9,6 +9,28 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, :through => :recipe_ingredients
   #mount_uploader :image, ImageUploader
 
+  def scale(amount_people)
+    #returns a Recipe object replica that has it's recipeingredients scaled
+    if self.servings.to_f > 0.0
+      ratio = amount_people.to_f / self.servings.to_f
+    else
+      ratio = 1.0
+    end
+    new_recipe = Recipe.new(:name => self.name,
+                                     :description => self.description,
+                                     :servings => amount_people,
+                                     :image => self.image,
+                                     :directions => self.directions,
+                                     :time_in_minutes => self.time_in_minutes)
+    self.recipe_ingredients.each do |recipe_ingredient|
+      temp_cmi = RecipeIngredient.new(:amount => ratio * recipe_ingredient.amount.to_f)
+      temp_cmi.ingredient = recipe_ingredient.ingredient
+      new_recipe.recipe_ingredients << temp_cmi
+      
+    end
+    return new_recipe
+  end
+
   def total_cost
     tc = 0.0
     self.recipe_ingredients.each do |recipe_ingredient|
