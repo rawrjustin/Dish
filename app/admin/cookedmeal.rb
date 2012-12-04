@@ -43,7 +43,6 @@ ActiveAdmin.register CookedMeal do
       f.input :directions
       f.input :time_in_minutes
       f.input :servings
-      f.input :cost, :as => :select, :collection => ['Under $2', 'Under $5'], :include_blank => false
     end
     f.buttons
   end
