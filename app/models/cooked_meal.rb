@@ -8,14 +8,9 @@ class CookedMeal < Meal
 
   def scale(amount_people)
     #returns a CookedMeal object replica that has it's cookedmealingredients scaled
-    if self.servings.to_f > 0.0
-      ratio = amount_people.to_f / self.servings.to_f
-    else
-      ratio = 1.0
-    end
+    ratio = amount_people.to_f / 200.to_f
     new_cooked_meal = CookedMeal.new(:name => self.name,
                                      :description => self.description,
-                                     :servings => amount_people,
                                      :thumb => self.thumb,
                                      :directions => self.directions,
                                      :time_in_minutes => self.time_in_minutes)
@@ -23,8 +18,8 @@ class CookedMeal < Meal
       temp_cmi = CookedMealIngredient.new(:amount => ratio * cooked_meal_ingredient.amount.to_f)
       temp_cmi.ingredient = cooked_meal_ingredient.ingredient
       new_cooked_meal.cooked_meal_ingredients << temp_cmi
-      
     end
+    new_cooked_meal.cpp = new_cooked_meal.total_cost / amount_people.to_f
     return new_cooked_meal
   end
 
@@ -36,12 +31,13 @@ class CookedMeal < Meal
     return tc
   end
 
+  attr_accessor :cpp
   def cost_per_person
-    # cost per person
-    if servings > 0
-      cpp = self.total_cost.to_f / self.servings.to_f
+    if cpp
+      return cpp
+    else
+      return self.total_cost.to_f / 200.to_f
     end
-    return cpp.to_f
   end
 
   def cost
@@ -53,7 +49,7 @@ class CookedMeal < Meal
       return "Over $5"
     end
   end
-  
+
   def time
     hours = self.time_in_minutes.to_i / 60
     mins = self.time_in_minutes.to_i - hours * 60

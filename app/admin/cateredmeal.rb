@@ -2,7 +2,6 @@ ActiveAdmin.register CateredMeal do
   index do
     column :name
     column :description
-    column :servings
     default_actions
   end
 
@@ -17,7 +16,6 @@ ActiveAdmin.register CateredMeal do
       row :description
       row :phone
       row :address
-      row :servings
       row :cost
     end
     active_admin_comments
@@ -30,7 +28,6 @@ ActiveAdmin.register CateredMeal do
       f.input :description
       f.input :phone
       f.input :address
-      f.input :servings
       f.input :cost, :as => :select, :collection => ['Under $2', 'Under $5'], :include_blank => false
     end
     f.buttons
