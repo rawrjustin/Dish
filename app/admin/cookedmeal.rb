@@ -16,7 +16,7 @@ ActiveAdmin.register CookedMeal do
       end
       row :description
       row :directions
-      row :time_in_minutes
+      row :time
       row :servings
       row :cost
       table_for meal.cooked_meal_ingredients do
@@ -43,7 +43,6 @@ ActiveAdmin.register CookedMeal do
       f.input :directions
       f.input :time_in_minutes
       f.input :servings
-      f.input :cost, :as => :select, :collection => ['Under $2', 'Under $5'], :include_blank => false
     end
     f.buttons
   end

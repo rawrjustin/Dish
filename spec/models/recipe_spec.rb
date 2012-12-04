@@ -4,11 +4,11 @@ describe Recipe do
   describe "cost per person" do
     before :each do
       @recipe = FactoryGirl.create(:recipe)
-      @recipe.stub(:total_cost).and_return(100)
-      @recipe.stub(:servings).and_return(50)
+      @recipe.stub(:total_cost) { 2.2 }
+      @recipe.stub(:servings).and_return(2)
     end
     it "should return the cost per person" do
-      @recipe.cpp.should == 2
+      @recipe.cost_per_person.should == 1.1
     end
   end
 

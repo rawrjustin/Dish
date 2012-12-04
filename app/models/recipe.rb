@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
-  validates :name, :description, :directions, :time_in_minutes, :servings, :total_cost, :recipe_type, :presence => true
+  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
+  validates :name, :description, :directions, :time_in_minutes, :servings, :recipe_type, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost, :greater_than_or_equal_to => 0
   validates :recipe_type,
     :inclusion => { :in => ['Main', 'Sides', 'Soups', 'Salads', 'Desserts'], :message => "%{value} is not a valid type of recipe"}
@@ -9,12 +9,20 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, :through => :recipe_ingredients
   #mount_uploader :image, ImageUploader
 
-  def cpp
+  def total_cost
+    tc = 0.0
+    self.recipe_ingredients.each do |recipe_ingredient|
+      tc += recipe_ingredient.ingredient.price * recipe_ingredient.amount
+    end
+    return tc
+  end
+
+  def cost_per_person
     # cost per person
     if servings > 0
-      cost_per_person = self.total_cost.to_f / self.servings.to_f
+      cpp = self.total_cost.to_f / self.servings.to_f
     end
-    return cost_per_person.to_f
+    return cpp.to_f
   end
 
   def time

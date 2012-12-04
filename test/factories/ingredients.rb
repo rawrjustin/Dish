@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :ingredient do
-    name "MyString"
-    location "MyString"
+    name "Cucumber"
+    association :location
     price 1.5
     photo "MyString"
-    notes "MyText"
+    notes "yummy when fresh"
   end
 end
