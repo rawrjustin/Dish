@@ -1,7 +1,7 @@
 class MealsController < ApplicationController
   def index
     @active_2 = params[:cost] == "Under $2"
-    @active_5 = !params[:cost] || params[:cost] == ""
+    @active_5 = !params[:cost] || params[:cost] == "Under $5"
 		@dropdown_label = "Showing all meals"
     if not params[:q]
       params[:q] = {}
