@@ -6,6 +6,28 @@ class CookedMeal < Meal
   accepts_nested_attributes_for :cooked_meal_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :cooked_meal_ingredients
 
+  def scale(amount_people)
+    #returns a CookedMeal object replica that has it's cookedmealingredients scaled
+    if self.servings.to_f > 0.0
+      ratio = amount_people.to_f / self.servings.to_f
+    else
+      ratio = 1.0
+    end
+    new_cooked_meal = CookedMeal.new(:name => self.name,
+                                     :description => self.description,
+                                     :servings => amount_people,
+                                     :thumb => self.thumb,
+                                     :directions => self.directions,
+                                     :time_in_minutes => self.time_in_minutes)
+    self.cooked_meal_ingredients.each do |cooked_meal_ingredient|
+      temp_cmi = CookedMealIngredient.new(:amount => ratio * cooked_meal_ingredient.amount.to_f)
+      temp_cmi.ingredient = cooked_meal_ingredient.ingredient
+      new_cooked_meal.cooked_meal_ingredients << temp_cmi
+      
+    end
+    return new_cooked_meal
+  end
+
   def total_cost
     tc = 0.0
     self.cooked_meal_ingredients.each do |cooked_meal_ingredient|
