@@ -17,20 +17,19 @@ class MealsController < ApplicationController
   end
 
   def show
-	  if !params[:servings]
-		  params[:servings] = "200"
-		end
-    @active_150 = params[:servings] == "150"
-    @active_200 = params[:servings] == "200"
-		@active_250 = params[:servings] == "250"
-	
     @unscaled_meal = Meal.find(params[:id])
-		@meal = @unscaled_meal.scale(params[:servings])
-    if @meal.type == "CookedMeal"
+    if @unscaled_meal.type == "CookedMeal"
+      if !params[:servings]
+        params[:servings] = "200"
+      end
+      @active_150 = params[:servings] == "150"
+      @active_200 = params[:servings] == "200"
+      @active_250 = params[:servings] == "250"
+      @meal = @unscaled_meal.scale(params[:servings])
       render "show_cooked_meal"
-    elsif @meal.type == "CateredMeal"
+    elsif @unscaled_meal.type == "CateredMeal"
+      @meal = @unscaled_meal
       render "show_catered_meal"
     end
   end
-	
 end
