@@ -29,5 +29,18 @@ config["recipes"].each do |recipe|
     end
   end
 end
-CookedMeal.create(config["cooked_meals"])
+config["cooked_meals"].each do |meal|
+  ingredient_list = meal.delete("ingredients")
+  m = CookedMeal.create(meal)
+  if ingredient_list
+    ingredient_list.each do |ingredient|
+      ing = Ingredient.find_by_name(ingredient["name"])
+      CookedMealIngredient.create do |c|
+        c.cooked_meal = m
+        c.ingredient = ing
+        c.amount = ingredient["size"]
+      end
+    end
+  end
+end
 CateredMeal.create(config["catered_meals"])
