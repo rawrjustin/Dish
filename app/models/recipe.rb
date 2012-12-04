@@ -11,18 +11,18 @@ class Recipe < ActiveRecord::Base
 
   def total_cost
     tc = 0.0
-    self.ingredients.each do |ingredient|
-      tc += ingredient.price
+    self.recipe_ingredients.each do |recipe_ingredient|
+      tc += recipe_ingredient.ingredient.price * recipe_ingredient.amount
     end
     return tc
   end
 
-  def cpp
+  def cost_per_person
     # cost per person
     if servings > 0
-      cost_per_person = self.total_cost.to_f / self.servings.to_f
+      cpp = self.total_cost.to_f / self.servings.to_f
     end
-    return cost_per_person.to_f
+    return cpp.to_f
   end
 
   def time

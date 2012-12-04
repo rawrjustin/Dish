@@ -4,7 +4,7 @@ ActiveAdmin.register Recipe do
     column :description
     column :recipe_type
     column :servings
-    column :cpp
+    column :cost_per_person
     column :time
     default_actions
   end
@@ -48,7 +48,6 @@ ActiveAdmin.register Recipe do
       f.input :directions
       f.input :time_in_minutes
       f.input :servings
-      f.input :total_cost
     end
     f.buttons
   end
