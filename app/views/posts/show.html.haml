@@ -1,6 +1,14 @@
-.row-fluid
-  .blog-body
-    .post-body
+#show_post
+  .row
+    .hero-unit
+      %img{:id => "thumb", :src => @recipe.thumbnail}
+      .hero-content
+        %h1= @recipe.name  
+        %p= "#{@recipe.description}"
+      
+
+  .row
+    .span12#post_content
       %a{:href => posts_path}= "<< Back to list"
       %br
       .title
