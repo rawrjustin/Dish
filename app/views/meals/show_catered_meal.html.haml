@@ -1,12 +1,60 @@
-.row-fluid
-  .span3
-    %img{:src => @meal.thumb}
-  .span9
-    %h1= @meal.name
-    %div= "#{@meal.description}"
-    %h2 about the meal:
-    %div= "It costs #{@meal.cost} per person"
-    %div= "It is for #{@meal.servings} servings"
-    %h2 where to get it:
-    %div= "#{@meal.address}"
-    %div= "Call: #{@meal.phone}"
+#show_catered_meals
+  .row
+    .hero-unit
+      %img{:id => "thumb", :src => @meal.thumb}
+      .hero-content
+        %h1= @meal.name  
+        = "#{@meal.address} | Phone: #{@meal.phone}"
+      
+  .row
+    .span12
+      
+  .row
+    .span12
+      %table.table
+        %tr
+          %th
+            Dish
+          %th
+            Size
+          %th
+            Feeds
+          %th
+            Cost
+        %tr
+          %td
+            Chicken Fried Rice
+          %td
+            %div
+              Small
+            %div
+              Large
+          %td
+            %div
+              15 people
+            %div
+              40 people
+          %td
+            %div
+              $20
+            %div
+              $28
+        %tr
+          %td
+            BBQ Pork
+          %td
+            %div
+              Small
+            %div
+              Large
+          %td
+            %div
+              15 people
+            %div
+              40 people
+          %td
+            %div
+              $20
+            %div
+              $28  
+              
