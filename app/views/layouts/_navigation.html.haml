@@ -1,17 +1,11 @@
-.navbar
-  .navbar-inner
-    = link_to "Dish Gracepoint", root_path, :class => 'brand'
-
-    %ul.nav
-      - if user_signed_in?
-        %li
-          = link_to 'Logout', destroy_user_session_path, :method=>'get'
-      - else
-        %li
-          = link_to 'Login', new_user_session_path
-      - if user_signed_in?
-        %li
-          = link_to 'Edit account', edit_user_registration_path
-      - else
-        %li
-          = link_to 'Sign up', new_user_registration_path
+#nav
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        = link_to "Dish Gracepoint", root_path, :class => 'brand'
+        - if @q
+          .navbar-search.pull-right
+            = search_form_for @q do |f|
+              = f.text_field @search_field, :class => 'input-large search-query span3', :placeholder => 'Search'
+              .icon-search
+  #navbar_spacer

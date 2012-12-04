@@ -1,44 +1,42 @@
-.row-fluid
-  .span2
-    .sidebar.affix.span2
-      %ul.nav.nav-list
-        %li
-          %h4 Show me...
-        %li{:class => @active_main ? 'active' : ''}
-          %a{:href => "?type=Main"}
-            Main
-        %li{:class => @active_sides ? 'active' : ''}
-          %a{:href => "?type=Sides"}
-            Sides
-        %li{:class => @active_salads ? 'active' : ''}
-          %a{:href => "?type=Salads"}
-            Salads
-        %li{:class => @active_soups ? 'active' : ''}
-          %a{:href => "?type=Soups"}
-            Soups
-        %li{:class => @active_desserts ? 'active' : ''}
-          %a{:href => "?type=Desserts"}
-            Desserts
-
-  .span10
-    .row-fluid.masthead
-      %h1 Recipes
-      .span4.form-search.pull-right
-        = search_form_for @q do |f|
-          = f.text_field :name_or_description_cont, :class => 'input-large search-query', :placeholder => 'Search for a recipe'
-          = f.submit :class => 'btn', :value => 'Search'
-      %h5 Everyday recipes for your small group, family, or potluck!
-    .row-fluid
+#recipes
+  .row
+    .span12#jumbotron
+      %h1
+        Small group dishes
+      %span#subheader
+        Each of the selections below are tasty dishes for small groups
+  .row
+    .span2
+      %div{"data-spy" => "affix", "data-offset-top" => "200"}
+        %ul.nav.nav-list
+          %li
+            %h4 Type of dish
+          %li{:class => @active_all ? 'active' : ''}
+            %a{:href => "?type="}
+              All dishes
+          %li{:class => @active_main ? 'active' : ''}
+            %a{:href => "?type=Main"}
+              Main
+          %li{:class => @active_sides ? 'active' : ''}
+            %a{:href => "?type=Sides"}
+              Sides
+          %li{:class => @active_salads ? 'active' : ''}
+            %a{:href => "?type=Salads"}
+              Salads
+          %li{:class => @active_soups ? 'active' : ''}
+            %a{:href => "?type=Soups"}
+              Soups
+          %li{:class => @active_desserts ? 'active' : ''}
+            %a{:href => "?type=Desserts"}
+              Desserts
+            
+    .span10#recipes_grid
       - if @recipes.count == 0
         .alert.alert-info Sorry, no results match your criteria.
       - else
-        .thumbnails
-          - @recipes.each do |recipe|
-            %li.span3
-              .thumbnail.recipe
-                %a{:href => recipe_path(recipe)}
-                  .recipename
-                    %p= recipe.name
-                  .recipe-img
-                    %img{:src => recipe.thumbnail}
+        - @recipes.each do |recipe|
+          %a.span3.thumbnail.recipe{:href => recipe_path(recipe)}
+            %img{:src => recipe.thumbnail}
+            %h1=recipe.name
         = paginate @recipes
+        

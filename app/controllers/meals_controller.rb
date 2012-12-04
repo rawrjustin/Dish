@@ -1,15 +1,19 @@
 class MealsController < ApplicationController
   def index
     @active_2 = params[:cost] == "Under $2"
-    @active_5 = params[:cost] == "Under $5"
+    @active_5 = !params[:cost] || params[:cost] == ""
+		@dropdown_label = "Showing all meals"
     if not params[:q]
       params[:q] = {}
     end
     if params[:cost] == "Under $2"
+		  @dropdown_label = "Showing meals under $2"
       params[:q][:cost_eq] = "Under $2"
     end
     @q = Meal.search(params[:q])
     @meals = @q.result.page(params[:page])
+		
+		@search_field = :name_or_description_cont
   end
 
   def show

@@ -1,87 +1,66 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* -----------------------------------*/
+/* ---------->>> Colors <<<-----------*/
+/* -----------------------------------*/
 
-a {
-    display: block;
-    &:hover {
-        opacity: 0.75;
-    }
-    &:active {
-        opacity: 1.0;
-    }
-}
+$modernWhite: rgb(240,240,240);
+$modernGreen: rgb(130,230,0);
+$modernOrange: rgb(244,163,51);
+$modernBlue: rgb(0,153,255);
+$modernBlack: rgb(22,22,22);
 
-#large_group {
-    height: 200px;
-    margin: 20px 0px 20px 0px;
-    background-color: rgba(131,231,3,0.95);
-    a {
-        color: white;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    h1 {
-        color: white;
-        margin: 24px;
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        font-size: 42px;
-        font-weight: normal;
-        line-height: 84px;
-    }
-    h2 {
-        color: white;
-        margin: 24px;
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        line-height: 40px;
-        font-weight: normal;
-    }
-}
+/* -----------------------------------*/
+/* -------->>> Typography <<<---------*/
+/* -----------------------------------*/
 
-#small_group {
-    height: 200px;
-    margin: 20px 0px 20px 0px;
-    float: left;
-    background-color: rgba(0,153,255,0.95);
-    h1 {
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        margin: 24px;
-        color: white;
-        font-size: 42px;
-        font-weight: normal;
-        line-height: 84px;
-    }
-    h2 {
-        color: white;
-        margin: 24px;
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        line-height: 40px;
-        font-weight: normal;
-    }
-}
+$menuFont: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
 
-#cooking_tips {
-    height: 200px;
-    margin: 20px 0px 20px 0px;
-    float: right;
-    background-color: rgba(244,163,51,0.95);
-    h1 {
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        margin: 24px;
-        color: white;
-        font-size: 42px;
-        font-weight: normal;
-        line-height: 84px;
-    }
-    h2 {
-        color: white;
-        margin: 24px;
-        font-family: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        line-height: 40px;
-        font-weight: normal;
-    }
+/* -----------------------------------*/
+/* ---------->>> Layout <<<-----------*/
+/* -----------------------------------*/
+
+#homepage {
+	#bg {
+		position:fixed; 
+		top:0; 
+		left:0; 
+		
+		/* Preserve aspet ratio */
+		min-width:100%;
+		min-height:100%;
+		z-index: -1;
+	}
+	#spacer {
+		display: block;
+		height: 100px;
+	}
+	a {
+		color: $modernWhite;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.panel {
+		height: 200px;
+		h1 {
+			font: 42px $menuFont;
+			margin: 24px;
+		}
+		h2 {
+			font: 20px $menuFont;
+			margin: 24px;
+		}
+	}
+	
+	#large_group {
+		margin-bottom: 14px;
+		background-color: $modernGreen;
+	}
+
+	#small_group {
+		background-color: $modernBlue;
+	}
+		
+	#cooking_tips {
+		background-color: $modernOrange;
+	}
 }

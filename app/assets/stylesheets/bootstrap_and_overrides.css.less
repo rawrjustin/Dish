@@ -29,3 +29,32 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+//@linkColor: #f80;
+//@linkColorHover: #333;
+
+#nav {
+	form {
+		margin-bottom: 0;
+	}
+	.navbar-search {
+		position: relative;
+		.search-query {
+			padding-left: 29px !important;
+		}
+		.icon-search {
+			position: absolute;
+			top: 7px;
+			left: 11px;
+		}
+	}	
+	#navbar_spacer {
+		display: block;
+		height: @navbarHeight;
+	}
+}
+
+@navbarText: rgb(55,55,55);
+@navbarHeight: 50px;
+@navbarBackground: rgba(255,255,255,0);
+@navbarBackgroundHighlight: rgba(255,255,255,0);

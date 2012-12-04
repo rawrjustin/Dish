@@ -1,15 +1,16 @@
-
-.row-fluid
-  %a{:href => 'large'}
-    .span12#large_group
+#homepage
+  %img{:src => 'http://farm9.staticflickr.com/8209/8235286457_3a4bc1666b_h.jpg', :id => 'bg'}
+  .row
+    #spacer
+  .row
+    %a.span12.panel#large_group{:href => 'large'}
       %h1 Large Group
       %h2 Complete meals that will economically feed 200+ people.
-.row-fluid
-  %a{:href => 'small'}
-    .span8#small_group
+  .row
+    %a.span8.panel#small_group{:href => 'small'}
       %h1 Small Group
       %h2 Delicious main dishes, sides, desserts, and snacks.
-  %a{:href => 'tips'}
-    .span4#cooking_tips
+    %a.span4.panel#cooking_tips{:href => 'tips'}
       %h1 Cooking Tips
       %h2 Practical tips & tutorials.
+

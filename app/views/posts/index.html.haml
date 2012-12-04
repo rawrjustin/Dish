@@ -1,26 +1,19 @@
-.row-fluid
-  .blog-body
-    .blog-header
-      .blog-title
-        Cooking Tips
-        .span4.form-search.pull-right
-          = search_form_for @q do |f|
-            = f.text_field :title_or_content_cont, :class => 'input-large search-query', :placeholder => 'Search cooking tips'
-            = f.submit :class => 'btn', :value => 'Search'
-    - if @posts.count == 0
-      .alert.alert-info Sorry, no results match your criteria.
-    - else
-      .thumbnails.post
+#posts
+  .row
+    .span12#jumbotron
+      %h1
+        Cooking tips
+      %span#subheader
+        Get better at cooking.
+  .row      
+    .span10#posts_grid
+      - if @posts.count == 0
+        .alert.alert-info Sorry, no results match your criteria.
+      - else
         - @posts.each do |post|
-          %li.span3
-            .thumbnail
-              %a{:href => post_path(post)}
-                .post-img
-                  %img{:src => post.thumbnail}
-                .post-info
-                  .post-title
-                    = post.title
-                  .post-subtitle
-                    =  " by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
-      .post-paginate
+          %a.span3.thumbnail.post{:href => post_path(post)}
+            %img{:src => post.thumbnail}
+            %h4=post.title
+            %h5=" by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
         = paginate @posts
+        
