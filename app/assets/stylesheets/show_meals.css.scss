@@ -4,10 +4,11 @@
 /* -----------------------------------*/
 
 $modernWhite: rgb(240,240,240);
-$modernGreen: rgb(130,230,0);
+$modernGreen: rgb(130,220,0);
 $modernOrange: rgb(244,163,51);
 $modernBlue: rgb(0,153,255);
 $modernBlack: rgb(22,22,22);
+$modernRed: rgb(195,55,0);
 
 /* -----------------------------------*/
 /* -------->>> Typography <<<---------*/
@@ -25,7 +26,7 @@ body {
 
 #show_cooked_meals {
 	.hero-unit {
-  	background-color: $modernOrange;
+  	background-color: $modernRed;
 		img#thumb {
   		float: right;			
 			height: 150px;
