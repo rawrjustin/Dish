@@ -1,3 +1,14 @@
+.row
+  .span12
+    %ul.breadcrumb
+      %li
+        %a{:href => meals_path}
+          Large Group
+        %span{:class => "divider"}
+          = "/"
+      %li.active
+        = "#{@meal.name}"
+
 #show_catered_meals
   .row
     .hero-unit
@@ -5,9 +16,6 @@
       .hero-content
         %h1= @meal.name  
         = "#{@meal.address} | Phone: #{@meal.phone}"
-      
-  .row
-    .span12
       
   .row
     .span12

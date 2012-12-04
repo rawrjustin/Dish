@@ -1,21 +1,16 @@
-#show_post
+#show_posts
   .row
     .hero-unit
-      %img{:id => "thumb", :src => @recipe.thumbnail}
+      %img{:id => "thumb", :src => @post.thumbnail}
       .hero-content
-        %h1= @recipe.name  
-        %p= "#{@recipe.description}"
-      
+        %h1= @post.title
+
+  .info
+    = "by " + @post.author
+    = @post.created_at.strftime("%b %d, %Y")
 
   .row
     .span12#post_content
       %a{:href => posts_path}= "<< Back to list"
-      %br
-      .title
-        = @post.title
-      .info
-        =  "by " + @post.author
-        %br
-        =  @post.created_at.strftime("%b %d, %Y")
       .content
         = @post.content
