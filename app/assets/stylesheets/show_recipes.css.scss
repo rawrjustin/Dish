@@ -1,0 +1,51 @@
+
+/* -----------------------------------*/
+/* ---------->>> Colors <<<-----------*/
+/* -----------------------------------*/
+
+$modernWhite: rgb(240,240,240);
+$modernGreen: rgb(130,220,0);
+$modernOrange: rgb(244,163,51);
+$modernBlue: rgb(0,153,255);
+$modernBlack: rgb(22,22,22);
+$modernRed: rgb(195,55,0);
+
+/* -----------------------------------*/
+/* -------->>> Typography <<<---------*/
+/* -----------------------------------*/
+
+$menuFont: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+
+/* -----------------------------------*/
+/* ---------->>> Layout <<<-----------*/
+/* -----------------------------------*/
+
+body {
+	background-image: none;
+}
+
+#show_recipes {
+	.hero-unit {
+  	background-color: $modernRed;
+		img#thumb {
+  		float: right;			
+			height: 150px;
+			margin-right: 25px;
+			width: 270px;
+		}
+		.hero-content {
+			color: white;
+			font-family: $menuFont;
+   	  text-shadow: 2px 2px rgba(128,128,128,0.5);
+		}
+	}
+	#servings {
+		.nav.nav-pills {
+			li a {
+				padding: 20px 50px 20px 50px;
+			}
+		}
+	}
+	#ingredients {
+	}
+}

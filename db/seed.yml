@@ -52,6 +52,7 @@ ingredients:
         price: "5"
         photo: "http://farm3.staticflickr.com/2074/2379377093_b4afa1f022.jpg"
 
+<<<<<<< HEAD
     -   name: "Red-Leaf Lettuce"
         size: "Head"
         location: "Safeway"
@@ -129,6 +130,31 @@ ingredients:
         location: "Koreana"
         price: "2"
         photo: "http://farm9.staticflickr.com/8206/8245865744_be20e89823.jpg"
+=======
+    -   name: "Chicken Breast"
+        size: "lb"
+        location: "Safeway"
+        price: "3"
+        photo: "http://farm1.staticflickr.com/6/11533831_25b04bdb88_m.jpg"
+
+    -   name: "Lime Juice"
+        size: "bottle"
+        location: "Safeway"
+        price: "2"
+        photo: "http://farm3.staticflickr.com/2247/2401325249_3c506726ba_m.jpg"
+
+    -   name: "Meatballs"
+        size: "10 lb. bag"
+        location: "Safeway"
+        price: "9.95"
+        photo: "http://farm6.staticflickr.com/5215/5493335597_a8cdb677a7.jpg"
+
+    -   name: "Potato Salad"
+        size: "box"
+        location: "Safeway"
+        price: "5.45"
+        photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
+>>>>>>> f54dea906eebfb956c309da282f1f9e991c0febe
 
 recipes:
     -   name: "BBQ Chicken"
@@ -138,6 +164,9 @@ recipes:
         servings: "10"
         recipe_type: "Main"
         image: "http://www.laurashomecooking.net/cms/uploads/BBQ-Chicken.jpg"
+        ingredients:
+            -   name: "Chicken Breast"
+                size: "2"
 
     -   name: "Lime Chicken"
         description: "A Gideon Chia classic"
@@ -146,6 +175,11 @@ recipes:
         servings: "5"
         recipe_type: "Main"
         image: "http://blogchef.net/wp-content/uploads/2010/06/lime_chicken_1.jpg"
+        ingredients:
+            -   name: "Chicken Breast"
+                size: "1"
+            -   name: "Lime Juice"
+                size: "5"
 
     -   name: "Double Chocolate Brownies"
         description: "Dark Chocolates and Milk chocolate combine for something awesome"
@@ -196,6 +230,11 @@ cooked_meals:
         directions: "Cook meatballs at 400F for one hour."
         time_in_minutes: "60"
         thumb: "http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg"
+        ingredients:
+            -   name: "Meatballs"
+                size: "10"
+            -   name: "Potato Salad"
+                size: "15"
 
     -   name: "Vietnamese Sandwiches"
         description: "Great for lunch."

@@ -14,7 +14,7 @@
         - @posts.each do |post|
           %a.span3.thumbnail.post{:href => post_path(post)}
             %img{:src => post.thumbnail}
-            %h4=post.title
-            %h5=" by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
+            %h1=post.title
+            %h2=" by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
         = paginate @posts
         

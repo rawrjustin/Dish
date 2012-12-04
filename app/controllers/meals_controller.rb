@@ -7,7 +7,6 @@ class MealsController < ApplicationController
       params[:q] = {}
     end
     if params[:cost] == "Under $2"
-		  @dropdown_label = "Showing meals under $2"
       params[:q][:cost_eq] = "Under $2"
     end
     @q = Meal.search(params[:q])
