@@ -35,10 +35,10 @@
               = k
             %td
               - v.each do |tray|
-                %div= tray.servings
+                %div= "#{tray.servings} people"
             %td
               - v.each do |tray|
                 %div= tray.name
             %td
               - v.each do |tray|
-                %div= tray.cost
+                %div= "$#{tray.cost}"
