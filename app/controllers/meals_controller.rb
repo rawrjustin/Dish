@@ -28,6 +28,13 @@ class MealsController < ApplicationController
       render "show_cooked_meal"
     elsif @unscaled_meal.type == "CateredMeal"
       @meal = @unscaled_meal
+      @trays = {}
+      @meal.catered_meal_trays.each do |tray|
+        if !@trays.has_key?(tray.size)
+          @trays[tray.size] = []
+        end
+        @trays[tray.size].push(tray)
+      end
       render "show_catered_meal"
     end
   end
