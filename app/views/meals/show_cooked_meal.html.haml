@@ -38,6 +38,15 @@
       %p
         Hover over ingredients for a photo, where to buy, and tips.
       %table.table
+        %tr
+          %th
+            Quantity
+          %th
+            Item
+          %th
+            Buy at
+          %th
+            Cost
         - @meal.cooked_meal_ingredients.each do |ing|
           %tr
             %td
@@ -46,19 +55,19 @@
               %a{:href => ""}
                 = ing.ingredient.display_name
             %td
-              = "$#{ing.amount * ing.ingredient.price}"
+              %a{:href => ""}
+                = ing.ingredient.location.name
+            %td
+              = "$#{ing.price}"
         %tr
           %td
           %td
-            Total cost of ingredients
-          %td
-            = "$#{@meal.total_cost}"
-        %tr
+            %h4 Total cost of ingredients
+            %h4 Cost per person
           %td
           %td
-            Cost per person
-          %td
-            = "$#{@meal.cost_per_person}"
+            %h4="$#{@meal.total_cost}"
+            %h4="$#{@meal.cost_per_person}"
             
 
   .row

@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(:version => 20121205051610) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+  create_table "catered_meal_trays", :force => true do |t|
+    t.integer  "catered_meal_id"
+    t.string   "name"
+    t.string   "size"
+    t.integer  "servings"
+    t.decimal  "cost"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "cooked_meal_ingredients", :force => true do |t|
     t.integer  "cooked_meal_id"
     t.integer  "ingredient_id"

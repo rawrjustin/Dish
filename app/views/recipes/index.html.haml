@@ -8,28 +8,27 @@
         
   .row
     .span2.content
-      %div{"data-spy" => "affix", "data-offset-top" => "200"}
-        %ul.nav.nav-list
-          %li
-            %h4 Type of dish
-          %li{:class => @active_all ? 'active' : ''}
-            %a{:href => "?type="}
-              All dishes
-          %li{:class => @active_main ? 'active' : ''}
-            %a{:href => "?type=Main"}
-              Main
-          %li{:class => @active_sides ? 'active' : ''}
-            %a{:href => "?type=Sides"}
-              Sides
-          %li{:class => @active_salads ? 'active' : ''}
-            %a{:href => "?type=Salads"}
-              Salads
-          %li{:class => @active_soups ? 'active' : ''}
-            %a{:href => "?type=Soups"}
-              Soups
-          %li{:class => @active_desserts ? 'active' : ''}
-            %a{:href => "?type=Desserts"}
-              Desserts
+      %ul.nav.nav-list
+        %li
+          %h4 Type of dish
+        %li{:class => @active_all ? 'active' : ''}
+          %a{:href => "?type="}
+            All dishes
+        %li{:class => @active_main ? 'active' : ''}
+          %a{:href => "?type=Main"}
+            Main
+        %li{:class => @active_sides ? 'active' : ''}
+          %a{:href => "?type=Sides"}
+            Sides
+        %li{:class => @active_salads ? 'active' : ''}
+          %a{:href => "?type=Salads"}
+            Salads
+        %li{:class => @active_soups ? 'active' : ''}
+          %a{:href => "?type=Soups"}
+            Soups
+        %li{:class => @active_desserts ? 'active' : ''}
+          %a{:href => "?type=Desserts"}
+            Desserts
             
     .span10.content.grid
       - if @recipes.count == 0

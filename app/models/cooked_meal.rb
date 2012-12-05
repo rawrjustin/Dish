@@ -17,7 +17,7 @@ class CookedMeal < Meal
                                      :directions => self.directions,
                                      :time_in_minutes => self.time_in_minutes)
     self.cooked_meal_ingredients.each do |cooked_meal_ingredient|
-      temp_cmi = CookedMealIngredient.new(:amount => ratio * cooked_meal_ingredient.amount.to_f)
+      temp_cmi = CookedMealIngredient.new(:amount => (ratio * cooked_meal_ingredient.amount.to_f).round(2))
       temp_cmi.ingredient = cooked_meal_ingredient.ingredient
       new_cooked_meal.cooked_meal_ingredients << temp_cmi
     end
@@ -30,15 +30,15 @@ class CookedMeal < Meal
     self.cooked_meal_ingredients.each do |cooked_meal_ingredient|
       tc += cooked_meal_ingredient.ingredient.price * cooked_meal_ingredient.amount
     end
-    return tc
+    return tc.round(2)
   end
 
   attr_accessor :servings
   def cost_per_person
     if servings
-      return self.total_cost.to_f / servings.to_f
+      return (self.total_cost.to_f / servings.to_f).round(2)
     else
-      return self.total_cost.to_f / 200.to_f
+      return (self.total_cost.to_f / 200.to_f).round(2)
     end
   end
 
