@@ -7,7 +7,6 @@
 #   Mayor.create!(name: 'Emanuel', city: cities.first)
 seed_file = File.join(Rails.root, 'db', 'seed.yml')
 config = YAML::load_file(seed_file)
-User.create!(config["users"])
 Post.create!(config["posts"])
 Location.create!(config["locations"])
 config["ingredients"].each do |ingredient|

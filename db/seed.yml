@@ -1,14 +1,3 @@
-users:
-    -   name: "First User"
-        email: "user1@example.com"
-        password: "please"
-        password_confirmation: "please"
-
-    -   name: "Second User"
-        email: "user2@example.com"
-        password: "please"
-        password_confirmation: "please"
-
 posts:
     -   title: "How to grill chicken"
         thumb: "http://farm7.staticflickr.com/6086/6125643375_9907d36b88_n.jpg"
@@ -141,6 +130,12 @@ ingredients:
         location: "Safeway"
         price: "3"
         photo: "http://farm1.staticflickr.com/6/11533831_25b04bdb88_m.jpg"
+
+    -   name: "Chicken Thighs"
+        size: "lbs"
+        location: "Safeway"
+        price: "3"
+        photo: "http://farm9.staticflickr.com/8207/8248162808_3a53cab53f.jpg"
 
     -   name: "Lime Juice"
         size: "bottle"
@@ -616,6 +611,29 @@ cooked_meals:
                 size: "16"
             -   name: "Balsamic Vinaigrette"
                 size: "8"
+            -   name: "Salad Dressing"
+                size: "4"
+
+    -   name: "Soy Sauce Chicken & Salad"
+        description: "Korean-style chicken over rice with a traditional house salad"
+        directions: "Mix soy sauce, sugar, and water in a 1:1:1 ratio and stir together. Place mixture in a pot and bring to a boil. Add chicken to the pot when boiling. You can also add potatoes and baby carrots if you want. You should use 10 pounds of potatoes and 5 pounds of carrots per 40 people. Cut cucumbers into half-moons and tomatoes into wedges. Mix the vegetables together along with the salad mix. Make sure the chicken is thoroughly cooked."
+        time_in_minutes: "75"
+        thumb: "http://farm9.staticflickr.com/8063/8245320825_24dcfaf2e9_z.jpg"
+        ingredients:
+            -   name: "Chicken Thighs"
+                size: "150"
+            -   name: "Soy Sauce"
+                size: "100"
+            -   name: "Sugar"
+                size: "100"
+            -   name: "Iceberg Salad Mix"
+                size: "8"
+            -   name: "Rice"
+                size: "150"
+            -   name: "Cucumbers"
+                size: "8"
+            -   name: "Tomato"
+                size: "16"
             -   name: "Salad Dressing"
                 size: "4"
 
