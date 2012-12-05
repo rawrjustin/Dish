@@ -15,12 +15,14 @@
 	}
   
 	#title {
-		padding: 40px;
+		margin-top: 40px;
 		h1 {
+			background-color: rgba(0,0,0,0.3);
 			$c: rgba(255,255,255,1);
 			$c2: rgba(0,0,0,0.3);
 			color: $c;
 			font-size: 72px;
+			line-height: 200px;
 			text-align: center;
 			text-shadow: 4px 4px $c2;
 		}
