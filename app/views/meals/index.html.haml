@@ -26,4 +26,6 @@
           %a.span3.thumbnail.item{:href => meal_path(meal)}
             %img{:src => meal.thumb}
             %h1=meal.name
-        = paginate @meals
+      .row
+        .span12
+          = paginate @meals

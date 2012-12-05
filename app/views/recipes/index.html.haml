@@ -38,5 +38,6 @@
           %a.span3.thumbnail.item{:href => recipe_path(recipe)}
             %img{:src => recipe.thumbnail}
             %h1=recipe.name
-        = paginate @recipes
-        
+      .row
+        .span12
+          = paginate @recipes

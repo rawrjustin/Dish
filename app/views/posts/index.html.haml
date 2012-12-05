@@ -16,5 +16,7 @@
             %img{:src => post.thumbnail}
             %h1=post.title
             %h2=" by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")
-        = paginate @posts
+      .row
+        .span12
+          = paginate @posts
         
