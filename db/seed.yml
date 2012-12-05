@@ -316,6 +316,24 @@ ingredients:
         price: "9"
         photo: "http://farm9.staticflickr.com/8350/8248009916_1a02d1035d.jpg"
 
+    -   name: "Pork Shoulder"
+        size: "lbs"
+        location: "Costco"
+        price: "3"
+        photo: "http://farm9.staticflickr.com/8058/8248048556_0582f19176.jpg"
+
+    -   name: "Char Siu Sauce"
+        size: "jar"
+        location: "99 Ranch"
+        price: "4"
+        photo: "http://farm9.staticflickr.com/8203/8246980225_27f9a66e2d.jpg"
+
+    -   name: "Cilantro"
+        size: "bunches"
+        location: "Safeway"
+        price: ".20"
+        photo: "http://farm9.staticflickr.com/8489/8248048606_5d9741e743.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -409,10 +427,23 @@ cooked_meals:
                 size: "32"
 
     -   name: "Vietnamese Sandwiches"
-        description: "Great for lunch."
-        directions: "Cook stuff. Sandwichify it."
-        time_in_minutes: "30"
+        description: "BBQ Pork Vietnamese sandwiches great for lunch."
+        directions: "This part should be done the night before! Thaw the pork shoulder. To quicken the process, leave pork shoulder still in the package with lukewarm water. Wash the pork and pat dry with a paper towel. When done, place pork in a container and cover with the Char Siu sauce and mix. Let it sit over night. The longer it sits, the better the taste. On the next day, preheat oven to 375. Lay pork in aluminum trays and set in oven for 25 to 30 minutes and flip over the pork. Let it bake for another 15-20 minutes. Make sure to check that the inside is cooked. Cut the pork into slices. You can grill the buns if you want to for crispness. During the baking time, wash and cut the cucumbers into half-circles, wash and pull apart the cilantro. Put into sandwiches when ready!"
+        time_in_minutes: "70"
         thumb: "http://farm8.staticflickr.com/7111/8160415698_1bb88ae465.jpg"
+        ingredients:
+            -   name: "Hoagie Rolls"
+                size: "200"
+            -   name: "Char Siu Sauce"
+                size: "25"
+            -   name: "Pork Shoulder"
+                size: "100"
+            -   name: "Shredded Carrots"
+                size: "10"
+            -   name: "Cucumbers"
+                size: "8"
+            -   name: "Cilantro"
+                size: "32"
 
     -   name: "Grilled Hotdogs"
         description: "An All-American grilling classic"
