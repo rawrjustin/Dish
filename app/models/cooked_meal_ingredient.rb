@@ -9,4 +9,8 @@ class CookedMealIngredient < ActiveRecord::Base
     c.update_cost
     c.save
   end
+
+  def price
+    return (self.amount * self.ingredient.price).round(2)
+  end
 end
