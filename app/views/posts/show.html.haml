@@ -11,14 +11,14 @@
 
 #show_posts
   .row
-    .hero-unit
+    .hero-unit.panel-red
       %img{:id => "thumb", :src => @post.thumbnail}
       .hero-content
         %h1= @post.title
-        %h5
+        %p
           ="by " + @post.author
           =@post.created_at.strftime("%b %d, %Y")
 
   .row
     .span12#content
-      = @post.content
+      %p= @post.content

@@ -11,14 +11,14 @@
 
 #show_catered_meals
   .row
-    .hero-unit
+    .hero-unit.panel-red
       %img{:id => "thumb", :src => @meal.thumb}
       .hero-content
         %h1= @meal.name  
         = "#{@meal.address} | Phone: #{@meal.phone}"
       
   .row
-    .span12
+    .span12.content#catered_trays
       %table.table
         %tr
           %th

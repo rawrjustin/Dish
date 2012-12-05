@@ -30,8 +30,34 @@
 // Example:
 // @linkColor: #ff0000;
 
-//@linkColor: #f80;
-//@linkColorHover: #333;
+/* -----------------------------------*/
+/* ---------->>> Colors <<<-----------*/
+/* -----------------------------------*/
+
+@modernWhite: rgb(240,240,240);
+@modernGreen: rgb(130,220,0);
+@modernOrange: rgb(244,163,51);
+@modernBlue: rgb(0,153,255);
+@modernBlack: rgb(22,22,22);
+@modernRed: rgb(195,55,0);
+
+/* -----------------------------------*/
+/* -------->>> Typography <<<---------*/
+/* -----------------------------------*/
+
+@sansFontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@serifFontFamily: 'Century Schoolbook', Georgia, Times, serif;
+@baseFontFamily: @sansFontFamily;
+@baseFontSize: 18px;
+@baseLineHeight: 24px;
+@navbarText: rgb(55,55,55);
+@navbarHeight: 50px;
+@navbarBackground: rgba(255,255,255,0);
+@navbarBackgroundHighlight: rgba(255,255,255,0);
+
+/* -----------------------------------*/
+/* ------->>> Global Styles <<<-------*/
+/* -----------------------------------*/
 
 a {
 	&:hover {
@@ -39,6 +65,20 @@ a {
 	}
 }
 
+p {
+	font-family: @serifFontFamily;
+	letter-spacing: 0.2px;
+}
+
+.content {
+  font-family: @serifFontFamily;
+}
+
+/* -----------------------------------*/
+/* ------>>> Global Elements <<<------*/
+/* -----------------------------------*/
+
+/* At the top of most pages */
 #nav {
 	form {
 		margin-bottom: 0;
@@ -60,11 +100,65 @@ a {
 	}
 }
 
+/* At the top of view pages */
 ul.breadcrumb {
 	background-color: rgb(255,255,255);
 }
 
-@navbarText: rgb(55,55,55);
-@navbarHeight: 50px;
-@navbarBackground: rgba(255,255,255,0);
-@navbarBackgroundHighlight: rgba(255,255,255,0);
+/* At the top of most pages */
+.hero-unit {
+	img#thumb {
+		float: right;
+		height: 150px;
+		margin-right: 25px;
+		width: 270px;
+	}
+	.hero-content {
+		color: white;
+		font-family: @sansFontFamily;
+		text-shadow: 2px 2px rgba(128,128,128,0.5);
+	}
+}
+
+/* Browsing meals, recipes, posts... */
+.grid {
+	padding-top: 12px;
+	.item {
+		margin: 3px;
+		img {
+			height: 150px;
+			width: 400px;
+		}
+		h1 {
+			color: @modernBlack;
+			font-size: 16px;
+			font-weight: normal;
+			letter-spacing: 1px;
+			line-height: 20px;
+			margin-left: 8px;
+			margin-right: 8px;
+			overflow: hidden;
+			text-align: center;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		h2 {
+			color: #999;
+			font-size: 12px;
+			font-weight: 100;
+			letter-spacing: 1px;
+			line-height: 12px;
+			margin-left: 8px;
+			margin-right: 8px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/* Background panels */
+.panel-white { background-color: @modernWhite; }
+.panel-green { background-color: @modernGreen; }
+.panel-orange { background-color: @modernOrange; }
+.panel-blue { background-color: @modernBlue; }
+.panel-black { background-color: @modernBlack; }
+.panel-red { background-color: @modernRed; }

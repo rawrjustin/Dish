@@ -1,13 +1,13 @@
 #meals
   .row
-    .hero-unit
+    .hero-unit.panel-green
       .hero-content
         %h1 Large group meals
         %p
           Each of the selections below are complete meals that will feed a large group.
 
   .row
-    .span2
+    .span2.content
       %div{"data-spy" => "affix", "data-offset-top" => "200"}
         %ul.nav.nav-list
           %li
@@ -19,12 +19,12 @@
             %a{:href => "?cost=Under%20$2"}
               $2 per person
       
-    .span10#meals_grid
+    .span10.content.grid
       - if @meals.count == 0
         .alert.alert-info Sorry, no results match your criteria.
       - else
         - @meals.each do |meal|
-          %a.span3.thumbnail.meal{:href => meal_path(meal)}
+          %a.span3.thumbnail.item{:href => meal_path(meal)}
             %img{:src => meal.thumb}
             %h1=meal.name
         = paginate @meals

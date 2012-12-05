@@ -1,18 +1,18 @@
 #posts
   .row
-    .hero-unit
+    .hero-unit.panel-orange
       .hero-content
         %h1 Cooking tips
         %p
-          Train up!
+          Get better at cooking!
 
-  .row      
-    .span10#posts_grid
+  .row
+    .span10.content.grid
       - if @posts.count == 0
         .alert.alert-info Sorry, no results match your criteria.
       - else
         - @posts.each do |post|
-          %a.span3.thumbnail.post{:href => post_path(post)}
+          %a.span3.thumbnail.item{:href => post_path(post)}
             %img{:src => post.thumbnail}
             %h1=post.title
             %h2=" by " + post.author + " | " + post.created_at.strftime("%b %d, %Y")

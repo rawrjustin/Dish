@@ -1,13 +1,13 @@
 #recipes
   .row
-    .hero-unit
+    .hero-unit.panel-blue
       .hero-content
         %h1 Small group meals
         %p
           Each of the selections below are tasty dishes for small groups.
         
   .row
-    .span2
+    .span2.content
       %div{"data-spy" => "affix", "data-offset-top" => "200"}
         %ul.nav.nav-list
           %li
@@ -31,12 +31,12 @@
             %a{:href => "?type=Desserts"}
               Desserts
             
-    .span10#recipes_grid
+    .span10.content.grid
       - if @recipes.count == 0
         .alert.alert-info Sorry, no results match your criteria.
       - else
         - @recipes.each do |recipe|
-          %a.span3.thumbnail.recipe{:href => recipe_path(recipe)}
+          %a.span3.thumbnail.item{:href => recipe_path(recipe)}
             %img{:src => recipe.thumbnail}
             %h1=recipe.name
         = paginate @recipes
