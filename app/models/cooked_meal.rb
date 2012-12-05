@@ -5,6 +5,7 @@ class CookedMeal < Meal
   has_many :cooked_meal_ingredients
   accepts_nested_attributes_for :cooked_meal_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :cooked_meal_ingredients
+  before_validation :update_cost
 
   def scale(amount_people)
     #returns a CookedMeal object replica that has it's cookedmealingredients scaled
@@ -19,7 +20,7 @@ class CookedMeal < Meal
       temp_cmi.ingredient = cooked_meal_ingredient.ingredient
       new_cooked_meal.cooked_meal_ingredients << temp_cmi
     end
-    new_cooked_meal.cpp = new_cooked_meal.total_cost / amount_people.to_f
+    new_cooked_meal.servings = amount_people
     return new_cooked_meal
   end
 
@@ -31,22 +32,12 @@ class CookedMeal < Meal
     return tc
   end
 
-  attr_accessor :cpp
+  attr_accessor :servings
   def cost_per_person
-    if cpp
-      return cpp
+    if servings
+      return self.total_cost.to_f / servings.to_f
     else
       return self.total_cost.to_f / 200.to_f
-    end
-  end
-
-  def cost
-    if cost_per_person < 2.0
-      return "Under $2"
-    elsif cost_per_person < 5.0
-      return "Under $5"
-    else
-      return "Over $5"
     end
   end
 
@@ -69,6 +60,17 @@ class CookedMeal < Meal
       end
     end
     return total_time.strip
+  end
+
+  def update_cost
+    costpp = self.cost_per_person.to_f
+    if costpp < 2.0
+      self.cost = "Under $2"
+    elsif costpp < 5.0
+      self.cost = "Under $5"
+    else
+      self.cost = "Over $5"
+    end
   end
 
 end
