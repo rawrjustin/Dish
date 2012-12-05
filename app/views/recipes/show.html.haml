@@ -42,7 +42,7 @@
         Hover over ingredients for a photo, where to buy, and tips.
       %table.table
         - @recipe.recipe_ingredients.each do |ing|
-          %tr
+          %tr.
             %td
               = "#{ing.amount}x"
             %td
@@ -62,10 +62,13 @@
             Cost per person
           %td
             = "$#{@recipe.cost_per_person}"
-            
-
   .row
     .span12#notes
       %h2 3. Preparation
       %div= "#{@recipe.directions}"
 
+:javascript
+  - @recipe.recipe_ingredients.each do |ing|
+    $('#mylink').click(function() {  
+      $('#mylink').after("#{escape_javascript new_snazzy_select_tag(myarray)}");
+    };
