@@ -41,13 +41,25 @@
       %p
         Hover over ingredients for a photo, where to buy, and tips.
       %table.table
+        %tr
+          %th
+            Quantity
+          %th
+            Item
+          %th
+            Buy at
+          %th
+            Cost
         - @recipe.recipe_ingredients.each do |ing|
-          %tr.
+          %tr
             %td
               = "#{ing.amount}x"
             %td
-              %a{:href => ""}
+              %a{:target => "_blank", :href => "#{ing.ingredient.photo}", :class => "#{ing.ingredient.name}", :rel => "popover", "data-content" => "This is a test"}
                 = ing.ingredient.display_name
+            %td
+              %a{:href => ""}
+                = ing.ingredient.location.name
             %td
               = "$#{ing.amount * ing.ingredient.price}"
         %tr
@@ -66,9 +78,3 @@
     .span12#notes
       %h2 3. Preparation
       %div= "#{@recipe.directions}"
-
-:javascript
-  - @recipe.recipe_ingredients.each do |ing|
-    $('#mylink').click(function() {  
-      $('#mylink').after("#{escape_javascript new_snazzy_select_tag(myarray)}");
-    };
