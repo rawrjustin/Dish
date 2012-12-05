@@ -244,6 +244,24 @@ ingredients:
         price: ".10"
         photo: "http://farm9.staticflickr.com/8490/8246219354_b90536a114_b.jpg"
 
+    -   name: "Wasabi"
+        size: "tubs"
+        location: "Costco"
+        price: "8"
+        photo: "http://farm9.staticflickr.com/8061/8246857508_996ceb5175.jpg"
+
+    -   name: "Avocado"
+        size: "count"
+        location: "Costco"
+        price: ".90"
+        photo: "http://farm9.staticflickr.com/8345/8245789977_3607c0ea35.jpg"
+
+    -   name: "Ghirardelli Brownie Mix"
+        size: "bag"
+        location: "Costco"
+        price: "3"
+        photo: "http://farm9.staticflickr.com/8479/8246866258_e01f60b838_m.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -276,6 +294,9 @@ recipes:
         servings: "15"
         recipe_type: "Desserts"
         image: "http://farm4.static.flickr.com/3264/2560601935_875e042485.jpg"
+        ingredients:
+            -   name: "Ghirardelli Brownie Mix"
+                size: "1"
 
     -   name: "Pasta with Beef"
         description: "Classic dish, easy to make at home."
@@ -403,6 +424,29 @@ cooked_meals:
                 size: "5"
             -   name: "Sugar"
                 size: "5"
+
+    -   name: "California Roll"
+        description: "A Japanese-American classic roll. Simple Sushi dish"
+        directions: "Thaw imitation crab. Wash and cook rice. Place imitation crab and mayo in a large bowl. Add pepper to the mixture. Wash cucumbers. Cut and grate cucumber to small thin slices with a Japanese slicer. Cut the remainder of the cucumber when it is too small to grate. Slice avocado long way around the seed. Cut seaweed into 4s."
+        time_in_minutes: "60"
+        thumb: "http://farm9.staticflickr.com/8338/8246846854_e6b7652a75_b.jpg"
+        ingredients:
+            -   name: "Rice"
+                size: "24"
+            -   name: "Mayonnaise"
+                size: "16"
+            -   name: "Roasted Seaweed"
+                size: "400"
+            -   name: "Imitation Crab"
+                size: "40"
+            -   name: "Soy Sauce"
+                size: "16"
+            -   name: "Cucumbers"
+                size: "32"
+            -   name: "Avocado"
+                size: "128"
+            -   name: "Wasabi"
+                size: "16"
 
 catered_meals:
     -   name: "Hong Kong Express"
