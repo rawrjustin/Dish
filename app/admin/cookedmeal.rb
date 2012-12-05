@@ -17,9 +17,13 @@ ActiveAdmin.register CookedMeal do
       row :directions
       row :time
       row :cost
-      table_for meal.cooked_meal_ingredients do
-        column "Ingredients" do |ing|
-           ing.amount.to_s + " - " + ing.ingredient.display_name
+      panel "Ingredients" do
+        table_for meal.cooked_meal_ingredients do
+          column :amount
+          column :ingredient
+          column "price" do |i| "$" + i.ingredient.price.to_s end
+          column "location" do |i| i.ingredient.location.name end
+          column "notes" do |i| i.ingredient.notes end
         end
       end
     end
