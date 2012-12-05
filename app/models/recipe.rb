@@ -8,7 +8,6 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :recipe_ingredients
   #mount_uploader :image, ImageUploader
-
   def scale(amount_people)
     #returns a Recipe object replica that has it's recipeingredients scaled
     if self.servings.to_f > 0.0
