@@ -304,6 +304,12 @@ ingredients:
         price: "8"
         photo: "http://farm9.staticflickr.com/8345/8246373492_68bafcecb8.jpg"
 
+    -   name: "Panda Express Orange Glaze"
+        size: "44oz bottles"
+        location: "Costco"
+        price: "9"
+        photo: "http://farm9.staticflickr.com/8345/8246373492_68bafcecb8.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -382,9 +388,17 @@ cooked_meals:
         thumb: "http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg"
         ingredients:
             -   name: "Meatballs"
-                size: "10"
-            -   name: "Potato Salad"
-                size: "15"
+                size: "16"
+            -   name: "Panda Express Orange Glaze"
+                size: "12"
+            -   name: "Iceberg Salad Mix"
+                size: "8"
+            -   name: "Salad Dressing"
+                size: "16"
+            -   name: "Cucumbers"
+                size: "8"
+            -   name: "Tomato"
+                size: "32"
 
     -   name: "Vietnamese Sandwiches"
         description: "Great for lunch."
