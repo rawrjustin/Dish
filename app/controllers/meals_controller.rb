@@ -17,7 +17,6 @@ class MealsController < ApplicationController
 
   def show
     @unscaled_meal = Meal.find(params[:id])
-    @mealID = params[:id]
     if @unscaled_meal.type == "CookedMeal"
       if !params[:servings]
         params[:servings] = "200"
@@ -31,20 +30,5 @@ class MealsController < ApplicationController
       @meal = @unscaled_meal
       render "show_catered_meal"
     end
-    @comments = @unscaled_meal.comments.recent.limit(50).all		
-
-  end
-  
-  def add_new_comment
-	  rec = Meal.find(params[:meal_id])
-
-	  if params[:title].length == 0 or params[:comment].length ==0
-	     flash[:alert] = "You need to enter both your name and a comment"
-	     redirect_to :action => :show, :id => rec
-	  else
-	     rec.comments.create(:title => params[:title], :comment => params[:comment])
-	     #rec.comments << Recipe.new(params[:comment])
-	     redirect_to :action => :show, :id => rec
-	  end
   end
 end

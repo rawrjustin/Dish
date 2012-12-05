@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes, :comments
+  attr_accessible :name, :description, :directions, :time_in_minutes, :servings, :image, :recipe_type, :ingredient_ids, :recipe_ingredients_attributes
   validates :name, :description, :directions, :time_in_minutes, :servings, :recipe_type, :presence => true
   validates_numericality_of :time_in_minutes, :servings, :total_cost, :greater_than_or_equal_to => 0
   validates :recipe_type,
@@ -8,8 +8,6 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :recipe_ingredients
   #mount_uploader :image, ImageUploader
-  acts_as_commentable
-  
   def scale(amount_people)
     #returns a Recipe object replica that has it's recipeingredients scaled
     if self.servings.to_f > 0.0
@@ -18,7 +16,6 @@ class Recipe < ActiveRecord::Base
       ratio = 1.0
     end
     new_recipe = Recipe.new(:name => self.name,
-                                     :id => self.id,
                                      :description => self.description,
                                      :servings => amount_people,
                                      :image => self.image,

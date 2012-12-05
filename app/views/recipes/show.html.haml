@@ -46,7 +46,7 @@
             %td
               = "#{ing.amount}x"
             %td
-              %a{:href => ""} 
+              %a{:href => ""}
                 = ing.ingredient.display_name
             %td
               = "$#{ing.amount * ing.ingredient.price}"
@@ -66,30 +66,3 @@
     .span12#notes
       %h2 3. Preparation
       %div= "#{@recipe.directions}"
-
-  .row
-    .span12
-      %h2 4. Comments
-      .hero-unit
-        - @comments.each do |comment|
-          .media
-            .pull-left
-              %img.media-object{ :src => "/assets/miniuser.png", :alt => "user" }
-            .media-body
-              %h4.media-heading
-                = comment["title"]
-              = comment["comment"]
-              
-        = form_tag "/small/add_new_comment" do
-          = hidden_field_tag "recipe_id", @recID
-          = text_field_tag "title", nil, :placeholder => "Name"
-          <br>
-          #comment
-            = text_area_tag "comment", nil, :placeholder => "Comment", :cols => 40
-          = submit_tag "Post Comment"
-    
-:javascript
-  - @recipe.recipe_ingredients.each do |ing|
-    $('#mylink').click(function() {  
-      $('#mylink').after("#{escape_javascript new_snazzy_select_tag(myarray)}");
-    };

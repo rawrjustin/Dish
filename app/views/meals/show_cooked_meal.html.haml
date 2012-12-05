@@ -74,25 +74,3 @@
     .span12#notes
       %h2 3. Preparation
       %div= "#{@meal.directions}"
-  
-  .row
-    .span12
-      %h2 4. Comments
-      .hero-unit
-        - @comments.each do |comment|
-          .media
-            .pull-left
-              %img.media-object{ :src => "/assets/miniuser.png", :alt => "user" }
-            .media-body
-              %h4.media-heading
-                = comment["title"]
-              = comment["comment"]
-              
-        = form_tag "/large/add_new_comment" do
-          = hidden_field_tag "meal_id", @mealID
-          = text_field_tag "title", nil, :placeholder => "Name"
-          <br>
-          #comment
-            = text_area_tag "comment", nil, :placeholder => "Comment", :cols => 40
-          = submit_tag "Post Comment"
-      
