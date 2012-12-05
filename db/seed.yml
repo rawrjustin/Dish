@@ -256,7 +256,6 @@ cooked_meals:
 
     -   name: "Salmon Bibimbap"
         description: "A Simple Korean meal"
-        servings: "200"
         directions: "Oven to 400 degrees. Wash and Cook Rice. Prepare Salmon with light touch of salt & pepper. Cut tofu into 1/2 inch cubes. Wash and cut vegetables. Organize into bowls and you're done!"
         time_in_minutes: "60"
         thumb: "http://farm9.staticflickr.com/8206/8245871658_2e495bef7f_h.jpg"
@@ -284,7 +283,6 @@ cooked_meals:
 
     -   name: "Sushi Bake"
         description: "A Japanese fusion meal"
-        servings: "200"
         directions: "Wash and cook rice. Wash shitake mushrooms until soft and thaw shrimp and imitation crab (if necessary). Wash and chop vegetables and imitation crab. Cook shitake mushrooms with soy sauce and sugar. Mix all vegetables and imitation crab with mayo, sour cream, furikake. In aluminum tray, put a layer of rice with a cover of your mixture (Ratio of 1.5:1, rice:mixture). Sprinkle masago and green onion (optional). Cut seaweed into 4's, chop romaine lettuce into 1-inch pieces and cucumbers into half-circles. Make Salad Dressing with balsamic vinegar, olive oil, soy sauce and sugar"
         time_in_minutes: "80"
         thumb: "http://farm9.staticflickr.com/8068/8244890595_44423ca495.jpg"

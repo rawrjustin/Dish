@@ -6,14 +6,12 @@ class MealsController < ApplicationController
     if not params[:q]
       params[:q] = {}
     end
-    if params[:cost]
+    if params[:cost] == "Under $2"
       params[:q][:cost_eq] = params[:cost]
-    else
-      params[:q][:cost_eq] = "Under $5"
     end
     @q = Meal.search(params[:q])
     @meals = @q.result.page(params[:page])
-		
+
 		@search_field = :name_or_description_cont
   end
 

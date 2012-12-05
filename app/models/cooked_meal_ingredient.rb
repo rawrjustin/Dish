@@ -5,7 +5,8 @@ class CookedMealIngredient < ActiveRecord::Base
   belongs_to :ingredient
   belongs_to :cooked_meal
   after_commit do
-    puts self.cooked_meal.ingredients
-    puts self.cooked_meal.cooked_meal_ingredients
+    c = CookedMeal.find(self.cooked_meal.id)
+    c.update_cost
+    c.save
   end
 end
