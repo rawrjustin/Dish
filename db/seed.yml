@@ -154,6 +154,12 @@ ingredients:
         price: "5.45"
         photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
 
+    -   name: "Hot Dog"
+        size: "bag"
+        location: "Safeway"
+        price: "50"
+        photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -224,7 +230,6 @@ recipes:
 cooked_meals:
     -   name: "Asian Meatballs, Salad, and Rice"
         description: "The perfect large group meal."
-        servings: "200"
         directions: "Cook meatballs at 400F for one hour."
         time_in_minutes: "60"
         thumb: "http://farm8.staticflickr.com/7270/8160380305_185c29e441.jpg"
@@ -236,21 +241,21 @@ cooked_meals:
 
     -   name: "Vietnamese Sandwiches"
         description: "Great for lunch."
-        servings: "200"
         directions: "Cook stuff. Sandwichify it."
         time_in_minutes: "30"
         thumb: "http://farm8.staticflickr.com/7111/8160415698_1bb88ae465.jpg"
 
     -   name: "Grilled Hotdogs"
         description: "An All-American classic."
-        servings: "300"
         directions: "..."
         time_in_minutes: "45"
         thumb: "http://farm8.staticflickr.com/7110/8160415758_6f1c3a38bc.jpg"
+        ingredients:
+            -   name: "Hot Dog"
+                size: "15"
 
     -   name: "Salmon Bibimbap"
         description: "A Simple Korean meal"
-        servings: "200"
         directions: "Oven to 400 degrees. Wash and Cook Rice. Prepare Salmon with light touch of salt & pepper. Cut tofu into 1/2 inch cubes. Wash and cut vegetables. Organize into bowls and you're done!"
         time_in_minutes: "60"
         thumb: "http://farm9.staticflickr.com/8206/8245871658_2e495bef7f_h.jpg"
@@ -278,7 +283,6 @@ cooked_meals:
 
     -   name: "Sushi Bake"
         description: "A Japanese fusion meal"
-        servings: "200"
         directions: "Wash and cook rice. Wash shitake mushrooms until soft and thaw shrimp and imitation crab (if necessary). Wash and chop vegetables and imitation crab. Cook shitake mushrooms with soy sauce and sugar. Mix all vegetables and imitation crab with mayo, sour cream, furikake. In aluminum tray, put a layer of rice with a cover of your mixture (Ratio of 1.5:1, rice:mixture). Sprinkle masago and green onion (optional). Cut seaweed into 4's, chop romaine lettuce into 1-inch pieces and cucumbers into half-circles. Make Salad Dressing with balsamic vinegar, olive oil, soy sauce and sugar"
         time_in_minutes: "80"
         thumb: "http://farm9.staticflickr.com/8068/8244890595_44423ca495.jpg"
@@ -286,7 +290,7 @@ cooked_meals:
 catered_meals:
     -   name: "Hong Kong Express"
         description: "Cheap and quick, we usually order from them!"
-        servings: "400"
         phone: "5355354422"
         address: "3445 Telegraph Ave, Berkeley"
         thumb: "http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg"
+        cost: "Under $2"

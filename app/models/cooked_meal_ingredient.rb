@@ -4,4 +4,9 @@ class CookedMealIngredient < ActiveRecord::Base
   validates_numericality_of :amount
   belongs_to :ingredient
   belongs_to :cooked_meal
+  after_commit do
+    c = CookedMeal.find(self.cooked_meal.id)
+    c.update_cost
+    c.save
+  end
 end

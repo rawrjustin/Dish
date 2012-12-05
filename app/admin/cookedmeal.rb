@@ -2,7 +2,6 @@ ActiveAdmin.register CookedMeal do
   index do
     column :name
     column :description
-    column :servings
     default_actions
   end
 
@@ -17,7 +16,6 @@ ActiveAdmin.register CookedMeal do
       row :description
       row :directions
       row :time
-      row :servings
       row :cost
       table_for meal.cooked_meal_ingredients do
         column "Ingredients" do |ing|
@@ -42,7 +40,6 @@ ActiveAdmin.register CookedMeal do
       end
       f.input :directions
       f.input :time_in_minutes
-      f.input :servings
     end
     f.buttons
   end

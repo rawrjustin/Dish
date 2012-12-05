@@ -26,7 +26,7 @@ class Recipe < ActiveRecord::Base
       temp_cmi = RecipeIngredient.new(:amount => ratio * recipe_ingredient.amount.to_f)
       temp_cmi.ingredient = recipe_ingredient.ingredient
       new_recipe.recipe_ingredients << temp_cmi
-      
+
     end
     return new_recipe
   end
