@@ -43,4 +43,14 @@ config["cooked_meals"].each do |meal|
     end
   end
 end
-CateredMeal.create!(config["catered_meals"])
+config["catered_meals"].each do |meal|
+  tray_list = meal.delete("trays")
+  m = CateredMeal.create!(meal)
+  if tray_list
+    tray_list.each do |tray|
+      cmt = CateredMealTray.new(tray)
+      cmt.catered_meal = m
+      cmt.save!
+    end
+  end
+end
