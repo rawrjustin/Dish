@@ -16,17 +16,17 @@ class Recipe < ActiveRecord::Base
       ratio = 1.0
     end
     new_recipe = Recipe.new(:name => self.name,
-                                     :description => self.description,
-                                     :servings => amount_people,
-                                     :image => self.image,
-                                     :directions => self.directions,
-                                     :time_in_minutes => self.time_in_minutes)
+                            :description => self.description,
+                            :servings => self.servings,
+                            :image => self.image,
+                            :directions => self.directions,
+                            :time_in_minutes => self.time_in_minutes)
     self.recipe_ingredients.each do |recipe_ingredient|
       temp_cmi = RecipeIngredient.new(:amount => (ratio * recipe_ingredient.amount.to_f).round(2))
       temp_cmi.ingredient = recipe_ingredient.ingredient
       new_recipe.recipe_ingredients << temp_cmi
-
     end
+    new_recipe.scaled_servings = amount_people
     return new_recipe
   end
 
@@ -38,12 +38,13 @@ class Recipe < ActiveRecord::Base
     return tc.round(2)
   end
 
+  attr_accessor :scaled_servings
   def cost_per_person
-    # cost per person
-    if servings > 0
-      cpp = self.total_cost.to_f / self.servings.to_f
+    if scaled_servings
+      return (self.total_cost.to_f / scaled_servings.to_f).round(2)
+    else
+      return (self.total_cost.to_f / self.servings.to_f).round(2)
     end
-    return cpp.to_f.round(2)
   end
 
   def time

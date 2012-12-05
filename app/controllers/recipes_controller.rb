@@ -17,19 +17,21 @@ class RecipesController < ApplicationController
     end
     @q = Recipe.search(params[:q])
     @recipes = @q.result.page(params[:page])
-		
+
 		@search_field = :name_or_description_cont
   end
 
   def show
-    @unscaled_recipe = Recipe.find(params[:id])
-		if !params[:servings]
-			params[:servings] = "10"
-		end
+    @active_default = !params[:servings] || params[:servings] == ""
 		@active_5 = params[:servings] == "5"
 		@active_10 = params[:servings] == "10"
 		@active_20 = params[:servings] == "20"
 		@active_50 = params[:servings] == "50"
-		@recipe = @unscaled_recipe.scale(params[:servings])
+    @unscaled_recipe = Recipe.find(params[:id])
+		if !params[:servings] || params[:servings] == ""
+      @recipe = @unscaled_recipe
+    else
+      @recipe = @unscaled_recipe.scale(params[:servings])
+		end
 	end
 end
