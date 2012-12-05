@@ -42,7 +42,7 @@
         Hover over ingredients for a photo, where to buy, and tips.
       %table.table
         - @recipe.recipe_ingredients.each do |ing|
-          %tr.
+          %tr
             %td
               = "#{ing.amount}x"
             %td
