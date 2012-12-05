@@ -220,6 +220,12 @@ ingredients:
         price: ".45"
         photo: "http://farm9.staticflickr.com/8489/8246219404_800ae1064a.jpg"
 
+    -   name: "Roma Tomatoes"
+        size: "box"
+        location: "Costco"
+        price: "8"
+        photo: "http://farm9.staticflickr.com/8061/8246925654_e0fab746ed.jpg"
+
     -   name: "Balsamic Vinegar"
         size: "cups"
         location: "Safeway"
@@ -261,6 +267,30 @@ ingredients:
         location: "Costco"
         price: "3"
         photo: "http://farm9.staticflickr.com/8479/8246866258_e01f60b838_m.jpg"
+
+    -   name: "Hoagie Rolls"
+        size: "count"
+        location: "Costco"
+        price: ".20"
+        photo: "http://farm9.staticflickr.com/8346/8246906450_18a76f0ab0_b.jpg"
+
+    -   name: "Shredded Mozarella Cheese"
+        size: "bags"
+        location: "Costco"
+        price: "8"
+        photo: "http://farm9.staticflickr.com/8338/8246912760_ff59f686e5.jpg"
+
+    -   name: "Iceberg Salad Mix"
+        size: "bags"
+        location: "Costco"
+        price: "4"
+        photo: "http://farm9.staticflickr.com/8482/8246373540_6885b76e46_b.jpg"
+
+    -   name: "Salad Dressing"
+        size: "bottle"
+        location: "Costco"
+        price: "5"
+        photo: "http://farm9.staticflickr.com/8057/8245845481_ee99fcfb29.jpg"
 
 recipes:
     -   name: "BBQ Chicken"
@@ -448,6 +478,27 @@ cooked_meals:
             -   name: "Wasabi"
                 size: "16"
 
+    -   name: "Meatball Sandwich & Salad"
+        description: "Fast and easy meatball sandwich"
+        directions: "Preheat oven to 375. Place meatballs in aluminum tray (1 bag per tray) and bake for 45 minutes. Pour pasta sauce into a pot and heat. Add meatballs into pot."
+        time_in_minutes: "65"
+        thumb: "http://farm9.staticflickr.com/8338/8245824377_7a70a3d2ca.jpg"
+        ingredients:
+            -   name: "Meatballs"
+                size: "16"
+            -   name: "Pasta Sauce"
+                size: "8"
+            -   name: "Hoagie Rolls"
+                size: "200"
+            -   name: "Shredded Mozarella Cheese"
+                size: "8"
+            -   name: "Iceberg Salad Mix"
+                size: "8"
+            -   name: "Roma Tomatoes"
+                size: "4"
+            -   name: "Salad Dressing"
+                size: "12"
+
 catered_meals:
     -   name: "Hong Kong Express"
         description: "Cheap and quick, we usually order from them!"
@@ -455,3 +506,4 @@ catered_meals:
         address: "3445 Telegraph Ave, Berkeley"
         thumb: "http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg"
         cost: "Under $2"
+
