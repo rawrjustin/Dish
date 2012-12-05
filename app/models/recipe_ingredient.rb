@@ -4,4 +4,8 @@ class RecipeIngredient < ActiveRecord::Base
   validates_numericality_of :amount
   belongs_to :ingredient
   belongs_to :recipe
+
+  def price
+    return (self.amount * self.ingredient.price).round(2)
+  end
 end
