@@ -8,16 +8,15 @@
 
   .row
     .span2.content
-      %div{"data-spy" => "affix", "data-offset-top" => "200"}
-        %ul.nav.nav-list
-          %li
-            %h4 Budget
-          %li{:class => @active_5 ? 'active' : ''}
-            %a{:href => "?cost=Under%20$5"}
-              $5 per person
-          %li{:class => @active_2 ? 'active' : ''}
-            %a{:href => "?cost=Under%20$2"}
-              $2 per person
+      %ul.nav.nav-list
+        %li
+          %h4 Budget
+        %li{:class => @active_5 ? 'active' : ''}
+          %a{:href => "?cost=Under%20$5"}
+            $5 per person
+        %li{:class => @active_2 ? 'active' : ''}
+          %a{:href => "?cost=Under%20$2"}
+            $2 per person
       
     .span10.content.grid
       - if @meals.count == 0
