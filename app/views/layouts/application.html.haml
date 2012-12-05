@@ -9,11 +9,15 @@
         = csrf_meta_tags
         = yield(:head)
   %body
-    %header
-      = render 'layouts/navigation'
-      = render 'layouts/messages'
+    - if !@skip_header
+      %header
+        = render 'layouts/navigation'
+        = render 'layouts/messages'
+
     .container
       #main{:role => "main"}
         = yield
+
+    - if !@skip_footer
       %footer
     / ! end of #container
