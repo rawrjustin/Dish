@@ -29,16 +29,16 @@
             Dish
           %th
             Cost
-        - @meal.catered_meal_trays.each do |tray|
+        - @trays.each_pair do |k, v|
           %tr
             %td
-              = "#{tray.size}"
+              = k
             %td
-              %div
-                = "#{tray.servings} people"
+              - v.each do |tray|
+                %div= "#{tray.servings} people"
             %td
-              %div
-                = "#{tray.name}"
+              - v.each do |tray|
+                %div= tray.name
             %td
-              %div
-                = "$#{tray.cost}"
+              - v.each do |tray|
+                %div= "$#{tray.cost}"
