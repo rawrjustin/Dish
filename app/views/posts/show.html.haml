@@ -16,8 +16,7 @@
       .hero-content
         %h1= @post.title
         %p
-          ="by " + @post.author
-          =@post.created_at.strftime("%b %d, %Y")
+          ="by " + @post.author + " | " + @post.created_at.strftime("%b %d, %Y")
 
   .row
     .span12#content
