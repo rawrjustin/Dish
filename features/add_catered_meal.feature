@@ -11,5 +11,5 @@ Scenario: successfully adding a cooked meal recipe
   And I fill in fields for catered meal "Peking Express"
   And I press "Create Catered meal"
   Then I should see "successfully created."
-  When I follow "Catered Meals"
+  When I am on the admin catered meals page
   Then I should see "Peking Express"

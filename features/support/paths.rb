@@ -41,6 +41,21 @@ module NavigationHelpers
     when /the admin page/
       '/admin'
 
+    when /the admin locations page/
+      '/admin/locations'
+
+    when /the admin ingredients page/
+      '/admin/ingredients'
+
+    when /the admin catered meals page/
+      '/admin/catered_meals'
+
+    when /the admin cooked meals page/
+      '/admin/cooked_meals'
+
+    when /the admin recipes page/
+      '/admin/recipes'
+
     when /the admin sign in page/
       '/admin/sign_in'
 

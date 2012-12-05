@@ -9,10 +9,8 @@ When /^I fill in fields for cooked meal "(.*?)"$/ do |name|
   fill_in "Name", :with => name
   fill_in "Image URL", :with => "some_link"
   fill_in "Description", :with => "Delicious!"
-  fill_in "Ingredients", :with => "Onions and meat"
   fill_in "Directions", :with => "Cook it"
   fill_in "Time in minutes", :with => 30
-  fill_in "Servings", :with => 200
 end
 
 When /^I fill in fields for catered meal "(.*?)"$/ do |name|
@@ -21,7 +19,6 @@ When /^I fill in fields for catered meal "(.*?)"$/ do |name|
   fill_in "Description", :with => "Delicious!"
   fill_in "Phone", :with => "315-000-PEKI"
   fill_in "Address", :with => "2222 Telegraphy Ave."
-  fill_in "Servings", :with => 200
 end
 
 Given /^the following meals exist:?$/ do |table|
@@ -66,8 +63,8 @@ Given /^these cooked meals exist: "([^"]*)"$/ do |meals|
 end
 
 Given /^I search for "(.*?)"$/ do |meal_name|
-  fill_in "q_name_cont", :with => meal_name
-  click_button "Search"
+  fill_in "q_name_or_description_cont", :with => meal_name
+  page.evaluate_script("document.forms[0].submit()")
 end
 
 Given /^these \$(\d+) meals exist: "(.*?)"$/ do |amount, meals|

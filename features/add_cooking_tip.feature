@@ -11,5 +11,5 @@ Scenario: successfully adding a cooking tip
   And I fill in fields for cooking tip "How to fry eggs"
   And I press "Create Post"
   Then I should see "successfully created."
-  When I follow "Posts"
+  When I am on the cooking tips page
   Then I should see "How to fry eggs"

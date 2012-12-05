@@ -13,16 +13,16 @@ Feature: add an ingredient
         And I fill in "Address" with "5555 Swift Street"
         And I press "Create Location"
 
-        When I follow "Ingredients"
+        When I am on the admin ingredients page
         And I follow "New Ingredient"
         And I fill in "Name" with "Cucumber"
         And I fill in "Price" with "3.50"
         And I fill in "Photo" with "blahblah"
         And I fill in "Notes" with "get the green ones not the brown ones"
-        And I select "Costco" from "Location"
+        And I select "Costco (San Leandro)" from "Location"
         And I press "Create Ingredient"
         Then I should see "successfully created."
 
-        When I follow "Ingredients"
+        When I am on the admin ingredients page
         Then I should see "Cucumber"
         Then I should see "Costco (San Leandro)"

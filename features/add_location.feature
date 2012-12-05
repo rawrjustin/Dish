@@ -14,6 +14,6 @@ Feature: add a location
         And I press "Create Location"
         Then I should see "successfully created."
 
-        When I follow "Locations"
+        When I am on the admin locations page
         Then I should see "Costco"
         Then I should see "San Leandro"

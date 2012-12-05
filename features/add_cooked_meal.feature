@@ -11,5 +11,5 @@ Scenario: successfully adding a cooked meal recipe
   And I fill in fields for cooked meal "Orange Chicken"
   And I press "Create Cooked meal"
   Then I should see "successfully created."
-  When I follow "Cooked Meals"
+  When I am on the admin cooked meals page
   Then I should see "Orange Chicken"
