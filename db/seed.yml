@@ -292,6 +292,18 @@ ingredients:
         price: "5"
         photo: "http://farm9.staticflickr.com/8057/8245845481_ee99fcfb29.jpg"
 
+    -   name: "Tyson Teriyaki Chicken Thighs"
+        size: "bags"
+        location: "Costco"
+        price: "10"
+        photo: "http://farm9.staticflickr.com/8069/8245306575_1143168908_m.jpg"
+
+    -   name: "Balsamic Vinaigrette"
+        size: "bottle"
+        location: "Costco"
+        price: "8"
+        photo: "http://farm9.staticflickr.com/8345/8246373492_68bafcecb8.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -498,6 +510,25 @@ cooked_meals:
                 size: "4"
             -   name: "Salad Dressing"
                 size: "12"
+
+    -   name: "Chicken Teriyaki & Salad"
+        description: "Chicken Teriyaki with a traditional house salad"
+        directions: "Preheat oven to 400 degrees. Lay out chicken in aluminum tray and bake in the oven. Cut cucumbers into half-moons and tomatoes into wedges. Mix the vegetables together along with the salad."
+        time_in_minutes: "55"
+        thumb: "http://farm9.staticflickr.com/8063/8245320825_24dcfaf2e9_z.jpg"
+        ingredients:
+            -   name: "Tyson Teriyaki Chicken Thighs"
+                size: "40"
+            -   name: "Iceberg Salad Mix"
+                size: "8"
+            -   name: "Cucumbers"
+                size: "8"
+            -   name: "Tomato"
+                size: "16"
+            -   name: "Balsamic Vinaigrette"
+                size: "8"
+            -   name: "Salad Dressing"
+                size: "4"
 
 catered_meals:
     -   name: "Hong Kong Express"
