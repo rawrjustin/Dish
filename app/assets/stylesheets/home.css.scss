@@ -7,12 +7,14 @@ $modernGreen: rgb(130,220,0);
 $modernOrange: rgb(244,163,51);
 $modernBlue: rgb(0,153,255);
 $modernBlack: rgb(22,22,22);
+$modernRed: rgb(195,55,0);
 
 /* -----------------------------------*/
 /* -------->>> Typography <<<---------*/
 /* -----------------------------------*/
 
-$menuFont: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+$sansFont: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serifFont: 'Century Schoolbook', Georgia, Times, serif;
 
 /* -----------------------------------*/
 /* ---------->>> Layout <<<-----------*/
@@ -43,11 +45,11 @@ $menuFont: 'Segoe UI Light', 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvet
 		height: 200px;
   	text-shadow: 2px 2px rgba(128,128,128,0.5);
 		h1 {
-			font: 42px $menuFont;
+			font: 42px $sansFont;
 			margin: 24px;
 		}
 		h2 {
-			font: 20px $menuFont;
+			font: 20px $sansFont;
 			margin: 24px;
 		}
 	}
