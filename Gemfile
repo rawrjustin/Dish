@@ -36,3 +36,4 @@ gem 'therubyracer'
 gem "simplecov"
 gem "ransack"
 gem "kaminari"
+gem 'yaml_db'
