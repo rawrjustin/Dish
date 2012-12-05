@@ -68,15 +68,12 @@
         %tr
           %td
           %td
-            Total cost of ingredients
-          %td
-            = "$#{@recipe.total_cost}"
-        %tr
+            %h4 Total cost of ingredients
+            %h4 Cost per person
           %td
           %td
-            Cost per person
-          %td
-            = "$#{@recipe.cost_per_person}"
+            %h4="$#{@recipe.total_cost}"
+            %h4="$#{@recipe.cost_per_person}"
   .row
     .span12#notes
       %h2 3. Preparation
