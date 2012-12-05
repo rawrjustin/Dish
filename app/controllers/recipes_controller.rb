@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
        params[:q][:recipe_type_eq] = params[:type]
     end
     @q = Recipe.search(params[:q])
-    @recipes = @q.result.page(params[:page])
+    @recipes = @q.result.page(params[:page]).per(9)
 
 		@search_field = :name_or_description_cont
   end
