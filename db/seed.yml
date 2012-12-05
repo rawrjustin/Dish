@@ -24,11 +24,20 @@ locations:
     -   name: "Safeway"
         city: "Oakland"
 
-    -   name: "Ranch 99"
+    -   name: "99 Ranch"
         city: "Richmond"
 
     -   name: "Costco"
         city: "Richmond"
+
+    -   name: "Pusan Market"
+        city: "Oakland"
+
+    -   name: "Koreana"
+        city: "Oakland"
+
+    -   name: "Jetro"
+        city: "Alameda"
 
 ingredients:
     -   name: "Pasta Sauce"
@@ -42,6 +51,84 @@ ingredients:
         location: "Safeway"
         price: "5"
         photo: "http://farm3.staticflickr.com/2074/2379377093_b4afa1f022.jpg"
+
+    -   name: "Red-Leaf Lettuce"
+        size: "Head"
+        location: "Safeway"
+        price: "2"
+        photo: "http://farm9.staticflickr.com/8477/8244694705_142c19cb30.jpg"
+
+    -   name: "Butter Lettuce Dried Wakame Seaweed"
+        size: "Head"
+        location: "99 Ranch"
+        price: "4"
+        photo: "http://farm9.staticflickr.com/8061/8245764634_f198a67b7b.jpg"
+
+    -   name: "Enoki Mushrooms"
+        size: "Package"
+        location: "Pusan Market"
+        price: "4"
+        photo: "http://farm9.staticflickr.com/8345/8244695087_c30f507ddb.jpg"
+
+    -   name: "Daikon Sprouts"
+        size: "Package"
+        location: "Pusan Market"
+        price: "3"
+        photo: "http://farm9.staticflickr.com/8198/8244702077_53e74aba01_z.jpg"
+
+    -   name: "Miso Salad Dressing"
+        size: "Bottle"
+        location: "99 Ranch"
+        price: "6"
+        photo: "http://farm9.staticflickr.com/8059/8244714255_217e79cc7f.jpg"
+
+    -   name: "Tofu"
+        size: "Package"
+        location: "99 Ranch"
+        price: "2"
+        photo: "http://farm9.staticflickr.com/8481/8245782896_53f6a7c4a6.jpg"
+
+    -   name: "Shredded Carrots"
+        size: "Bags"
+        location: "Jetro"
+        price: "9"
+        photo: "http://farm9.staticflickr.com/8057/8244777143_f51598faaa.jpg"
+
+    -   name: "Cucumbers"
+        size: "count"
+        location: "Koreana"
+        price: "1"
+        photo: "http://farm9.staticflickr.com/8204/8245865278_abd66d913c_z.jpg"
+
+    -   name: "Salmon"
+        size: "lbs"
+        location: "Costco"
+        price: "6"
+        photo: "http://farm9.staticflickr.com/8485/8244800021_aa4b5ca58b_h.jpg"
+
+    -   name: "Green Onions"
+        size: "Bunches"
+        location: "Koreana"
+        price: "2"
+        photo: "http://farm9.staticflickr.com/8490/8244797819_9f09feae56.jpg"
+
+    -   name: "Gochujang (Red Bean Paste)"
+        size: "Box"
+        location: "Koreana"
+        price: "8"
+        photo: "http://farm9.staticflickr.com/8490/8244797819_9f09feae56.jpg"
+
+    -   name: "Roasted Seaweed"
+        size: "Packages"
+        location: "Koreana"
+        price: "5"
+        photo: "http://farm9.staticflickr.com/8200/8244849825_603e4a5af4_m.jpg"
+
+    -   name: "Miso Paste"
+        size: "Box"
+        location: "Koreana"
+        price: "2"
+        photo: "http://farm9.staticflickr.com/8206/8245865744_be20e89823.jpg"
 
     -   name: "Chicken Breast"
         size: "lb"
@@ -119,6 +206,27 @@ recipes:
             -   name: "Beef"
                 size: "2"
 
+    -   name: "Japanese Salad"
+        description: "Asian salad"
+        directions: "Tear (don't chop) lettuce into salad-size pieces and divide into 5 bowls. 2. Soak the wakame seaweed (mee-yuk) in HOT water until it is hydrated. 3. Squeeze as much water as you can out of the seaweed, and spread over the lettuce (do not toss the salad). 4. Chop the firm tofu into small cubes (about the size of sugar cubes, or smaller, if you can) and place in a neat pile atop the seaweed. 5. Chop the bottoms off the enoki mushrooms, wash, and place a few stalks in a small pile to the right of your pile of tofu in each bowl. 6. Chop the bottoms off the daikon sprouts, and place a few stalks over the enoki mushrooms ON THE SAME SIDE as your tofu pile (presentation is very important). 7. Before serving, drizzle miso salad dressing over the tofu pile."
+        time_in_minutes: "30"
+        servings: "4"
+        recipe_type: "Salads"
+        image: "http://farm9.staticflickr.com/8061/8244694493_b073fcc87e_z.jpg"
+        ingredients:
+            -   name: "Red-Leaf Lettuce"
+                size: "1"
+            -   name: "Butter Lettuce Dried Wakame Seaweed"
+                size: "1"
+            -   name: "Enoki Mushrooms"
+                size: "2"
+            -   name: "Daikon Sprouts"
+                size: "2"
+            -   name: "Miso Salad Dressing"
+                size: "1"
+            -   name: "Tofu"
+                size: "1"
+
 cooked_meals:
     -   name: "Asian Meatballs, Salad, and Rice"
         description: "The perfect large group meal."
@@ -145,6 +253,41 @@ cooked_meals:
         ingredients:
             -   name: "Hot Dog"
                 size: "15"
+
+    -   name: "Salmon Bibimbap"
+        description: "A Simple Korean meal"
+        servings: "200"
+        directions: "Oven to 400 degrees. Wash and Cook Rice. Prepare Salmon with light touch of salt & pepper. Cut tofu into 1/2 inch cubes. Wash and cut vegetables. Organize into bowls and you're done!"
+        time_in_minutes: "60"
+        thumb: "http://farm9.staticflickr.com/8206/8245871658_2e495bef7f_h.jpg"
+        ingredients:
+            -   name: "Shredded Carrots"
+                size: "20"
+            -   name: "Red-Leaf Lettuce"
+                size: "20"
+            -   name: "Cucumbers"
+                size: "28"
+            -   name: "Salmon"
+                size: "60"
+            -   name: "Green Onions"
+                size: "16"
+            -   name: "Daikon Sprouts"
+                size: "36"
+            -   name: "Roasted Seaweed"
+                size: "3"
+            -   name: "Gochujang (Red Bean Paste)"
+                size: "2"
+            -   name: "Tofu"
+                size: "32"
+            -   name: "Miso Paste"
+                size: "4"
+
+    -   name: "Sushi Bake"
+        description: "A Japanese fusion meal"
+        servings: "200"
+        directions: "Wash and cook rice. Wash shitake mushrooms until soft and thaw shrimp and imitation crab (if necessary). Wash and chop vegetables and imitation crab. Cook shitake mushrooms with soy sauce and sugar. Mix all vegetables and imitation crab with mayo, sour cream, furikake. In aluminum tray, put a layer of rice with a cover of your mixture (Ratio of 1.5:1, rice:mixture). Sprinkle masago and green onion (optional). Cut seaweed into 4's, chop romaine lettuce into 1-inch pieces and cucumbers into half-circles. Make Salad Dressing with balsamic vinegar, olive oil, soy sauce and sugar"
+        time_in_minutes: "80"
+        thumb: "http://farm9.staticflickr.com/8068/8244890595_44423ca495.jpg"
 
 catered_meals:
     -   name: "Hong Kong Express"

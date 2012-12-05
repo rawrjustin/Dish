@@ -1,3 +1,14 @@
+.row
+  .span12
+    %ul.breadcrumb
+      %li
+        %a{:href => meals_path}
+          Large Group
+        %span{:class => "divider"}
+          = "/"
+      %li.active
+        = "#{@meal.name}"
+
 #show_cooked_meals
   .row
     .hero-unit

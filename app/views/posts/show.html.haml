@@ -1,13 +1,24 @@
-.row-fluid
-  .blog-body
-    .post-body
-      %a{:href => posts_path}= "<< Back to list"
-      %br
-      .title
-        = @post.title
-      .info
-        =  "by " + @post.author
-        %br
-        =  @post.created_at.strftime("%b %d, %Y")
-      .content
-        = @post.content
+.row
+  .span12
+    %ul.breadcrumb
+      %li
+        %a{:href => posts_path}
+          Cooking Tips
+        %span{:class => "divider"}
+          = "/"
+      %li.active
+        = "#{@post.title}"
+
+#show_posts
+  .row
+    .hero-unit
+      %img{:id => "thumb", :src => @post.thumbnail}
+      .hero-content
+        %h1= @post.title
+        %h5
+          ="by " + @post.author
+          =@post.created_at.strftime("%b %d, %Y")
+
+  .row
+    .span12#content
+      = @post.content

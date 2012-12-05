@@ -24,36 +24,30 @@ body {
 	background-image: none;
 }
 
-#meals {
-  .hero-unit {
-  	background-color: $modernGreen;
+#show_posts {
+	.hero-unit {
+  	background-color: $modernRed;
+		img#thumb {
+  		float: right;			
+			height: 150px;
+			margin-right: 25px;
+			width: 270px;
+		}
 		.hero-content {
 			color: white;
 			font-family: $sansFont;
    	  text-shadow: 2px 2px rgba(128,128,128,0.5);
 		}
 	}
-	.dropdown-toggle {
-		background-image: none;
+	#servings {
+		.nav.nav-pills {
+			li a {
+				padding: 20px 50px 20px 50px;
+			}
+		}
 	}
-	#meals_grid {
-		padding-top: 12px;
-		li {
-			list-style: none;
-		}
-		.meal {
-			margin: 3px;
-			img {
-				height: 150px;
-				width: 400px;
-			}
-			h1 {
-				color: $modernBlack;
-				font-size: 16px;
-				font-weight: normal;
-				margin: 0px auto 0px auto;
-				text-align: center;
-			}
-		}
+	#content {
+		font-family: $serifFont;
+		font-size: 16px;
 	}
 }

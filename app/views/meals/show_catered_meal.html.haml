@@ -1,12 +1,87 @@
-.row-fluid
-  .span3
-    %img{:src => @meal.thumb}
-  .span9
-    %h1= @meal.name
-    %div= "#{@meal.description}"
-    %h2 about the meal:
-    %div= "It costs #{@meal.cost} per person"
-    %div= "It is for #{@meal.servings} servings"
-    %h2 where to get it:
-    %div= "#{@meal.address}"
-    %div= "Call: #{@meal.phone}"
+.row
+  .span12
+    %ul.breadcrumb
+      %li
+        %a{:href => meals_path}
+          Large Group
+        %span{:class => "divider"}
+          = "/"
+      %li.active
+        = "#{@meal.name}"
+
+#show_catered_meals
+  .row
+    .hero-unit
+      %img{:id => "thumb", :src => @meal.thumb}
+      .hero-content
+        %h1= @meal.name  
+        = "#{@meal.address} | Phone: #{@meal.phone}"
+      
+  .row
+    .span12
+      %table.table
+        %tr
+          %th
+            Size
+          %th
+            Feeds
+          %th
+            Dish
+          %th
+            Cost
+        %tr
+          %td
+            Small Tray
+          %td
+            %div
+              15 people
+          %td
+            %div
+              Chicken Fried Rice
+            %div
+              BBQ Pork
+            %div
+              Chow Mein
+            %div
+              Orange Chicken
+            %div
+              Salad
+          %td
+            %div
+              $20
+            %div
+              $20
+            %div
+              $22
+            %div
+              $22
+            %div
+              $10
+        %tr
+          %td
+            Large Tray
+          %td
+            %div
+              40 people
+          %td
+            %div
+              Chicken Fried Rice
+            %div
+              BBQ Pork
+            %div
+              Chow Mein
+            %div
+              Orange Chicken
+            %div
+              Salad
+          %td
+            %div
+              $28
+            %div
+              $28
+            %div
+              $30
+            %div
+              $30
+            %div
+              $14

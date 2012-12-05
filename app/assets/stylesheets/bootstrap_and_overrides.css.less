@@ -33,6 +33,12 @@
 //@linkColor: #f80;
 //@linkColorHover: #333;
 
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 #nav {
 	form {
 		margin-bottom: 0;
@@ -52,6 +58,10 @@
 		display: block;
 		height: @navbarHeight + 20px;
 	}
+}
+
+ul.breadcrumb {
+	background-color: rgb(255,255,255);
 }
 
 @navbarText: rgb(55,55,55);
