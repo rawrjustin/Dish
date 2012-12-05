@@ -10,7 +10,7 @@ class MealsController < ApplicationController
       params[:q][:cost_eq] = params[:cost]
     end
     @q = Meal.search(params[:q])
-    @meals = @q.result.page(params[:page])
+    @meals = @q.result.page(params[:page]).per(9)
 
 		@search_field = :name_or_description_cont
   end
