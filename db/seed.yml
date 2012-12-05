@@ -67,6 +67,12 @@ ingredients:
         price: "5.45"
         photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
 
+    -   name: "Hot Dog"
+        size: "bag"
+        location: "Safeway"
+        price: "50"
+        photo: "http://farm1.staticflickr.com/48/139800516_4b84cea332_m.jpg"
+
 recipes:
     -   name: "BBQ Chicken"
         description: "The best chicken dish in the world that has the seal of approval of Sause Bause"
@@ -136,6 +142,9 @@ cooked_meals:
         directions: "..."
         time_in_minutes: "45"
         thumb: "http://farm8.staticflickr.com/7110/8160415758_6f1c3a38bc.jpg"
+        ingredients:
+            -   name: "Hot Dog"
+                size: "15"
 
 catered_meals:
     -   name: "Hong Kong Express"
@@ -143,3 +152,4 @@ catered_meals:
         phone: "5355354422"
         address: "3445 Telegraph Ave, Berkeley"
         thumb: "http://farm8.staticflickr.com/7271/8160380337_4e148bafd4.jpg"
+        cost: "Under $2"
