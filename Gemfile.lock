@@ -40,6 +40,7 @@ GEM
     activesupport (3.2.7)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_commentable (3.0.1)
     addressable (2.3.2)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
@@ -251,6 +252,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_commentable (= 3.0.1)
   capybara (>= 1.1.2)
   carrierwave
   coffee-rails (~> 3.2.1)

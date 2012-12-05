@@ -6,6 +6,7 @@ class CookedMeal < Meal
   accepts_nested_attributes_for :cooked_meal_ingredients, :allow_destroy => true
   has_many :ingredients, :through => :cooked_meal_ingredients
   before_validation :update_cost
+  acts_as_commentable
 
   def scale(amount_people)
     #returns a CookedMeal object replica that has it's cookedmealingredients scaled

@@ -23,6 +23,7 @@ class RecipesController < ApplicationController
 
   def show
     @unscaled_recipe = Recipe.find(params[:id])
+    @recID = params[:id]
 		if !params[:servings]
 			params[:servings] = "10"
 		end
@@ -31,5 +32,23 @@ class RecipesController < ApplicationController
 		@active_20 = params[:servings] == "20"
 		@active_50 = params[:servings] == "50"
 		@recipe = @unscaled_recipe.scale(params[:servings])
+		@comments = @unscaled_recipe.comments.recent.limit(50).all		
+		
 	end
+	
+	def add_new_comment
+	  rec = Recipe.find(params[:recipe_id])
+
+	  if params[:title].length == 0 or params[:comment].length ==0
+	     flash[:alert] = "You need to enter both your name and a comment"
+	     redirect_to :action => :show, :id => rec
+	  else
+	     rec.comments.create(:title => params[:title], :comment => params[:comment])
+	     #rec.comments << Recipe.new(params[:comment])
+	     redirect_to :action => :show, :id => rec
+	  end
+	  
+    
+
+  end
 end

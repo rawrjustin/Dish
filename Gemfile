@@ -36,3 +36,4 @@ gem 'therubyracer'
 gem "simplecov"
 gem "ransack"
 gem "kaminari"
+gem 'acts_as_commentable', '3.0.1'
