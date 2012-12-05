@@ -23,7 +23,7 @@ class Recipe < ActiveRecord::Base
                                      :directions => self.directions,
                                      :time_in_minutes => self.time_in_minutes)
     self.recipe_ingredients.each do |recipe_ingredient|
-      temp_cmi = RecipeIngredient.new(:amount => ratio * recipe_ingredient.amount.to_f)
+      temp_cmi = RecipeIngredient.new(:amount => (ratio * recipe_ingredient.amount.to_f).round(2))
       temp_cmi.ingredient = recipe_ingredient.ingredient
       new_recipe.recipe_ingredients << temp_cmi
 
@@ -36,7 +36,7 @@ class Recipe < ActiveRecord::Base
     self.recipe_ingredients.each do |recipe_ingredient|
       tc += recipe_ingredient.ingredient.price * recipe_ingredient.amount
     end
-    return tc
+    return tc.round(2)
   end
 
   def cost_per_person
@@ -44,7 +44,7 @@ class Recipe < ActiveRecord::Base
     if servings > 0
       cpp = self.total_cost.to_f / self.servings.to_f
     end
-    return cpp.to_f
+    return cpp.to_f.round(2)
   end
 
   def time
