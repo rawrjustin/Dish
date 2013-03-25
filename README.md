@@ -51,6 +51,12 @@ To fix Invalid Gemspec, Invalid Date Format Errors
 
     sudo sed -i 's/ 00:00:00.000000000Z//' /var/lib/gems/1.8/specifications/*
 
+What I did when bundle install doesn't wanna work
+* remove ruby from apt-get, keep ruby1.9.1-dev
+* install ruby1.9.2 with rvm, check version with ruby -v
+* gem install bundler
+* bundle install
+
 ## Ruby on Rails
 
 This application requires:
