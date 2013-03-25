@@ -30,6 +30,26 @@ login with these credentials
 
 happy hacking guys
 
+## Setup Troubleshooting
+To install ruby 1.9.2
+
+    sudo apt-get install rvm
+    rvm install ruby-1.9.2-p290
+    rvm use ruby ruby-1.9.2-p290 --default
+
+To reset Gemfile.lcok
+
+    rm Gemfile.lcok
+    bundle install --without production
+
+To update bundler
+
+    gem install bundler
+    bundle install
+
+To fix Invalid Gemspec, Invalid Date Format Errors
+
+    sudo sed -i 's/ 00:00:00.000000000Z//' /var/lib/gems/1.8/specifications/*
 
 ## Ruby on Rails
 
