@@ -37,5 +37,3 @@ gem "simplecov"
 gem "ransack"
 gem "kaminari"
 gem 'yaml_db'
-
-gem 'acts_as_commentable', '3.0.1'
