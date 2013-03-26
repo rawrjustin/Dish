@@ -30,6 +30,16 @@ login with these credentials
 
 happy hacking guys
 
+## Rails Assets Precompilation Tips
+
+To load a javascript library, just copy it into lib/assets/javascripts
+and then run
+
+    rake assets:precompile
+
+Then it should load
+TODO: Figure out how to skip this in development, so it's more convenient
+
 ## Setup Troubleshooting
 To install ruby 1.9.2
 
