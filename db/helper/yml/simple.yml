@@ -1,0 +1,24 @@
+ingredients:
+    -   Name: "Pasta Sauce"
+        Size: "Jar"
+        Location: "Safeway"
+        Price: "4.00"
+        Photo: "http://farm4.staticflickr.com/3180/5835826345_8978f3b27d.jpg"
+
+    -   Name: "Spaghetti Noodles"
+        Size: "Package"
+        Location: "Safeway"
+        Price: "2.00"
+        Photo: "http://farm9.staticflickr.com/8341/8247047559_3c0ef7cf27_b.jpg"
+
+    -   Name: "Ground Beef"
+        Size: "lb"
+        Location: "Safeway"
+        Price: "4.00"
+        Photo: "http://farm3.staticflickr.com/2074/2379377093_b4afa1f022.jpg"
+
+    -   Name: "Red-Leaf Lettuce"
+        Size: "Head"
+        Location: "Safeway"
+        Price: "0.40"
+        Photo: "http://farm9.staticflickr.com/8477/8244694705_142c19cb30.jpg"
