@@ -1,3 +1,19 @@
+:javascript
+  // Create the tooltips only on document load
+  $(document).ready(function()
+  {
+  // Notice the use of the each() method to acquire access to each elements attributes
+  $('#ingredients_info a[image]').each(function()
+    {
+      $(this).qtip({
+        content: '<img src="' + $(this).attr('image') + '" />', // Use the tooltip attribute of the element for the content
+        show: { when: { event: 'click' } },
+        hide: { when: { event: 'unfocus' } }
+      });
+    });
+  });
+
+
 .row
   .span12
     %ul.breadcrumb
@@ -43,37 +59,38 @@
       %h2 2. Buy Ingredients
       %p
         Hover over ingredients for a photo, where to buy, and tips.
-      %table.table
-        %tr
-          %th
-            Quantity
-          %th
-            Item
-          %th
-            Buy at
-          %th
-            Cost
-        - @recipe.recipe_ingredients.each do |ing|
+      #ingredients_info
+        %table.table
+          %tr
+            %th
+              Quantity
+            %th
+              Item
+            %th
+              Buy at
+            %th
+              Cost
+          - @recipe.recipe_ingredients.each do |ing|
+            %tr
+              %td
+                = "#{ing.amount}x"
+              %td
+                %a#item{:image => "#{ing.ingredient.photo}"}
+                  = ing.ingredient.display_name
+              %td
+                %a{:href => ""}
+                  = ing.ingredient.location.name
+              %td
+                = "$#{ing.price}"
           %tr
             %td
-              = "#{ing.amount}x"
             %td
-              %a{:target => "_blank", :href => "#{ing.ingredient.photo}", :class => "#{ing.ingredient.name}", :rel => "popover", "data-content" => "This is a test"}
-                = ing.ingredient.display_name
+              %h4 Total cost of ingredients
+              %h4 Cost per person
             %td
-              %a{:href => ""}
-                = ing.ingredient.location.name
             %td
-              = "$#{ing.price}"
-        %tr
-          %td
-          %td
-            %h4 Total cost of ingredients
-            %h4 Cost per person
-          %td
-          %td
-            %h4="$#{@recipe.total_cost}"
-            %h4="$#{@recipe.cost_per_person}"
+              %h4="$#{@recipe.total_cost}"
+              %h4="$#{@recipe.cost_per_person}"
   .row
     .span12#notes
       %h2 3. Preparation
