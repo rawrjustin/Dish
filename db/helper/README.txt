@@ -1,8 +1,22 @@
-Working with CSV and YML files...
+Working with CSV, YML, Excel...
 
---------------
-- XLS to CSV -
---------------
+NOTE: Currently you can only call directly XLSX to YML.
+If you want to run the other scripts, just uncomment the bottom chunk & run.
+
+---------------
+- XLSX to YML -
+---------------
+
+EXAMPLE
+python xlsx_to_yml xlsx/ingredients.xlsx
+
+CALLING THE SCRIPT
+* Make sure to call the script from with the /helper/ directory only.
+  - The script makes assumptions that the folders /yml/ and /csv/ exist.
+
+---------------
+- XLSX to CSV -
+---------------
 
 In Excel, File >> Save as... >> CSV
 
