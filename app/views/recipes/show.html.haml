@@ -3,10 +3,29 @@
   $(document).ready(function()
   {
   // Notice the use of the each() method to acquire access to each elements attributes
-  $('#ingredients_info a[image]').each(function()
+    $('#ingredients_info a[photo]').each(function()
     {
       $(this).qtip({
-        content: '<img src="' + $(this).attr('image') + '" />', // Use the tooltip attribute of the element for the content
+        content: '<img width="150" src="' + $(this).attr('photo') + '" />', // Use the tooltip attribute of the element for the content
+        show: { when: { event: 'click' } },
+        hide: { when: { event: 'unfocus' } }
+      });
+    });
+
+    $('#ingredients_info a[tel]').each(function()
+    {
+      $(this).qtip({
+        content:
+          "<b>"
+          + $(this).attr('name')
+          + "</b>" + "<br>"
+          + $(this).attr('address1') + "<br>"
+          + $(this).attr('address2') + "<br>"
+          + $(this).attr('tel') + "<br>"
+          + "<a href=http://maps.google.com/?q="
+          + encodeURIComponent($(this).attr('address1') + "," + $(this).attr('address2')) + ">"
+          + "Get Directions" + "</a>"
+          , // Use the tooltip attribute of the element for the content
         show: { when: { event: 'click' } },
         hide: { when: { event: 'unfocus' } }
       });
@@ -30,14 +49,14 @@
     .hero-unit.panel-blue
       %img{:id => "thumb", :src => @recipe.thumbnail}
       .hero-content
-        %h1= @recipe.name  
+        %h1= @recipe.name
         %p= "#{@recipe.description}"
-      
+
   .row
     .span12#servings
       %h2 1. Choose Number of Servings
       %p
-        Select servings below, and ingredients will be automatically scaled. 
+        Select servings below, and ingredients will be automatically scaled.
       %ul.nav.nav-pills
         %li{:class => @active_default ? 'active' : ''}
           %a{:href => "?servings="}
@@ -75,11 +94,14 @@
               %td
                 = "#{ing.amount}x"
               %td
-                %a#item{:image => "#{ing.ingredient.photo}"}
+                %a#item{:photo => "#{ing.ingredient.photo}"}
                   = ing.ingredient.display_name
               %td
-                %a{:href => ""}
-                  = ing.ingredient.location.name
+                %a#item{:name => "#{ing.ingredient.location.name}",
+                        :address1 => "#{ing.ingredient.location.address1}",
+                        :address2 => "#{ing.ingredient.location.address2}",
+                        :tel => "#{ing.ingredient.location.tel}"}
+                  = ing.ingredient.location.display_name
               %td
                 = "$#{ing.price}"
           %tr

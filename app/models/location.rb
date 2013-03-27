@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  attr_accessible :address, :city, :name
+  attr_accessible :address1, :address2, :tel,  :city, :name
   has_many :ingredients
   validates :name, :city, :presence => true
 
