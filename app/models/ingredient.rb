@@ -12,7 +12,7 @@ class Ingredient < ActiveRecord::Base
     if self.size == ""
       self.name
     else
-      self.name + " (" + self.size + ")"
+      self.name + " (" + "$" + self.price.to_s + "/" + self.size + ")"
     end
   end
 end

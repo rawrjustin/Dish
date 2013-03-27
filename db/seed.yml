@@ -12,21 +12,39 @@ posts:
 locations:
     -   name: "Safeway"
         city: "Oakland"
+        address1: "6310 College Avenue"
+        address2: "Oakland, CA 94618"
+        tel: "(510) 654-6992"
 
     -   name: "99 Ranch"
         city: "Richmond"
+        address1: "3288 Pierce Street #99"
+        address2: "Richmond, CA 94804"
+        tel: "(510) 558-2120"
 
     -   name: "Costco"
         city: "Richmond"
+        address1: "4801 Central Avenue"
+        address2: "Richmond, CA 94804"
+        tel: "(510) 898-2003"
 
     -   name: "Pusan Market"
         city: "Oakland"
+        address1: "2370 Telegraph Avenue"
+        address2: "Oakland, CA 94612"
+        tel: "(510) 986-1234"
 
     -   name: "Koreana"
         city: "Oakland"
+        address1: "2370 Telegraph Avenue"
+        address2: "Oakland, CA 94612"
+        tel: "(510) 986-1234"
 
     -   name: "Jetro"
         city: "Alameda"
+        address1: "440 High St"
+        address2: "Oakland, CA 94601"
+        tel: "(510) 628-0600"
 
 ingredients:
     -   name: "Pasta Sauce"

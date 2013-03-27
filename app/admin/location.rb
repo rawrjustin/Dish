@@ -3,7 +3,6 @@ ActiveAdmin.register Location do
     column :id
     column :name
     column :city
-    column :address
     default_actions
   end
 
@@ -14,7 +13,9 @@ ActiveAdmin.register Location do
     f.inputs "Location Details" do 
       f.input :name
       f.input :city
-      f.input :address
+      f.input :address1
+      f.input :address2
+      f.input :tel
     end
     f.buttons
   end
