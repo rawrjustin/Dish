@@ -17,13 +17,13 @@ QUOTE = '"'
 LINE_BREAK = '\n'
 EXTERNAL_FILE_TAG = 'FILE:'
 
-def csv_to_yaml(infilename):
+def csv_to_yml(infilename):
   # Remove file extension from infilename
   dot_pos = infilename.find('.')
   slash_pos = infilename.find('/')
   current_dir = infilename[0:slash_pos]
   name_only = infilename[slash_pos+1:dot_pos]
-  yaml_filename = OUTPUT_EXTENSION + '/' + name_only + '_GEN' + '.' + OUTPUT_EXTENSION
+  yaml_filename = OUTPUT_EXTENSION + '/' + name_only + '.' + OUTPUT_EXTENSION
   
   # Create output file
   with open(yaml_filename, 'w') as output:
@@ -116,15 +116,14 @@ def csv_to_yaml(infilename):
 # Process files listed on command line, or all .csv files in current dir if no
 # args given
 #
-re_excelfilename = re.compile(r'(\.csv)$')
-try:    args = sys.argv[1:]
-except: args = []
-if len(args) < 1:
-  infilenames = filter(re_excelfilename.search, os.listdir("."))
-  infilenames.sort()
-else:
-  infilenames = args
-  
-for infilename in infilenames:
-  csv_to_yaml(infilename)
-        
+#re_excelfilename = re.compile(r'(\.csv)$')
+#try:    args = sys.argv[1:]
+#except: args = []
+#if len(args) < 1:
+  #infilenames = filter(re_excelfilename.search, os.listdir("."))
+  #infilenames.sort()
+#else:
+  #infilenames = args
+  #
+#for infilename in infilenames:
+#  csv_to_yml(infilename)

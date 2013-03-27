@@ -23,7 +23,7 @@ def yaml_to_csv(infilename):
   dot_pos = infilename.find('.')
   slash_pos = infilename.find('/')
   name_only = infilename[slash_pos+1:dot_pos]
-  csv_filename = OUTPUT_EXTENSION + '/' + name_only + '_GEN' + '.' + OUTPUT_EXTENSION
+  csv_filename = OUTPUT_EXTENSION + '/' + name_only + '.' + OUTPUT_EXTENSION
   
   newline_regex = re.compile(r'(\n)')
   table_regex = re.compile(r'\w+:')
