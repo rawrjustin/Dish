@@ -8,11 +8,19 @@ If you want to run the other scripts, just uncomment the bottom chunk & run.
 ---------------
 
 EXAMPLE
-python xlsx_to_yml xlsx/ingredients.xlsx
+python xlsx_to_yml xlsx/cooked_meals.xlsx
+
+XLSX Format
+* Make sure the sheet name matches the filename
+* See xlsx/cooked_meals.xlsx for an example
 
 CALLING THE SCRIPT
 * Make sure to call the script from with the /helper/ directory only.
   - The script makes assumptions that the folders /yml/ and /csv/ exist.
+  
+NESTED STUFF
+* See xlsx/cooked_meals.xlsx for an example
+* Include nested stuff as additional sheets. Make sure that the sheet name matches the filename that you specify!
 
 ---------------
 - XLSX to CSV -
