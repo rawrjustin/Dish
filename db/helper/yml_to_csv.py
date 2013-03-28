@@ -5,7 +5,8 @@ import  os, sys, os.path
 import  yaml
 
 # Assumptions
-# - Input file extension is '.csv'
+# - **** NO NESTED ENTRIES ***
+# - Input file extension is '.yml'
 
 # Constants
 OUTPUT_EXTENSION = 'csv'

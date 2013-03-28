@@ -6,7 +6,7 @@ import xlsx_to_csv
 import csv_to_yml
 
 #
-# Process files listed on command line, or all .csv files in current dir if no
+# Process files listed on command line, or all files in current dir if no
 # args given
 #
 
