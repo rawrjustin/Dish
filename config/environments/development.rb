@@ -50,5 +50,8 @@ FoodPrepApp::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = false
+  config.assets.debug = true
+
+  # Do not serve assets in public folder
+  config.serve_static_assets = false
 end
