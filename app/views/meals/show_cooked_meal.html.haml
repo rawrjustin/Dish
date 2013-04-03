@@ -1,3 +1,38 @@
+:javascript
+  // Create the tooltips only on document load
+  $(document).ready(function()
+  {
+  // Notice the use of the each() method to acquire access to each elements attributes
+    $('#ingredients_info a[photo]').each(function()
+    {
+      $(this).qtip({
+        content: '<img width="150" src="' + $(this).attr('photo') + '" />', // Use the tooltip attribute of the element for the content
+        show: { when: { event: 'click' } },
+        hide: { when: { event: 'unfocus' } }
+      });
+    });
+
+    $('#ingredients_info a[tel]').each(function()
+    {
+      $(this).qtip({
+        content:
+          "<b>"
+          + $(this).attr('name')
+          + "</b>" + "<br>"
+          + $(this).attr('address1') + "<br>"
+          + $(this).attr('address2') + "<br>"
+          + $(this).attr('tel') + "<br>"
+          + "<a href=http://maps.google.com/?q="
+          + encodeURIComponent($(this).attr('address1') + "," + $(this).attr('address2')) + ">"
+          + "Get Directions" + "</a>"
+          , // Use the tooltip attribute of the element for the content
+        show: { when: { event: 'click' } },
+        hide: { when: { event: 'unfocus' } }
+      });
+    });
+  });
+
+
 .row
   .span12
     %ul.breadcrumb
@@ -37,37 +72,41 @@
       %h2 2. Buy Ingredients
       %p
         Click an ingredient for more information.
-      %table.table
-        %tr
-          %th
-            Quantity
-          %th
-            Item
-          %th
-            Buy at
-          %th
-            Cost
-        - @meal.cooked_meal_ingredients.each do |ing|
+      #ingredients_info
+        %table.table
+          %tr
+            %th
+              Quantity
+            %th
+              Item
+            %th
+              Buy at
+            %th
+              Cost
+          - @meal.cooked_meal_ingredients.each do |ing|
+            %tr
+              %td
+                = "#{ing.amount}x"
+              %td
+                %a#item{:photo => "#{ing.ingredient.photo}"}
+                  = ing.ingredient.display_name
+              %td
+                %a#item{:name => "#{ing.ingredient.location.name}",
+                        :address1 => "#{ing.ingredient.location.address1}",
+                        :address2 => "#{ing.ingredient.location.address2}",
+                        :tel => "#{ing.ingredient.location.tel}"}
+                  = ing.ingredient.location.display_name
+              %td
+                = "$#{ing.price}"
           %tr
             %td
-              = "#{ing.amount}x"
             %td
-              %a{:href => "#{ing.ingredient.photo}", :target => "_blank"}
-                = ing.ingredient.display_name
+              %h4 Total cost of ingredients
+              %h4 Cost per person
             %td
-              %a{:href => ""}
-                = ing.ingredient.location.name
             %td
-              = "$#{ing.price}"
-        %tr
-          %td
-          %td
-            %h4 Total cost of ingredients
-            %h4 Cost per person
-          %td
-          %td
-            %h4="$#{@meal.total_cost}"
-            %h4="$#{@meal.cost_per_person}"
+              %h4="$#{@meal.total_cost}"
+              %h4="$#{@meal.cost_per_person}"
             
 
   .row
