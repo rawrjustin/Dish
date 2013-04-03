@@ -6,7 +6,15 @@
     $('#ingredients_info a[photo]').each(function()
     {
       $(this).qtip({
-        content: '<img width="150" src="' + $(this).attr('photo') + '" />', // Use the tooltip attribute of the element for the content
+        content:
+          '<img width="150" src="' + $(this).attr('photo') + '" />'
+          + '<br>'
+          + '<b>' + $(this).attr('name') + '</b>'
+          + '<br>'
+          + 'Cost: '
+          + '$' + $(this).attr('price')
+          + '/' + $(this).attr('size')
+          , // Use the tooltip attribute of the element for the content
         show: { when: { event: 'click' } },
         hide: { when: { event: 'unfocus' } }
       });
@@ -92,10 +100,13 @@
           - @recipe.recipe_ingredients.each do |ing|
             %tr
               %td
-                = "#{ing.amount}x"
+                = "#{ing.amount} x #{ing.ingredient.size}"
               %td
-                %a#item{:photo => "#{ing.ingredient.photo}"}
-                  = ing.ingredient.display_name
+                %a#item{:photo => "#{ing.ingredient.photo}",
+                        :size => "#{ing.ingredient.size}",
+                        :price => "#{ing.ingredient.price}",
+                        :name => "#{ing.ingredient.name}"}
+                  = ing.ingredient.name
               %td
                 %a#item{:name => "#{ing.ingredient.location.name}",
                         :address1 => "#{ing.ingredient.location.address1}",
